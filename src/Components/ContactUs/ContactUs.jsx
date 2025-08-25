@@ -178,13 +178,13 @@ const ContactUs = () => {
         <h2>Find Us Here</h2>
         <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
           <Marker
-            position={center}
-            title="Chiselon Technologies Pvt. Ltd. - Corporate Office, Coimbatore"
-            onClick={() => {
-              const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${center.lat},${center.lng}`;
-              window.open(googleMapsUrl, "_blank");
-            }}
-          />
+    position={center}
+    title="Chiselon Technologies Pvt. Ltd. - Corporate Office, Coimbatore"
+    onClick={() => {
+      const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${center.lat},${center.lng}`;
+      window.open(googleMapsUrl, "_blank");
+    }}
+  />
 
           {showInfoWindow && (
             <InfoWindow
@@ -207,7 +207,7 @@ const ContactUs = () => {
       {/* Closing Note */}
       <section className="closing-note">
         <p>
-          No matter your need — hiring, staffing, product development, or innovation consulting —
+          No matter your need — hiring, staffing, product development, or innovation consulting — 
           <b> Chiselon is here to partner with you.</b>
         </p>
         <h3>👉 Let’s carve your success story today.</h3>

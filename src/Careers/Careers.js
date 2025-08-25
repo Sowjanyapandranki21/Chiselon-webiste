@@ -85,11 +85,12 @@ const Careers = () => {
           📩 Apply via <a href="mailto:careers@chiselon.com">careers@chiselon.com</a>
           {" "}
           <button
-            className="btn primary"
-            onClick={() => {
-              const subject = encodeURIComponent("Job Application");
-              const body = encodeURIComponent(
-                `Dear Chiselon Team,
+  className="btn primary"
+  onClick={() => {
+    const email = "udaypukkalla@gmail.com";
+    const subject = encodeURIComponent("Job Application");
+    const body = encodeURIComponent(
+      `Dear Chiselon Team,
 
 I am interested in applying for a position at Chiselon Technologies Pvt. Ltd. Please find my resume attached.
 
@@ -97,12 +98,14 @@ Looking forward to your response.
 
 Best regards,
 [Your Name]`
-              );
-              window.location.href = `mailto:udaypukkalla@gmail.com?subject=${subject}&body=${body}`;
-            }}
-          >
-            Apply
-          </button>
+    );
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+    window.open(gmailUrl, "_blank");
+  }}
+>
+  Apply
+</button>
+
 
         </p>
       </section>
