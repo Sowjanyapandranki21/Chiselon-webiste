@@ -28,27 +28,27 @@ const Careers = () => {
       </section>
 
       {/* EVP - Alternating Layout */}
- {/* Employee Value Proposition */}
-<section className="employee-value">
-  <h2>Employee Value Proposition</h2>
-  <p>
-    At Chiselon, we don’t just offer jobs — we offer career journeys.
-    Whether you are a fresher looking to start strong or an experienced
-    professional seeking the next challenge, Chiselon is a place where you
-    can learn, lead, and grow.
-  </p>
-</section>
+      {/* Employee Value Proposition */}
+      <section className="employee-value">
+        <h2>Employee Value Proposition</h2>
+        <p>
+          At Chiselon, we don’t just offer jobs — we offer career journeys.
+          Whether you are a fresher looking to start strong or an experienced
+          professional seeking the next challenge, Chiselon is a place where you
+          can learn, lead, and grow.
+        </p>
+      </section>
 
-{/* Life at Chiselon */}
-<section className="life-at-chiselon">
-  <h2>Life at Chiselon</h2>
-  <ul>
-    <li>🌟 Team-driven innovation culture</li>
-    <li>🎉 Celebrating milestones & achievements</li>
-    <li>🏆 Recognition and rewards for excellence</li>
-    <li>🌍 Commitment to diversity and inclusion</li>
-  </ul>
-</section>
+      {/* Life at Chiselon */}
+      <section className="life-at-chiselon">
+        <h2>Life at Chiselon</h2>
+        <ul>
+          <li>🌟 Team-driven innovation culture</li>
+          <li>🎉 Celebrating milestones & achievements</li>
+          <li>🏆 Recognition and rewards for excellence</li>
+          <li>🌍 Commitment to diversity and inclusion</li>
+        </ul>
+      </section>
 
 
       {/* Current Openings */}
@@ -80,10 +80,33 @@ const Careers = () => {
             </tr>
           </tbody>
         </table>
+
         <p className="apply-now">
           📩 Apply via <a href="mailto:careers@chiselon.com">careers@chiselon.com</a>
+          {" "}
+          <button
+            className="btn primary"
+            onClick={() => {
+              const subject = encodeURIComponent("Job Application");
+              const body = encodeURIComponent(
+                `Dear Chiselon Team,
+
+I am interested in applying for a position at Chiselon Technologies Pvt. Ltd. Please find my resume attached.
+
+Looking forward to your response.
+
+Best regards,
+[Your Name]`
+              );
+              window.location.href = `mailto:udaypukkalla@gmail.com?subject=${subject}&body=${body}`;
+            }}
+          >
+            Apply
+          </button>
+
         </p>
       </section>
+
 
       {/* CTA Banner */}
       <section className="cta-banner">
