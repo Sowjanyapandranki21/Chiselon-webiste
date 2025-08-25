@@ -1,38 +1,118 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: .3s ease;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* prevent body from scrolling */
+}
+:root {
+    /* Primary Brand Colors */
+    --PrimaryColor: hsl(26, 93%, 50%);
+    /* Orange */
+    --HoverColor: hsl(26, 90%, 42%);
+
+    /* Neutral Colors */
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --textColor: hsl(240, 1%, 48%);
+    --greyBg: hsl(0, 0%, 96%);
+    --mediumGray: hsl(0, 0%, 80%);
+    --darkGray: hsl(0, 0%, 40%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: hsl(330, 12%, 97%);
+    /* Secondary / Accent Colors */
+    --secondaryColor: hsl(200, 90%, 50%);
+    /* Blue */
+    --secondaryHover: hsl(200, 90%, 40%);
+    --accentColor: hsl(340, 82%, 52%);
+    /* Pink */
+    --accentHover: hsl(340, 82%, 42%);
+
+    /* Status Colors */
+    --successColor: hsl(145, 63%, 42%);
+    /* Green */
+    --warningColor: hsl(45, 100%, 51%);
+    /* Yellow */
+    --dangerColor: hsl(0, 84%, 60%);
+    /* Red */
+    --infoColor: hsl(210, 100%, 60%);
+    /* Light Blue */
+
+    /* Background Colors */
+    --backgroundLight: hsl(0, 0%, 98%);
+    --backgroundDark: hsl(0, 0%, 12%);
+    --cardBackground: hsl(0, 0%, 100%);
+    --overlayColor: hsla(0, 0%, 0%, 0.6);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.section{
+    padding: 4rem 0 2rem;
+}
+.container{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.icon{
+    font-size: 2rem;
+    cursor: pointer;
+}
+.flex{
+    display: flex;
+    align-items: center;
+}
+.btn{
+    padding: .4rem 1.5rem;
+    background: var(--PrimaryColor);
+    border: none;
+    outline: none;
+    border-radius: 3rem;
+    cursor: pointer;
+}
+.btn a{
+    color:var(--whiteColor);
+    font-weight: 500;
+}
+.btn:hover a{
+    color:var(--whiteColor)
+}
+.secIntro{
+    max-width:70%;
+    text-align: center;
+    margin: 0 auto 2rem;
+}
+.secIntro .secTitle{
+    color:var(--blackColor);
+    line-height: 1.5rem;
+    padding-bottom: .5rem;
+}
+.secIntro p{
+    font-size: 13px;
+    color:var(--textColor);
+    font-weight: 500;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+img,video{
+    width:100%;
+    height: auto;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input{
+    font-size: 100%;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-content {
+  overflow-y: auto;  /* enable vertical scroll */
+  height: calc(100vh - 80px); /* subtract navbar height */
 }

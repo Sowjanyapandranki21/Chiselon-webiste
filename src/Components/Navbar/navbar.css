@@ -1,0 +1,271 @@
+/* ===== Header ===== */
+.header {
+  width: 100%;
+  background: #fff;
+  padding: 1rem 0;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* keep logo left */
+  max-width: 1200px;
+  margin: 0;
+  padding: 0 1rem;
+  width: 100%;
+  position: relative; /* needed for absolute positioning of nav */
+}
+
+.navLists {
+  display: flex;
+  gap: 1.8rem;
+  list-style: none;
+  position: absolute;
+  right: 0; /* pushes nav list to the far right */
+  top: 50%; /* vertically center */
+  transform: translateY(-50%);
+  margin: 0; /* remove auto margin */
+}
+
+
+.logo-text-wrapper {
+  display: flex;
+  flex-direction: column; /* stack h2 and p vertically */
+  align-items: center;    /* center subtitle below h2 */
+}
+
+.logo-text {
+  margin: 0;
+}
+
+.logo-subtitle {
+  font-size: 16px;          /* slightly bigger for visibility */
+  color: #1a73e8;           /* a nice professional blue */
+  margin-top: 6px;           /* space below the h2 */
+  font-weight: 600;          /* slightly bolder for emphasis */
+  font-style: italic;        /* gives a subtle elegant touch */
+  text-align: center;        /* center below the h2 */
+  letter-spacing: 0.5px;    /* subtle spacing for readability */
+}
+/* ===== Logo Always Left ===== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.logo img {
+  width: 60px;   /* Increased size */
+  height: 60px;
+  border-radius: 50%; /* makes it circular if square */
+
+}
+
+
+.logo h2 {
+  font-size: 1.6rem; /* slightly bigger name */
+  font-weight: 800;
+  color: blue;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15); /* glow text */
+}
+.logo-text {
+  font-size: 2rem;   /* Bigger by default */
+  font-weight: 800;
+  color: blue;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  transition: font-size 0.3s ease;
+}
+
+/* ===== Navbar (desktop) ===== */
+.navBar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-left: auto; /* pushes the nav list to the right */
+}
+
+
+.navLink {
+  text-decoration: none;
+  color: #111;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #2563eb;
+}
+
+/* ===== Header Buttons ===== */
+.headerBtns {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.btn {
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+/* login + signup */
+.loginBtn {
+  background: transparent;
+  border: 2px solid #2563eb;
+}
+.loginBtn a {
+  color: #2563eb;
+  text-decoration: none;
+}
+.loginBtn:hover {
+  background: #2563eb;
+}
+.loginBtn:hover a {
+  color: #fff;
+}
+
+.signupBtn {
+  background: #ccff00;
+}
+.signupBtn a {
+  color: #111;
+  text-decoration: none;
+}
+.signupBtn:hover {
+  background: #a6e600;
+}
+
+/* ===== Mobile Menu Toggle (right corner) ===== */
+.mobileMenu {
+  display: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  margin-left: auto; /* push to right */
+  z-index: 1100;
+}
+
+.mobileMenu div {
+  width: 25px;
+  height: 3px;
+  background: #111;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+.mobileMenu.active .bar1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.mobileMenu.active .bar2 {
+  opacity: 0;
+}
+.mobileMenu.active .bar3 {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 200px;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-link {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.dropdown-link:hover {
+  background-color: #f0f0f0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .navBar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 280px;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 4rem 2rem;
+    gap: 2rem;
+    transition: 0.4s ease-in-out;
+    box-shadow: -2px 0 6px rgba(0,0,0,0.1);
+  }
+.logo-text {
+    font-size: 1.6rem !important;
+  }
+  .navBar.activeNavbar {
+    right: 0;
+  }
+
+  .navLists {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .headerBtns {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .mobileMenu {
+    display: block; /* show hamburger only on mobile */
+  }
+}
+@media screen and (max-width: 768px) {
+  .logo-text {
+    font-size: 1.3rem !important;
+  }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 480px) {
+  .logo-text {
+    font-size: 1.1rem !important;
+  }
+}

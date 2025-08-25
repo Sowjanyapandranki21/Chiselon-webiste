@@ -1,0 +1,95 @@
+import React, { useState } from "react";
+import "./ProductsSection.css";
+
+const products = [
+  {
+    title: "NITO (Electus)",
+    subtitle: "Next-Gen Online Test Platform",
+    description: "Advanced mock test platform for students preparing for competitive exams.",
+    features: [
+      "Adaptive test engine with customizable difficulty levels.",
+      "Real-time analytics & performance reports for students.",
+      "Secure, scalable cloud-based architecture.",
+      "Multi-device compatibility"
+    ],
+    impact: "Helps students build confidence and track progress effectively."
+  },
+  {
+    title: "AestheTech",
+    subtitle: "AI-Powered Clinic Management System",
+    description: "Comprehensive clinic management platform for dermatology and multi-specialty clinics.",
+    features: [
+      "Patient management (records, history, appointments).",
+      "AI-assisted imaging & diagnosis support.",
+      "Doctor support modules and task management.",
+      "Digital prescriptions, billing, and inventory integration"
+    ],
+    impact: "Improves patient outcomes and operational efficiency."
+  },
+  {
+    title: "Quantum Quest (SureCare)",
+    subtitle: "Uber for Nurses",
+    description: "On-demand healthcare staffing platform connecting nurses with hospitals and patients.",
+    features: [
+      "Real-time nurse availability matching.",
+      "Secure scheduling and shift management.",
+      "Verified nursing professionals.",
+      "Integrated payments and compliance tracking"
+    ],
+    impact: "Ensures timely patient care and flexible work opportunities."
+  },
+  {
+    title: "HRMS Suite",
+    subtitle: "Integrated Timesheet & Leave Management System",
+    description: "Smart HR platform to manage workforce seamlessly.",
+    features: [
+      "Timesheet management with project-wise tracking.",
+      "Leave management with approval workflows.",
+      "Integrated payroll compatibility.",
+      "Employee self-service portal"
+    ],
+    impact: "Increases productivity and reduces manual errors."
+  }
+];
+
+const ProductsSection = () => {
+  const [expanded, setExpanded] = useState({});
+
+  const toggleExpand = (index) => {
+    setExpanded((prev) => ({ ...prev, [index]: !prev[index] }));
+  };
+
+  return (
+    <section className="products-section">
+      {products.map((p, index) => (
+        <div key={index} className="product-card">
+          <div className="card-content">
+            <h2>{p.title}</h2>
+            <h3>{p.subtitle}</h3>
+            <p>{p.description}</p>
+          </div>
+
+          <div className="btn-wrapper">
+            <button
+              className="view-btn"
+              onClick={() => toggleExpand(index)}
+            >
+              {expanded[index] ? "View Less" : "View More"}
+            </button>
+          </div>
+
+          <div className={`product-details ${expanded[index] ? "active" : ""}`}>
+            <ul>
+              {p.features.map((f, i) => (
+                <li key={i}>{f}</li>
+              ))}
+            </ul>
+            <p><strong>Impact:</strong> {p.impact}</p>
+          </div>
+        </div>
+      ))}
+    </section>
+  );
+};
+
+export default ProductsSection;

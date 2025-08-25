@@ -1,0 +1,90 @@
+/* Section Styling */
+.talent-staffing {
+  padding: 4rem 2rem;
+  /* background: #f8fbff; */
+}
+
+/* Container for image + content */
+.talent-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 2rem;
+  flex-wrap: wrap; /* for responsiveness */
+}
+
+/* Left Image */
+.talent-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.talent-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 114, 255, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.talent-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 32px rgba(0, 114, 255, 0.3);
+}
+
+/* Right Content */
+.talent-content {
+  flex: 1;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.talent-content:hover {
+  transform: translateY(-5px);
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0047ab;
+  margin-bottom: 1rem;
+  border-left: 6px solid #00c6ff;
+  padding-left: 12px;
+}
+
+.offerings {
+  margin: 1.5rem 0;
+  padding-left: 1.2rem;
+}
+.offerings li {
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #333;
+}
+
+.highlights {
+  margin-top: 1.5rem;
+}
+.highlights p {
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+  color: #0047ab;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+  .talent-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .talent-content {
+    margin-top: 2rem;
+  }
+}
+

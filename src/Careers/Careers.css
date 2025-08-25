@@ -1,0 +1,231 @@
+.careers-page {
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero */
+.careers-hero {
+  background: url("https://source.unsplash.com/1600x600/?technology,team") center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+.careers-hero .overlay {
+  background: rgba(0,0,0,0.6);
+  padding: 30px;
+  border-radius: 12px;
+}
+.careers-hero h1 {
+  font-size: 2.5rem;
+}
+.careers-hero p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+/* Timeline */
+.careers-timeline {
+  padding: 60px 20px;
+  text-align: center;
+}
+.careers-timeline h2 {
+  margin-bottom: 30px;
+  color: #0056b3;
+}
+.timeline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.timeline-item {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  min-width: 200px;
+  max-width: 250px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Alternating EVP & Life */
+.evp-section, .life-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 20px;
+}
+.evp-text, .life-text {
+  flex: 1;
+  min-width: 280px;
+}
+.evp-img, .life-img {
+  flex: 1;
+  min-width: 280px;
+  height: 250px;
+  border-radius: 12px;
+  background: url("https://source.unsplash.com/600x400/?career,growth") center/cover no-repeat;
+}
+.life-img {
+  background: url("https://source.unsplash.com/600x400/?office,teamwork") center/cover no-repeat;
+}
+.evp-section {
+  background: #f4f9ff;
+}
+.life-section {
+  background: #fff;
+}
+/* Employee Value Proposition */
+.employee-value {
+  background: linear-gradient(135deg, #f5f8ff, #eef2ff);
+  border-left: 6px solid #4f46e5; /* Indigo accent */
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.employee-value h2 {
+  font-size: 1.8rem;
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.employee-value p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #374151;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Life at Chiselon */
+.life-at-chiselon {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.life-at-chiselon h2 {
+  font-size: 1.8rem;
+  color: #065f46; /* Emerald accent */
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.life-at-chiselon ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.life-at-chiselon li {
+  background: #f0fdf4;
+  border: 1px solid #d1fae5;
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #065f46;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.life-at-chiselon li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .employee-value h2,
+  .life-at-chiselon h2 {
+    font-size: 1.5rem;
+  }
+  .employee-value p {
+    font-size: 1rem;
+  }
+}
+
+/* Openings */
+.careers-openings {
+  padding: 60px 20px;
+  text-align: center;
+}
+.openings-table {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+.openings-table th, .openings-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+}
+.openings-table th {
+  background: #007bff;
+  color: white;
+}
+.apply-now {
+  margin-top: 20px;
+}
+
+/* CTA Banner */
+.cta-banner {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+.cta-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.btn-light, .btn-dark {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+.btn-light {
+  background: white;
+  color: #007bff;
+}
+.btn-dark {
+  background: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .careers-hero h1 {
+    font-size: 1.8rem;
+  }
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+  }
+  .evp-section, .life-section {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,279 @@
+/* =====================
+   Global Variables
+===================== */
+:root {
+  --PrimaryColor: hsl(26, 93%, 50%);
+  --SecondaryColor: hsl(200, 90%, 50%);
+  --AccentColor: hsl(340, 82%, 52%);
+
+  --White: #fff;
+  --Black: #222;
+  --Text: #444;
+  --LightGray: #f8f9fa;
+  --DarkGray: #555;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--Text);
+  background: var(--White);
+}
+
+/* =====================
+   Navbar Fix
+===================== */
+.navBarSection .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--White);
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+}
+
+.logoDiv .logo h1 {
+  color: var(--PrimaryColor); /* Dot color fixed */
+}
+
+/* =====================
+   Hero Section
+===================== */
+/* .hero {
+  background: linear-gradient(
+    135deg,
+    var(--PrimaryColor),
+    var(--SecondaryColor)
+  );
+  color: var(--White);
+  padding: 10rem 2rem 6rem;
+  text-align: center;
+} */
+
+.hero-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero .tagline {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.hero .subheadline {
+  margin: 1rem 0 2rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+  padding: 0.9rem 1.6rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-buttons .btn.primary {
+  background: var(--White);
+  color: var(--PrimaryColor);
+}
+
+.hero-buttons .btn.secondary {
+  background: var(--AccentColor);
+  color: var(--White);
+}
+
+.hero-buttons .btn.outline {
+  background: transparent;
+  border: 2px solid var(--White);
+  color: var(--White);
+}
+
+.hero-buttons .btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =====================
+   Sections
+===================== */
+section {
+  padding: 5rem 2rem;
+}
+
+.intro,
+.services,
+.trust,
+.impact,
+.cta {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.intro h2,
+.services h2,
+.trust h2,
+.impact h2,
+.cta h2 {
+  font-size: 2rem;
+  color: var(--PrimaryColor);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* =====================
+   Services Section
+===================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background: var(--LightGray);
+  padding: 2rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  background: var(--textColor);
+  color: var(--White);
+}
+
+/* =====================
+   Trust Section
+===================== */
+.trust-points {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.trust-point {
+  background: var(--LightGray);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+/* =====================
+   Impact Section
+===================== */
+.impact-stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.stat {
+  text-align: center;
+  margin: 1rem;
+}
+
+.stat h3 {
+  font-size: 2rem;
+  color: var(--PrimaryColor);
+}
+
+/* =====================
+   CTA Section
+===================== */
+.cta {
+  text-align: center;
+  background: var(--PrimaryColor);
+  color: var(--White);
+  padding: 4rem 2rem;
+  border-radius: 12px;
+}
+
+.cta-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  background: var(--White);
+  color: var(--PrimaryColor);
+}
+
+/* =====================
+   Responsive Media Queries
+===================== */
+
+/* Tablets */
+@media screen and (max-width: 1024px) {
+  .hero {
+    padding: 9rem 1.5rem 5rem;
+  }
+  .hero .tagline {
+    font-size: 2.5rem;
+  }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Landscape */
+@media screen and (max-width: 768px) {
+  .hero {
+    padding: 8rem 1.5rem 4rem;
+  }
+  .hero .tagline {
+    font-size: 2rem;
+  }
+  .hero .subheadline {
+    font-size: 1rem;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .trust-points {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small Mobiles */
+@media screen and (max-width: 480px) {
+  .hero {
+    padding: 7rem 1rem 3rem;
+  }
+  .hero .tagline {
+    font-size: 1.6rem;
+  }
+  .hero .subheadline {
+    font-size: 0.9rem;
+  }
+  .hero-buttons .btn {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+  }
+}

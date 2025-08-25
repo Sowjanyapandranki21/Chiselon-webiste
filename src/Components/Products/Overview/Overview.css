@@ -1,0 +1,23 @@
+.overview {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  color: #222;
+}
+
+.overview h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.overview p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media(max-width:768px){
+  .overview h1 { font-size: 1.6rem; }
+  .overview p { font-size: 0.95rem; }
+}

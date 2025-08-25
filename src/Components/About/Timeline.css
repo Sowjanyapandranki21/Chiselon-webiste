@@ -1,0 +1,123 @@
+.timeline-section {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 2rem;
+  /* background: #f5f8ff; */
+  border-radius: 16px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0a2540;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 5px;
+  /* background: linear-gradient(90deg, #007bff, #00c6ff); */
+  margin: 0.7rem auto 0;
+  border-radius: 5px;
+}
+
+/* Timeline container */
+.timeline-horizontal {
+  display: flex;
+  flex-wrap: wrap; /* items can move to next row */
+  gap: 2rem;
+  justify-content: center;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+/* Timeline item card */
+.timeline-item {
+  position: relative;
+  text-align: center;
+  min-width: 220px;
+  max-width: 280px;
+  flex: 1 1 220px;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateY(-10px);
+}
+
+.timeline-dot {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  border-radius: 50%;
+  border: 4px solid #fff;
+  margin: 0 auto 1rem;
+  box-shadow: 0 4px 15px rgba(0, 198, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+  box-shadow: 0 0 0 10px rgba(0, 198, 255, 0.4);
+}
+
+.timeline-date {
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.timeline-content {
+  background: #fff;
+  padding: 1rem 1.2rem;
+  border-radius: 16px;
+  border-left: 4px solid #007bff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  color: #0a2540;
+}
+
+.timeline-item:hover .timeline-content {
+  background: #e6f2ff;
+  border-left: 4px solid #00c6ff;
+  box-shadow: 0 8px 20px rgba(0,123,255,0.2);
+  transform: translateY(-5px);
+}
+
+/* Scrollbar hidden */
+.timeline-section::-webkit-scrollbar { display: none; }
+.timeline-section { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .timeline-item { min-width: 180px; }
+  .timeline-horizontal { gap: 1.5rem; }
+}
+
+@media (max-width: 768px) {
+  .timeline-horizontal {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .timeline-item {
+    width: 100%;
+    min-width: auto;
+  }
+  .timeline-dot {
+    margin: 0 0 0.5rem 0;
+  }
+  .timeline-content {
+    border-left: none;
+    border-top: 4px solid #007bff;
+  }
+  .timeline-item:hover .timeline-content {
+    border-top: 4px solid #00c6ff;
+    transform: translateY(0);
+  }
+}

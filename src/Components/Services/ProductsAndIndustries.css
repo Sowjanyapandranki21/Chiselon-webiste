@@ -1,0 +1,99 @@
+.products-industries {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0; /* start from left corner */
+  padding: 0;
+}
+
+/* Side-by-side layout with gap between columns */
+.side-by-side {
+  display: flex;
+  gap: 40px; /* space between left & right columns */
+  align-items: flex-start;
+  justify-content: flex-start; /* align columns to left */
+}
+
+/* Section blocks - equal width */
+.section-block {
+  flex: 1; /* both blocks equal width */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Section titles with slide & fade animation */
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideFade 3s ease-in-out infinite alternate;
+}
+
+/* Optional delay for right block title */
+.right-block .section-title {
+  animation-delay: 0.3s;
+}
+
+/* Keyframes for slide & fade */
+@keyframes slideFade {
+  0% { opacity: 0; transform: translateY(-20px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Card container */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* space between cards */
+  width: 100%; /* full width of block */
+}
+
+/* Individual card with hover effect */
+.card {
+  display: flex;
+  align-items: flex-start;
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%; /* full width inside block */
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+  font-size: 28px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.card-content {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .side-by-side {
+    flex-direction: column;
+    gap: 20px; /* smaller gap between columns on mobile */
+  }
+
+  .section-block {
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+  }
+}

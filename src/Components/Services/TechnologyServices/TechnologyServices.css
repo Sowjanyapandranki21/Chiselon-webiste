@@ -1,0 +1,117 @@
+/* TechnologyServices.css */
+
+.tech-services {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  padding: 20px;
+}
+
+.tech-services .container {
+  max-width: none; /* full width */
+  margin: 0;
+  padding: 0;
+}
+
+.tech-services .section-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.tech-services p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.tech-services .expertise {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tech-services .expertise .card {
+  background-color: #fff;
+  flex: 1 1 calc(20% - 15px); /* smaller cards, 5 per row */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center content */
+  text-align: center;  /* center text */
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tech-services .expertise .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.tech-services .card-icon {
+  width: 50px;  /* icon size */
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.tech-services .card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.tech-services .card-description {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #555;
+}
+
+.tech-services .approach {
+  margin-top: 30px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .tech-services .expertise .card {
+    flex: 1 1 calc(25% - 15px); /* 4 per row */
+  }
+}
+
+@media (max-width: 992px) {
+  .tech-services .expertise .card {
+    flex: 1 1 calc(33.333% - 15px); /* 3 per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-services .expertise .card {
+    flex: 1 1 calc(50% - 15px); /* 2 per row */
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-services .expertise {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tech-services .expertise .card {
+    flex: 1 1 100%; /* full width on mobile */
+  }
+
+  .tech-services .section-title {
+    font-size: 24px;
+  }
+
+  .tech-services p, .tech-services .approach {
+    font-size: 15px;
+  }
+}

@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./app.css";
+import Navbar from "./Components/Navbar/Navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-function App() {
+// Pages
+import HomePage from "./Components/Home/Home";
+import About from "./Components/About/About";
+import ContactUs from "./Components/ContactUs/ContactUs";
+import Services from "./Components/Services/Services";
+import Products from "./Components/Products/Products";
+import Industries from "./Components/Industries/Industries";
+import Careers from "./Careers/Careers";
+import CaseStudies from "./Cilents/CaseStudies";
+import Blog from "./Components/Blog/Blog";
+
+// ScrollToTop
+import ScrollToTop from "./Components/ScrollToTop"; // ✅ import
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+  <Navbar />
+  <div className="main-content">
+    <ScrollToTop /> {/* scroll only inside this container */}
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/products" element={<Products />} />
+      <Route path="/industries" element={<Industries />} />
+      <Route path="/careers" element={<Careers />} />
+      <Route path="/caseStudies" element={<CaseStudies />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/contact" element={<ContactUs />} />
+    </Routes>
+  </div>
+</Router>
+
   );
-}
+};
 
 export default App;
