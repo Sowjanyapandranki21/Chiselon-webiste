@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.43669435.css",
+    "main.js": "/static/js/main.f5d6fe3b.js",
+    "static/media/team.png": "/static/media/team.2b52eb4e6f333285acfb.png",
+    "static/media/teamwork.png": "/static/media/teamwork.f598a099ae53829b2d1a.png",
+    "static/media/image1.png": "/static/media/image1.8b18bd849fe67082b111.png",
+    "static/media/talent.png": "/static/media/talent.6b64a4ec3df4a6a27f62.png",
+    "static/media/Services.png": "/static/media/Services.0515fb418e1c6c5f094c.png",
+    "static/media/logochiselon1.png": "/static/media/logochiselon1.bb2cfdbf4966222a7216.png",
+    "static/media/recurtiment3.png": "/static/media/recurtiment3.8e0183cfecf3256e5c41.png",
+    "static/media/security.png": "/static/media/security.2cf627c019588ba30797.png",
+    "static/media/software.png": "/static/media/software.1299f6dc2e3100780cfd.png",
+    "static/media/Iot.png": "/static/media/Iot.38b9d94e113a5d9f8bb3.png",
+    "static/media/data.png": "/static/media/data.eedc0e6b20ebe5d44ae2.png",
+    "static/media/cloud.png": "/static/media/cloud.2d37e174bf9a700f57cd.png",
+    "index.html": "/index.html",
+    "main.43669435.css.map": "/static/css/main.43669435.css.map",
+    "main.f5d6fe3b.js.map": "/static/js/main.f5d6fe3b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.43669435.css",
+    "static/js/main.f5d6fe3b.js"
+  ]
+}
