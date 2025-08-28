@@ -67,7 +67,7 @@
 
 .navLink {
   text-decoration: none;
-  color: #fff;
+  color: #0115ae;
   font-size: 0.9rem;
   /* decreased font size */
   font-weight: 500;
@@ -75,14 +75,14 @@
 }
 
 .navLink:hover {
-  color: #b6f300;
+  color: #0115ae;
 }
 
 /* Dropdown */
 .dropdown {
   position: relative;
   cursor: pointer;
-  color:#fff
+  color:#0115ae
 }
 
 .dropdown-toggle {
@@ -114,7 +114,7 @@
   display: block;
   padding: 10px 15px;
   text-decoration: none;
-    color:#fff;
+    color:#0115ae;
   font-size: 0.85rem;
   /* decreased font size */
   transition: background 0.2s;
@@ -122,6 +122,7 @@
 
 .dropdown-link:hover {
   background-color: #a8b2fe;
+  color: #0115ae;
 }
 
 /* Mobile Menu */
@@ -166,11 +167,12 @@
     background: transparent;
     border-radius: 0;
     padding-left: 1rem;
+    color:#b6f300 ;
   }
 
   .dropdown-link {
     padding: 8px 0;
-    color: #fff;
+    color: #0115ae;
     font-size: 0.9rem;
     /* adjusted for mobile */
   }

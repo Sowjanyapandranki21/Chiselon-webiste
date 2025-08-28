@@ -10,38 +10,12 @@ const HeroSection = () => {
     navigate("/services"); // Navigates to services page
   };
 
-  const servicesData = [
-    {
-      title: "🔹 Technology Services",
-      items: [
-        "Software Development (Java, .NET, React, Flutter, etc.)",
-        "Cloud & DevOps (AWS, Azure, GCP, Kubernetes, Docker)",
-        "AI/ML, Data Science & Analytics",
-        "Cybersecurity & Embedded Systems",
-      ],
-    },
-    {
-      title: "🔹 Talent Acquisition & Staffing",
-      items: [
-        "Recruitment Process Outsourcing (RPO)",
-        "Contract & Permanent Staffing",
-        "Executive Search & Leadership Hiring",
-      ],
-    },
-    {
-      title: "🔹 Proprietary Products",
-      items: [
-        "NITO – AI-powered test prep",
-        "AestheTech – AI-driven clinic solution",
-        "HRMS with Integrated Timesheet",
-      ],
-    },
-  ];
+
 
   return (
-    <div>
+    <div >
       {/* Hero Section */}
-      <section className="hero">
+      <section className="hero" style={{marginBottom:"-200px"}}>
         <div className="container heroContent">
           {/* Left Side - Text */}
           <div className="heroText">
