@@ -10,16 +10,14 @@ const HeroSection = () => {
     navigate("/services"); // Navigates to services page
   };
 
-
-
   return (
-    <div >
+    <div>
       {/* Hero Section */}
-      <section className="hero" style={{marginBottom:"-200px"}}>
+      <section className="hero">
         <div className="container heroContent">
           {/* Left Side - Text */}
           <div className="heroText">
-            <p style={{ color: "black" }}>
+            <p>
               At Chiselon Technologies, we empower businesses by bridging the gap
               between people and technology. Whether it’s building high-performing
               teams through recruitment or delivering cutting-edge digital products,
@@ -38,8 +36,6 @@ const HeroSection = () => {
           </div>
         </div>
       </section>
-
-    
     </div>
   );
 };

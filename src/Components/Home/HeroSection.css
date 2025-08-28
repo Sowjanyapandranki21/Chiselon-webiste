@@ -1,143 +1,68 @@
-
-/* Remove top margin from services section */
-.services-wrapper {
-  margin-top: 0; /* Remove extra space above services */
-  padding-top: 20px; /* Optional: slight padding for spacing */
-}
+/* ===== Hero Section Base ===== */
 .hero {
-  /* NEW Background Gradient */
-  margin-bottom: 0; /* Remove extra space below hero */
-  padding-bottom: 0; 
-  color: #fff; /* white text for contrast */
-  
+  width: 100%;
+  min-height: 100vh;
   display: flex;
+  align-items: flex-start; /* Align content at the top */
   justify-content: center;
-  align-items: center;
-  
-  /* padding: 6rem 2rem; */
-  min-height: 100vh; /* ensures it fills the full viewport */
-  
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  padding: 80px 20px 40px; /* Top-heavy padding */
+  box-sizing: border-box;
+  background: #ccff00; /* optional if you want background like screenshot */
 }
 
-/* Heading */
-.crave-title {
-  font-size: 3rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  text-align: center;
-
-  /* Blue gradient */
-  background: linear-gradient(90deg, #00c6ff, #0072ff, #0047ab);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 2px;
-
-  animation: gradientMove 8s ease infinite, glowPulse 1.5s ease-in-out infinite alternate;
-
-  /* Sharper rendering */
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Gradient animation */
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Softer blue glow for light bg */
-@keyframes glowPulse {
-  0% {
-    text-shadow: 0 0 1px #00c6ff, 0 0 3px #0072ff, 0 0 5px #0047ab;
-  }
-  100% {
-    text-shadow: 0 0 2px #00c6ff, 0 0 6px #0072ff, 0 0 8px #0047ab;
-  }
-}
-
-/* Hero Content */
 .heroContent {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: 40px;
   max-width: 1200px;
-  width: 100%;
-  gap: 2rem;
+  margin: 0 auto;
+  flex-wrap: wrap; /* helps responsiveness */
 }
 
-/* Hero Text */
 .heroText {
   flex: 1;
-}
-
-.heroText h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  min-width: 300px;
 }
 
 .heroText p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  color: #333; /* Dark text for light bg */
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: #000; /* black text */
 }
 
-/* Buttons */
 .heroBtns {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+  justify-content: center; /* centers horizontally */
+  align-items: center;     /* centers vertically if multiple lines */
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .btn {
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  padding: 12px 25px;
   border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Primary stands out on light background */
-.primaryBtn {
-  background: #2575fc; /* Bright blue */
-  color: #fff;
-}
-.primaryBtn:hover {
-  background: #1a5edb;
-}
-
-/* Secondary is outlined */
 .secondaryBtn {
-  background: transparent;
-  color: #2575fc;
-  border: 2px solid #2575fc;
+  background-color: #0077ff;
+  color: white;
 }
+
 .secondaryBtn:hover {
-  background: rgba(37, 117, 252, 0.1);
+  background-color: #005fcc;
 }
 
-/* Text button */
-.textBtn {
-  background: transparent;
-  color: #333;
-  border: 2px solid #333;
-}
-.textBtn:hover {
-  background: rgba(0, 0, 0, 0.05);
-}
-
-/* Hero Image */
+/* ===== Right Side Image ===== */
 .heroImage {
   flex: 1;
+  min-width: 280px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -146,78 +71,59 @@
 .heroImage img {
   max-width: 100%;
   height: auto;
+  object-fit: contain;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  animation: float 3s ease-in-out infinite;
-}
-/* Hero Buttons - White Outline */
-.heroBtns .btn {
-  background: transparent;      /* transparent background */
-  color: #fff;                  /* white text */
-  border: 2px solid #fff;       /* white border */
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-/* Hover effect: subtle transparent white background */
-.heroBtns .btn:hover {
-  background: rgba(255, 255, 255, 0.1); /* subtle fill on hover */
-  color: #fff;                           /* text stays white */
-}
-/* Primary Button - Orange Gradient with White Border */
-.primaryBtn {
-  background: linear-gradient(90deg, #ff7e5f, #feb47b);
-  color: #fff;
-  border: 2px solid #fff; /* white border */
-}
-.primaryBtn:hover {
-  background: linear-gradient(90deg, #ff6347, #ffb347);
-}
+/* ===================
+   Responsive Styles
+   =================== */
 
-/* Secondary Button - Transparent with White Border */
-.secondaryBtn {
-  background: transparent;
-  color: #fff; /* white text */
-  border: 2px solid #fff; /* white border */
-}
-.secondaryBtn:hover {
-  background: #fff; /* white fill on hover */
-  color: #28a745; /* green text on hover */
-}
+/* Tablets */
+@media (max-width: 992px) {
+  .hero {
+    align-items: flex-start;
+    padding: 60px 20px;
+  }
 
-/* Text Button - Transparent with White Border */
-.textBtn {
-  background: transparent;
-  color: #fff;
-  border: 2px solid #fff; /* white border */
-}
-.textBtn:hover {
-  background: #fff;
-  color: #333; /* dark text on hover */
-}
-
-/* Floating animation */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-}
-
-/* Responsive Design */
-@media screen and (max-width: 992px) {
   .heroContent {
     flex-direction: column;
     text-align: center;
+    gap: 30px;
   }
-  .heroImage {
-    margin-top: 2rem;
+
+  .heroText p {
+    font-size: 1.1rem;
+  }
+
+  .heroBtns {
+    justify-content: center;
+  }
+
+  .heroImage img {
+    width: 80%;
   }
 }
 
-@media screen and (max-width: 500px) {
-  .heroBtns {
-    flex-direction: column;
+/* Mobile */
+@media (max-width: 600px) {
+  .hero {
+    align-items: flex-start;
+    padding: 40px 15px;
+  }
+
+  .heroText p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  .heroImage img {
+    width: 100%;
   }
 }
