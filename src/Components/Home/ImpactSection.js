@@ -1,5 +1,6 @@
 import React from "react";
 import "./ImpactSection.css";
+import { motion } from "framer-motion";
 
 const stats = [
   { icon: "🚀", text: "640+ Candidates Placed" },
@@ -12,13 +13,23 @@ const ImpactSection = () => {
   return (
     <section className="impact-section">
       <div className="impact-container">
-        <h2 className="impact-title">Impact in Numbers</h2>
+        <h2 className="section-title">Impact in Numbers</h2>
+
         <div className="impact-stats">
           {stats.map((stat, index) => (
-            <div key={index} className="impact-card">
+            <motion.div
+              key={index}
+              className="impact-card"
+             animate={{ x: ["0%", "-100%"] }}
+            transition={{
+              ease: "linear",
+              duration: 12, // speed of scroll
+              repeat: Infinity,
+            }}
+            >
               <span className="impact-icon">{stat.icon}</span>
               <p className="impact-text">{stat.text}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

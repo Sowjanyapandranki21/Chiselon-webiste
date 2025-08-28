@@ -2,7 +2,8 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #1e3a8a;
+  color:#0115ae;
+
   text-align: center;
 }
 
@@ -33,5 +34,6 @@
 .about-page {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 0rem; 
+ background: #b6f300;
 }

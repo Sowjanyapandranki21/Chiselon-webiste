@@ -17,7 +17,7 @@ const IntroSection = () => {
 
         {/* Right Text */}
         <div className="intro-text-right">
-          <h2>Who We Are</h2>
+          <h2 className="section-title">Who We Are</h2>
           <p>
             At Chiselon, we are more than a staffing company or a software provider — 
             we are a strategic growth partner. We help startups, SMEs, and global enterprises scale faster.

@@ -13,7 +13,7 @@ const TrustSection = () => {
   return (
     <section className="trust-section">
       <div className="trust-container">
-        <h2 className="trust-title">Why Clients Trust Us</h2>
+        <h2 className="section-title">Why Clients Trust Us</h2>
         <ul className="trust-list">
           {trustPoints.map((point, index) => (
             <li key={index} className="trust-item">

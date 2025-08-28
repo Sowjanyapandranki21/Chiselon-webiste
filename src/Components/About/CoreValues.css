@@ -20,15 +20,27 @@
 }
 
 /* Section title */
-.section-title {
-  font-size: 1.8rem;
+.section-titles {
+  font-size: 24px;
   font-weight: 700;
-  color: #222;
-  margin: 2rem 0 1.2rem;
+  margin-bottom: 20px;
+  opacity: 1;
+  text-align: center;
+  color:#0115ae;
+  transform: none;
+  border: none;   /* remove bottom line */
+  text-decoration: none;
   position: relative;
 }
 
-.section-title:first-of-type {
+/* Remove pseudo-element underline if it exists */
+.section-titles::after,
+.section-titles::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* .section-title:first-of-type {
   margin-top: 0;
 }
 
@@ -40,7 +52,7 @@
   background: linear-gradient(90deg, #007bff, #00c6ff);
   margin-top: 0.5rem;
   border-radius: 3px;
-}
+} */
 
 /* List styling */
 .values-list {

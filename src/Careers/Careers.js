@@ -8,7 +8,7 @@ const Careers = () => {
       <section className="careers-hero">
         <div className="overlay">
           <h1>Join Us in Shaping the Future of Talent and Technology</h1>
-          <p>
+          <p style={{color:"black"}}>
             At Chiselon Technologies Pvt. Ltd., we believe people are the foundation of innovation.
             Come grow your career with us.
           </p>
@@ -17,21 +17,53 @@ const Careers = () => {
 
       {/* Why Work With Chiselon - Timeline Layout */}
       <section className="careers-timeline">
-        <h2>Why Work With Chiselon?</h2>
+        <h3 className="section-title">Life at Chiselon</h3>
         <div className="timeline">
-          <div className="timeline-item">🚀 Global Exposure <p>Work with clients worldwide.</p></div>
-          <div className="timeline-item">💡 Cutting-Edge Tech <p>Hands-on AI, Cloud & DevOps.</p></div>
-          <div className="timeline-item">🌱 Career Growth <p>Learning, mentorship & leadership.</p></div>
-          <div className="timeline-item">🤝 Collaboration <p>Inclusive, innovative culture.</p></div>
-          <div className="timeline-item">🎯 Work-Life Balance <p>Flexible models to thrive.</p></div>
+          <div className="timeline-item">
+            🚀 <strong>Global Exposure</strong>
+            <p>Work with clients worldwide.</p>
+          </div>
+          <div className="timeline-item">
+            💡 <strong>Cutting-Edge Tech</strong>
+            <p>Hands-on AI, Cloud & DevOps.</p>
+          </div>
+          <div className="timeline-item">
+            🌱 <strong>Career Growth</strong>
+            <p>Learning, mentorship & leadership.</p>
+          </div>
+          <div className="timeline-item">
+            🤝 <strong>Collaboration</strong>
+            <p>Inclusive, innovative culture.</p>
+          </div>
+          <div className="timeline-item">
+            🎯 <strong>Work-Life Balance</strong>
+            <p>Flexible models to thrive.</p>
+          </div>
+          <div className="timeline-item">
+            🌟 <strong>Team-Driven Innovation</strong>
+            <p>Fostering creativity and collaboration.</p>
+          </div>
+          <div className="timeline-item">
+            🎉 <strong>Celebrating Milestones</strong>
+            <p>Recognizing achievements across teams.</p>
+          </div>
+          <div className="timeline-item">
+            🏆 <strong>Recognition & Rewards</strong>
+            <p>Incentives for excellence and impact.</p>
+          </div>
+          <div className="timeline-item">
+            🌍 <strong>Diversity & Inclusion</strong>
+            <p>Commitment to an equitable workplace.</p>
+          </div>
         </div>
       </section>
+
 
       {/* EVP - Alternating Layout */}
       {/* Employee Value Proposition */}
       <section className="employee-value">
-        <h2>Employee Value Proposition</h2>
-        <p>
+        <h2 className="section-title">Employee Value Proposition</h2>
+        <p style={{color:"black"}}>
           At Chiselon, we don’t just offer jobs — we offer career journeys.
           Whether you are a fresher looking to start strong or an experienced
           professional seeking the next challenge, Chiselon is a place where you
@@ -39,81 +71,64 @@ const Careers = () => {
         </p>
       </section>
 
-      {/* Life at Chiselon */}
-      <section className="life-at-chiselon">
-        <h2>Life at Chiselon</h2>
-        <ul>
-          <li>🌟 Team-driven innovation culture</li>
-          <li>🎉 Celebrating milestones & achievements</li>
-          <li>🏆 Recognition and rewards for excellence</li>
-          <li>🌍 Commitment to diversity and inclusion</li>
-        </ul>
-      </section>
+
 
 
       {/* Current Openings */}
-      <section className="careers-openings">
-        <h2>Current Openings</h2>
-        <table className="openings-table">
-          <thead>
-            <tr>
-              <th>Role</th>
-              <th>Experience</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Full Stack Developer (Java/React)</td>
-              <td>3–6 years</td>
-            </tr>
-            <tr>
-              <td>Cloud & DevOps Engineer (AWS/Azure)</td>
-              <td>4–8 years</td>
-            </tr>
-            <tr>
-              <td>Recruitment Specialist (IT/Non-IT)</td>
-              <td>2–5 years</td>
-            </tr>
-            <tr>
-              <td>QA Automation Engineer (Selenium/Cypress)</td>
-              <td>3–6 years</td>
-            </tr>
-          </tbody>
-        </table>
+   <section className="careers-openings">
+  <h2 className="section-title">Current Openings</h2>
+  <table className="openings-table">
+    <thead>
+      <tr>
+        <th>Role</th>
+        <th>Experience</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody style={{color:"black"}}>
+      {[
+        { role: "Full Stack Developer (Java/React)", exp: "3–6 years" },
+        { role: "Cloud & DevOps Engineer (AWS/Azure)", exp: "4–8 years" },
+        { role: "Recruitment Specialist (IT/Non-IT)", exp: "2–5 years" },
+        { role: "QA Automation Engineer (Selenium/Cypress)", exp: "3–6 years" },
+      ].map((job, index) => (
+        <tr key={index}>
+          <td>{job.role}</td>
+          <td>{job.exp}</td>
+          <td>
+            <button
+              className="btn primary"
+              onClick={() => {
+                const email = "udaypukkalla@gmail.com"; // recipient
+                const subject = encodeURIComponent(`${job.role} – Job Application`);
+                const body = encodeURIComponent(
+                  `Dear Chiselon Team,
 
-        <p className="apply-now">
-          📩 Apply via <a href="mailto:careers@chiselon.com">careers@chiselon.com</a>
-          {" "}
-          <button
-  className="btn primary"
-  onClick={() => {
-    const email = "udaypukkalla@gmail.com";
-    const subject = encodeURIComponent("Job Application");
-    const body = encodeURIComponent(
-      `Dear Chiselon Team,
-
-I am interested in applying for a position at Chiselon Technologies Pvt. Ltd. Please find my resume attached.
+I am interested in applying for the ${job.role} position at Chiselon Technologies Pvt. Ltd. Please find my resume attached.
 
 Looking forward to your response.
 
 Best regards,
 [Your Name]`
-    );
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
-    window.open(gmailUrl, "_blank");
-  }}
->
-  Apply
-</button>
+                );
+                const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+                window.open(gmailUrl, "_blank");
+              }}
+            >
+              Apply
+            </button>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</section>
 
-
-        </p>
-      </section>
 
 
       {/* CTA Banner */}
       <section className="cta-banner">
-        <h2>Shape Your Future with Us 🚀</h2>
+        <h2 style={{color:"black"}}>Shape Your Future with Us 🚀</h2>
         <div className="cta-buttons">
           <button className="btn-light">Explore Opportunities</button>
           <button className="btn-dark">Submit Your Resume</button>

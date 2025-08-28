@@ -25,10 +25,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="logo">
           <img src={logo} alt="Chiselon Logo" />
-          <div className="logo-text-wrapper">
-            <h2 className="logo-text">Chiselon Technologies</h2>
-            <p className="logo-subtitle">Crave to Carve</p>
-          </div>
+         
         </div>
 
         {/* Navbar */}
@@ -58,7 +55,7 @@ const Navbar = () => {
               )}
             </li>
 
-            <li><Link to="/blog" className="navLink">Blog</Link></li>
+            <li><Link to="/blog" className="navLink">Trends & Readings</Link></li>
             <li><Link to="/contact" className="navLink">Contact</Link></li>
           </ul>
         </nav>

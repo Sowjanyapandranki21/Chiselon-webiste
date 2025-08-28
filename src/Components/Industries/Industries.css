@@ -7,6 +7,7 @@
   margin: 0 auto;
   font-family: 'Arial', sans-serif;
   align-items: start;
+  /* background: linear-gradient(145deg, #b6f300 0%,  #b6f300 100%); */
 }
 
 .product-card {
@@ -131,11 +132,13 @@
   }
 }
 /* ---------- Expertise Section ---------- */
+/* ---------- Expertise Section ---------- */
 .expertise-section {
   max-width: 900px;
   margin: 60px auto 40px;
   padding: 0 20px;
   text-align: center;
+  font-family: 'Arial', sans-serif;
 }
 
 /* Section Title */
@@ -161,22 +164,24 @@
 .expertise-list li {
   position: relative;
   background-color: #f5f5f5;
-  padding: 15px 20px 15px 35px;
+  padding: 15px 20px 15px 40px; /* space for checkmark */
   border-radius: 8px;
   font-size: 1rem;
   line-height: 1.5;
   color: #333;
+  text-align: left;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Add Checkmark Before Each Item */
 .expertise-list li::before {
-  content: "✔";
+              /* checkmark symbol */
   position: absolute;
-  left: 10px;
+  left: 15px;                  /* consistent alignment */
   top: 50%;
   transform: translateY(-50%);
   color: #007bff;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -184,7 +189,59 @@
 .expertise-list li:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f0f8ff;   /* subtle hover background */
 }
+
+/* ---------- Responsive Adjustments ---------- */
+@media (max-width: 1024px) {
+  .expertise-list {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .expertise-title {
+    font-size: 1.6rem;
+  }
+
+  .expertise-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .expertise-list li {
+    font-size: 0.95rem;
+    padding: 12px 15px 12px 35px;
+  }
+
+  .expertise-list li::before {
+    left: 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .expertise-title {
+    font-size: 1.4rem;
+  }
+
+  .expertise-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .expertise-list li {
+    font-size: 0.9rem;
+    padding: 10px 12px 10px 30px;
+  }
+
+  .expertise-list li::before {
+    left: 10px;
+    font-size: 0.85rem;
+  }
+}
+
 
 /* Responsive */
 @media (max-width: 1024px) {
@@ -199,19 +256,7 @@
     grid-template-columns: 1fr;
     padding: 30px 15px;
   }
-.expertise-title {
-    font-size: 1.6rem;
-  }
 
-  .expertise-list {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-  }
-
-  .expertise-list li {
-    font-size: 0.95rem;
-    padding: 12px 15px 12px 30px;
-  }
 
   .product-card h2 {
     font-size: 1.3rem;
@@ -228,19 +273,5 @@
   .view-btn {
     font-size: 0.75rem;
     padding: 4px 10px;
-  }
-}
-@media (max-width: 480px) {
-  .expertise-title {
-    font-size: 1.4rem;
-  }
-
-  .expertise-list {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .expertise-list li {
-    font-size: 0.9rem;
   }
 }

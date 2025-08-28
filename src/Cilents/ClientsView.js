@@ -10,7 +10,7 @@ const ClientsView = () => {
 
   return (
     <div className="overview">
-      <h2 style={{color:"#007bff",fontWeight:'bold'}}>Our Esteemed Clients</h2>
+      <h2 className="section-title">Our Esteemed Clients</h2>
       <p>{clientsList.join(", ")}</p>
     </div>
   );

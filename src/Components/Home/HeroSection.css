@@ -1,14 +1,20 @@
-/* Hero Section */
+
+/* Remove top margin from services section */
+.services-wrapper {
+  margin-top: 0; /* Remove extra space above services */
+  padding-top: 20px; /* Optional: slight padding for spacing */
+}
 .hero {
   /* NEW Background Gradient */
-background: linear-gradient(145deg, #b6f300 0%,  #1c36fc 100%);
+  margin-bottom: 0; /* Remove extra space below hero */
+  padding-bottom: 0; 
   color: #fff; /* white text for contrast */
   
   display: flex;
   justify-content: center;
   align-items: center;
   
-  padding: 6rem 2rem;
+  /* padding: 6rem 2rem; */
   min-height: 100vh; /* ensures it fills the full viewport */
   
   background-size: cover;

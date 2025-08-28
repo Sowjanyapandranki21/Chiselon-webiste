@@ -1,6 +1,6 @@
 .missionvision-section {
   padding: 80px 20px;
-  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+  /* background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%); */
 }
 
 .mission-container {
@@ -48,7 +48,7 @@
 .section-title {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #0f172a;
+  color: #0115ae;
   margin-bottom: 20px;
   position: relative;
   z-index: 1;

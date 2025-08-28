@@ -10,15 +10,16 @@ import ProductsAndIndustries from "./ProductsAndIndustries";
 
 const Services = () => {
   return (
-    <main>
+   <div className="homepage">
       <ServicesOverview />
-      <TalentStaffing />
       <TechnologyServices />
+      <TalentStaffing />
+      
       <ProductsAndIndustries />
   
       <WhyChiselon />
       <CallToAction />
-    </main>
+   </div>
   );
 };
 

@@ -27,22 +27,20 @@ const CallToAction = () => {
     }, 500);
   };
 
-  const handleBuildClick = () => {
-    window.location.href = "/build-solutions";
-  };
+ 
 
   return (
     <section className="cta-section">
       <div className="particles"></div>
       <div className="cta-container">
-        <h3 className="cta-title">
+        <p className="cta-subtext" >
           👉 Let’s collaborate to carve your success story.
-        </h3>
+        </p>
         <div className="cta-buttons">
           <button className="btn primary" onClick={handleHireClick}>
             Hire Talent
           </button>
-          <button className="btn secondary" onClick={handleBuildClick}>
+          <button className="btn secondary" onClick={handleHireClick}>
             Build Technology Solutions
           </button>
           <button className="btn outline secondary" onClick={handleContactClick}>

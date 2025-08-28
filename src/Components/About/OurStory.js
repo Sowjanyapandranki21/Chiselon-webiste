@@ -9,13 +9,13 @@ const OurStory = () => {
         {/* Left Content */}
         <div className="ourstory-text fade-in-left">
           <h2 className="section-title">Our Story</h2>
-          <p>
+          <p style={{color:"black"}}>
             At <strong>Chiselon Technologies Pvt. Ltd.</strong>, we believe in
             carving possibilities into realities. Founded with the mission to bridge
             the gap between talent and technology, Chiselon has emerged as a trusted
             partner for businesses across industries.
           </p>
-          <p>
+          <p style={{color:"black"}}>
             From our beginnings as a recruitment consulting firm, we have grown into
             a multi-dimensional organization that delivers both talent acquisition
             excellence and cutting-edge technology solutions. Today, we work with

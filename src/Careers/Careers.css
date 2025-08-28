@@ -2,6 +2,7 @@
   font-family: "Segoe UI", sans-serif;
   color: #333;
   line-height: 1.6;
+  background:  #b6f300;
 }
 
 /* Hero */
@@ -16,7 +17,7 @@
   position: relative;
 }
 .careers-hero .overlay {
-  background: rgba(0,0,0,0.6);
+  background: rgba(248, 240, 240, 0.133);
   padding: 30px;
   border-radius: 12px;
 }
@@ -82,12 +83,12 @@
 }
 /* Employee Value Proposition */
 .employee-value {
-  background: linear-gradient(135deg, #f5f8ff, #eef2ff);
-  border-left: 6px solid #4f46e5; /* Indigo accent */
+  /* background: linear-gradient(135deg, #f5f8ff, #eef2ff); */
+
   padding: 2rem;
   border-radius: 12px;
   margin: 2rem 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+
   text-align: center;
 }
 
@@ -188,7 +189,7 @@
 
 /* CTA Banner */
 .cta-banner {
-  background: linear-gradient(135deg, #007bff, #00c6ff);
+  /* background: linear-gradient(135deg, #007bff, #00c6ff); */
   color: white;
   text-align: center;
   padding: 60px 20px;

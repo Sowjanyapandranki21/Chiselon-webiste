@@ -1,17 +1,24 @@
 import React from "react";
 import "./WhyChiselon.css";
-
+const trustPoints = [
+  "Proven expertise in both people and technology",
+  "Tailored, scalable models for different business sizes",
+  "640+ successful placements & multiple high-impact product launches",
+  " Over 90% client retention due to consistency & transparency",
+  "Partnerships with global leaders like IntraEdge, AppOrchid, Reveal Data, MSG Global",
+];
 const WhyChiselon = () => {
   return (
-    <section className="why-chiselon">
-      <div className="container">
-        <h3 className="section-title">Why Chiselon Services?</h3>
-        <ul>
-          <li> Proven expertise in both people and technology</li>
-          <li> Tailored, scalable models for different business sizes</li>
-          <li>640+ successful placements & multiple high-impact product launches</li>
-          <li> Over 90% client retention due to consistency & transparency</li>
-          <li> Partnerships with global leaders like IntraEdge, AppOrchid, Reveal Data, MSG Global</li>
+    <section className="trust-section">
+      <div className="trust-container">
+        <h2 className="section-title">Why Chiselon Services?</h2>
+       <ul className="trust-list">
+          {trustPoints.map((point, index) => (
+            <li key={index} className="trust-item">
+              <span className="trust-icon">✔</span>
+              <span className="trust-text">{point}</span>
+            </li>
+          ))}
         </ul>
       </div>
     </section>

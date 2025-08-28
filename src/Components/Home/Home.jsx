@@ -12,7 +12,7 @@ const HomePage = () => {
   return (
     <div className="homepage">
       <HeroSection />
-      <IntroSection />
+      {/* <IntroSection /> */}
       <ServicesSection />
       <TrustSection />
       <ImpactSection />

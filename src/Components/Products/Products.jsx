@@ -5,7 +5,7 @@ import CallToAction from "./CallToAction/CallToAction";
 
 const Products = () => {
   return (
-    <div>
+    <div className="homepage">
       <Overview />
       <ProductsSection />
       <CallToAction />

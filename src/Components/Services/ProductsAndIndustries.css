@@ -2,6 +2,7 @@
   font-family: 'Arial', sans-serif;
   color: #333;
   padding: 40px 20px;
+
 }
 
 .container {
@@ -25,26 +26,23 @@
   flex-direction: column;
 }
 
-/* Section titles with slide & fade animation */
+/* Section titles - no underline, no animation */
 .section-title {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(-20px);
-  animation: slideFade 3s ease-in-out infinite alternate;
+  opacity: 1;
+  transform: none;
+  border: none;   /* remove bottom line */
+  text-decoration: none;
+  position: relative;
 }
 
-/* Optional delay for right block title */
-.right-block .section-title {
-  animation-delay: 0.3s;
-}
-
-/* Keyframes for slide & fade */
-@keyframes slideFade {
-  0% { opacity: 0; transform: translateY(-20px); }
-  50% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(-20px); }
+/* Remove pseudo-element underline if it exists */
+.section-title::after,
+.section-title::before {
+  content: none !important;
+  display: none !important;
 }
 
 /* Card container */
@@ -59,12 +57,13 @@
 .card {
   display: flex;
   align-items: flex-start;
-  background-color: #fff;
+  background-color: #ffffff; /* optional: card background color */
   padding: 15px 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   transition: transform 0.3s, box-shadow 0.3s;
   width: 100%; /* full width inside block */
+  border: none; /* remove left line */
 }
 
 .card:hover {

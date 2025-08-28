@@ -5,7 +5,7 @@ const Testimonials = () => {
   return (
     <section className="testimonials-section">
       <div className="testimonials-container">
-        <h2 className="testimonials-title">Testimonials</h2>
+        <h2 className="section-title">Testimonials</h2>
         <div className="testimonial-card">
           <span className="quote-icon">“</span>
           <blockquote className="testimonial-text">

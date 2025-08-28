@@ -9,8 +9,8 @@ const ServicesOverview = () => {
         
         {/* Left Side - Text */}
         <div className="talent-content">
-          <h6 className="section-title">🌐 Our Services</h6>
-          <p>
+          <h2 className="section-title">🌐 Our Services</h2>
+          <p >
             At Chiselon Technologies, our services are designed to meet the dual needs of
             businesses: finding the right people and building the right technologies.
           </p>

@@ -1,44 +1,62 @@
-import React from "react"; 
-import { useNavigate } from "react-router-dom"; // import the hook
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
+const servicesData = [
+  {
+    title: "🔹 Technology Services",
+    items: [
+      "Software Development (Java, .NET, React, Flutter, etc.)",
+      "Cloud & DevOps (AWS, Azure, GCP, Kubernetes, Docker)",
+      "AI/ML, Data Science & Analytics",
+      "Cybersecurity & Embedded Systems",
+    ],
+  },
+  {
+    title: "🔹 Talent Acquisition & Staffing",
+    items: [
+      "Recruitment Process Outsourcing (RPO)",
+      "Contract & Permanent Staffing",
+      "Executive Search & Leadership Hiring",
+    ],
+  },
+  {
+    title: "🔹 Proprietary Products",
+    items: [
+      "NITO – AI-powered test prep",
+      "AestheTech – AI-driven clinic solution",
+      "HRMS with Integrated Timesheet",
+    ],
+  },
+];
 
 const ServicesSection = () => {
-  const navigate = useNavigate(); // get the navigate function
+  const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate("/services"); // navigate to contact page
+  const goToServices = () => {
+    navigate("/services");
   };
 
   return (
-    <section className="services">
-      <h3 className="section-title">What We Do</h3>
-      <div className="services-grid">
-        <div className="service-card" onClick={handleClick} style={{ cursor: "pointer" }}>
-          <h3>🔹 Technology Services</h3>
-          <ul>
-            <li>Software Development (Java, .NET, React, Flutter, etc.)</li>
-            <li>Cloud & DevOps (AWS, Azure, GCP, Kubernetes, Docker)</li>
-            <li>AI/ML, Data Science & Analytics</li>
-            <li>Cybersecurity & Embedded Systems</li>
-          </ul>
-        </div>
-        
-        <div className="service-card" onClick={handleClick} style={{ cursor: "pointer" }}>
-          <h3>🔹 Talent Acquisition & Staffing</h3>
-          <ul>
-            <li>Recruitment Process Outsourcing (RPO)</li>
-            <li>Contract & Permanent Staffing</li>
-            <li>Executive Search & Leadership Hiring</li>
-          </ul>
-        </div>
+    <section className="services-wrapper">
+      <h2 className="services-heading">What We Do</h2>
 
-        <div className="service-card" onClick={handleClick} style={{ cursor: "pointer" }}>
-          <h3>🔹 Proprietary Products</h3>
-          <ul>
-            <li>NITO – AI-powered test prep</li>
-            <li>AestheTech – AI-driven clinic solution</li>
-            <li>HRMS with Integrated Timesheet</li>
-          </ul>
-        </div>
+      <div className="services-container">
+        {servicesData.map((service, idx) => (
+          <div
+            key={idx}
+            className="service-block"
+            onClick={goToServices}
+            role="button"
+            tabIndex={0}
+          >
+            <h3 className="service-title">{service.title}</h3>
+            <ul className="service-list">
+              {service.items.map((item, i) => (
+                <li key={i} className="service-item">{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </section>
   );

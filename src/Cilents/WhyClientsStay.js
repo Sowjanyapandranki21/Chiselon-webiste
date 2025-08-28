@@ -2,8 +2,8 @@ import React from "react";
 
 const WhyClientsStay = () => (
   <div className="overview">
-    <h2 style={{color:"#007bff",fontWeight:'bold'}}>Why Clients Stay With Us</h2>
-    <ul>
+    <h2 className="section-title">Why Clients Stay With Us</h2>
+    <ul style={{color:"black"}}>
       <li>Proven Track Record: 640+ successful placements and multiple product implementations.</li>
       <li>Domain Expertise: Deep understanding of IT, healthcare, education, and consulting industries.</li>
       <li>Client-Centric Model: Transparent processes and tailored solutions.</li>

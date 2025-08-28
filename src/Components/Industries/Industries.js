@@ -7,7 +7,7 @@ import "./Industries.css";
 
 const Industries = () => {
   return (
-    <div className="industries-section">
+    <div className="homepage">
       <Overview />
       <IndustriesContainer industries={industriesData} />
       <ExpertiseList list={expertiseList} />

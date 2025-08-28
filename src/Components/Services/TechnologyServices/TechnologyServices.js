@@ -41,7 +41,7 @@ const TechnologyServices = () => {
     <section className="tech-services">
       <div className="container">
         <h3 className="section-title">Technology Services & Product Development</h3>
-        <p>
+        <p >
           Beyond staffing, Chiselon helps businesses design, build, and scale software
           solutions that drive innovation and growth.
         </p>

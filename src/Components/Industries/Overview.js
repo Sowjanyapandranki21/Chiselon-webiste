@@ -4,8 +4,8 @@ import "./Industries.css"; // Make sure this is imported
 const Overview = () => {
   return (
     <div className="overview">
-      <h1 className="overview-title">Industries We Serve</h1>
-      <p className="overview-text">
+      <h2 className="section-title">Industries We Serve</h2>
+      <p className="overview-text" style={{color:"black"}}>
         At Chiselon Technologies Pvt. Ltd., we believe that every industry faces unique challenges, 
         and therefore deserves customized solutions. Our dual expertise in talent acquisition and technology services 
         allows us to empower organizations across multiple sectors. We don’t just provide staffing or technology — 

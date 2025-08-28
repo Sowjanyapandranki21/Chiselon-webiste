@@ -42,19 +42,7 @@ body {
   color: var(--PrimaryColor); /* Dot color fixed */
 }
 
-/* =====================
-   Hero Section
-===================== */
-/* .hero {
-  background: linear-gradient(
-    135deg,
-    var(--PrimaryColor),
-    var(--SecondaryColor)
-  );
-  color: var(--White);
-  padding: 10rem 2rem 6rem;
-  text-align: center;
-} */
+
 
 .hero-content {
   max-width: 900px;
@@ -115,7 +103,8 @@ body {
    Sections
 ===================== */
 section {
-  padding: 5rem 2rem;
+  padding: 0;
+  margin: 0;
 }
 
 .intro,
@@ -124,9 +113,19 @@ section {
 .impact,
 .cta {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto; /* only centers horizontally */
+  padding: 0; /* remove any internal spacing */
 }
-
+.homepage {
+background:  #b6f300;
+  min-height: 100vh; /* ensures full viewport height */
+  width: 100%;
+  overflow-x: hidden; /* prevents horizontal scroll if any content overflows */
+}
+.homepage > * {
+  margin: 0;
+  padding: 0;
+}
 .intro h2,
 .services h2,
 .trust h2,
@@ -141,23 +140,51 @@ section {
 /* =====================
    Services Section
 ===================== */
-.services-grid {
+.services-wrapper {
+  padding: 50px 20px;
+  /* background-color: #f9f9f9; */
+}
+
+.services-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color:#0115ae;
+}
+
+.services-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-content: end; /* Align cards to right */
 }
 
-.service-card {
-  background: var(--LightGray);
-  padding: 2rem;
+.service-block {
+background-color: white;
+  padding: 20px;
   border-radius: 10px;
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.service-card:hover {
-  background: var(--textColor);
-  color: var(--White);
+.service-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.service-title {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.service-list {
+  list-style: disc inside;
+  padding-left: 0;
+}
+
+.service-item {
+  margin-bottom: 8px;
 }
 
 /* =====================
@@ -201,7 +228,7 @@ section {
 ===================== */
 .cta {
   text-align: center;
-  background: var(--PrimaryColor);
+  /* background: var(--PrimaryColor); */
   color: var(--White);
   padding: 4rem 2rem;
   border-radius: 12px;

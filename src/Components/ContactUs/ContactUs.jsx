@@ -81,11 +81,12 @@ const ContactUs = () => {
   if (!isLoaded) return <p>Loading map...</p>;
 
   return (
+      <div className="homepage">
     <div className="contact-page">
       {/* Headline Section */}
       <section className="headline">
-        <h1>Let’s Build Success Together.</h1>
-        <p>
+        <h2 className="section-title">Let’s Build Success Together.</h2>
+        <p style={{color:"black"}}>
           At <b>Chiselon Technologies Pvt. Ltd.</b>, we’re always ready to listen,
           collaborate, and deliver. Whether you’re a business looking for talent
           acquisition services, a partner exploring technology solutions, or a
@@ -96,7 +97,7 @@ const ContactUs = () => {
       {/* Contact Section */}
       <section className="contact-section">
         <div className="contact-info">
-          <h2>Get in Touch</h2>
+          <h2 className="section-title">Get in Touch</h2>
 
           <p>
             📍 <b>Registered Office</b><br />
@@ -116,16 +117,11 @@ const ContactUs = () => {
             📧 Email: <a href="mailto:info@chiselon.com">info@chiselon.com</a>
           </p>
           <p>📞 Phone: +91-XXXXXXXXXX</p>
-          <p>
-            🌐 Website:{" "}
-            <a href="https://chiselontechnologies.com/" target="_blank" rel="noreferrer">
-              www.chiselon.com
-            </a>
-          </p>
+          
         </div>
 
         <div className="contact-form-section">
-          <h2>Contact Form</h2>
+          <h2 className="section-title">Contact Form</h2>
           <form onSubmit={handleSubmit} className="contact-form">
             <input
               type="text"
@@ -175,7 +171,7 @@ const ContactUs = () => {
 
       {/* Map Section */}
       <section className="map-section">
-        <h2>Find Us Here</h2>
+        <h2 className="section-title">Find Us Here</h2>
         <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
           <Marker
     position={center}
@@ -210,8 +206,9 @@ const ContactUs = () => {
           No matter your need — hiring, staffing, product development, or innovation consulting — 
           <b> Chiselon is here to partner with you.</b>
         </p>
-        <h3>👉 Let’s carve your success story today.</h3>
+        <p  >👉 Let’s carve your success story today.</p>
       </section>
+    </div>
     </div>
   );
 };
