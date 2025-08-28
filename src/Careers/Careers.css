@@ -175,7 +175,7 @@
   border-collapse: collapse;
 }
 .openings-table th, .openings-table td {
-  border: 1px solid #ddd;
+  border: 1px solid #fff;
   padding: 12px 15px;
   text-align: left;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import "./WhoWeAre.css";
-import teamImg from "../../Assests/recurtiment3.png"; // 👉 replace with your own image
+import teamImg from "../../Assests/Dashboard1.png"; // 👉 replace with your own image
 
 const WhoWeAre = () => {
   return (

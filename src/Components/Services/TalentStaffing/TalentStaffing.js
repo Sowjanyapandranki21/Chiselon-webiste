@@ -1,6 +1,6 @@
 import React from "react";
 import "./TalentStaffing.css";
-import talentImg from "../../../Assests/talent.png"; // 👉 replace with the chosen image
+import talentImg from "../../../Assests/talent1.png"; // 👉 replace with the chosen image
 
 const TalentStaffing = () => {
   return (

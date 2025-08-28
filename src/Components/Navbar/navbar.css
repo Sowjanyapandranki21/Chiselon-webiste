@@ -1,5 +1,4 @@
 /* ===== Header ===== */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,43 +18,35 @@
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  /* keep logo left */
-  max-width: 1200px;
-  margin: 0;
-  padding: 0 1rem;
-  width: 100%;
+  justify-content: space-between;  /* logo left, nav right */
+  width: 100%;                     /* take full width */
+  padding: 0 1rem;                  /* keep small padding */
   position: relative;
-  /* needed for absolute positioning of nav */
+  /* removed max-width + margin:auto */
 }
 
 /* Logo */
 .logo {
   display: flex;
   background: #ffffff;
-  /* Box background */
-  padding: 5px 10px;
+  padding: 4px 8px;  /* slightly reduced */
   border-radius: 8px;
-  display: flex;
   align-items: center;
   justify-content: center;
   height: 50px;
 }
 
 .logo img {
-  height: 40px;
-  /* Fits inside the box */
+  height: 42px; /* slightly bigger */
   width: auto;
   cursor: pointer;
 }
-
 
 /* Navbar */
 .navBar {
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin-left: auto;
 }
 
 .navLists {
@@ -67,22 +58,21 @@
 
 .navLink {
   text-decoration: none;
-  color: #0115ae;
+  color: #fff;
   font-size: 0.9rem;
-  /* decreased font size */
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .navLink:hover {
-  color: #0115ae;
+  color: #b6f300;
 }
 
 /* Dropdown */
 .dropdown {
   position: relative;
   cursor: pointer;
-  color:#0115ae
+  color: #fff;
 }
 
 .dropdown-toggle {
@@ -96,8 +86,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  /* background: #fff; */
-  color:#0115ae;
+  color: #0115ae;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
@@ -107,22 +96,20 @@
 
 .dropdown-menu li {
   list-style: none;
-   
 }
 
 .dropdown-link {
   display: block;
   padding: 10px 15px;
   text-decoration: none;
-    color:#0115ae;
+  color:  #fff;
+  font-weight: 600;
   font-size: 0.85rem;
-  /* decreased font size */
   transition: background 0.2s;
 }
 
 .dropdown-link:hover {
   background-color: #a8b2fe;
-  color: #0115ae;
 }
 
 /* Mobile Menu */
@@ -142,7 +129,7 @@
     right: -100%;
     height: 100vh;
     width: 280px;
-    background: #fff;
+    background: #0115ae;
     flex-direction: column;
     align-items: flex-start;
     padding: 4rem 2rem;
@@ -167,14 +154,12 @@
     background: transparent;
     border-radius: 0;
     padding-left: 1rem;
-    color:#b6f300 ;
   }
 
   .dropdown-link {
     padding: 8px 0;
-    color: #0115ae;
+    color: #fff;
     font-size: 0.9rem;
-    /* adjusted for mobile */
   }
 
   .mobileMenu {
