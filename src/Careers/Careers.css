@@ -2,204 +2,148 @@
   font-family: "Segoe UI", sans-serif;
   color: #333;
   line-height: 1.6;
-  background:  #b6f300;
+  margin: 0;
+  padding: 0;
+    background: #b6f300;
 }
 
 /* Hero */
 .careers-hero {
   background: url("https://source.unsplash.com/1600x600/?technology,team") center/cover no-repeat;
-  height: 60vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  text-align: center;
   position: relative;
+  padding: 2rem;
 }
+
+.careers-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+
+  z-index: 1;
+}
+
 .careers-hero .overlay {
-  background: rgba(248, 240, 240, 0.133);
-  padding: 30px;
+  position: relative;
+  z-index: 2;
+  background: rgba(255,255,255,0.8);
+  padding: 2rem;
   border-radius: 12px;
+  max-width: 800px;
+  text-align: center;
 }
+
 .careers-hero h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #111;
 }
+
 .careers-hero p {
-  margin-top: 10px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 2rem;
+  color: #1e3a8a;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 /* Timeline */
 .careers-timeline {
-  padding: 60px 20px;
-  text-align: center;
-}
-.careers-timeline h2 {
-  margin-bottom: 30px;
-  color: #0056b3;
+  padding: 3rem 1.5rem;
 }
 .timeline {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 1.5rem;
 }
 .timeline-item {
-  background: #f8f9fa;
-  border-radius: 8px;
-  padding: 20px;
-  min-width: 200px;
-  max-width: 250px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 1.2rem;
+  width: 220px;
+  text-align: center;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+  background: none;
+  border: 1px solid #e5e7eb;
+}
+.timeline-item:hover {
+  transform: translateY(-4px);
 }
 
-/* Alternating EVP & Life */
-.evp-section, .life-section {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 40px;
-  padding: 60px 20px;
-}
-.evp-text, .life-text {
-  flex: 1;
-  min-width: 280px;
-}
-.evp-img, .life-img {
-  flex: 1;
-  min-width: 280px;
-  height: 250px;
-  border-radius: 12px;
-  background: url("https://source.unsplash.com/600x400/?career,growth") center/cover no-repeat;
-}
-.life-img {
-  background: url("https://source.unsplash.com/600x400/?office,teamwork") center/cover no-repeat;
-}
-.evp-section {
-  background: #f4f9ff;
-}
-.life-section {
-  background: #fff;
-}
-/* Employee Value Proposition */
+/* Employee Value */
 .employee-value {
-  /* background: linear-gradient(135deg, #f5f8ff, #eef2ff); */
-
-  padding: 2rem;
-  border-radius: 12px;
-  margin: 2rem 0;
-
+  padding: 3rem 1.5rem;
   text-align: center;
 }
-
 .employee-value h2 {
-  font-size: 1.8rem;
-  color: #1e3a8a;
   margin-bottom: 1rem;
-  font-weight: bold;
 }
-
 .employee-value p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #374151;
   max-width: 800px;
   margin: 0 auto;
+  font-size: 1.1rem;
+  color: #374151;
 }
 
-/* Life at Chiselon */
-.life-at-chiselon {
-  margin: 3rem 0;
-  padding: 2rem;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.life-at-chiselon h2 {
-  font-size: 1.8rem;
-  color: #065f46; /* Emerald accent */
-  margin-bottom: 1.5rem;
-  text-align: center;
-  font-weight: bold;
-}
-
-.life-at-chiselon ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.life-at-chiselon li {
-  background: #f0fdf4;
-  border: 1px solid #d1fae5;
-  border-radius: 10px;
-  padding: 1rem;
-  font-size: 1rem;
-  color: #065f46;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.life-at-chiselon li:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-}
-
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .employee-value h2,
-  .life-at-chiselon h2 {
-    font-size: 1.5rem;
-  }
-  .employee-value p {
-    font-size: 1rem;
-  }
-}
-
-/* Openings */
+/* Current Openings */
 .careers-openings {
-  padding: 60px 20px;
-  text-align: center;
+  padding: 3rem 1.5rem;
 }
 .openings-table {
   width: 100%;
-  max-width: 800px;
-  margin: 20px auto;
+  max-width: 850px;
+  margin: 0 auto;
   border-collapse: collapse;
 }
-.openings-table th, .openings-table td {
-  border: 1px solid #fff;
-  padding: 12px 15px;
+.openings-table th,
+.openings-table td {
+  padding: 14px;
   text-align: left;
+  border: 1px solid #ddd;
 }
 .openings-table th {
+  color: #007bff;
+  font-weight: bold;
+  background: none;
+}
+.btn.primary {
   background: #007bff;
   color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
-.apply-now {
-  margin-top: 20px;
+.btn.primary:hover {
+  background: #0056b3;
 }
 
 /* CTA Banner */
 .cta-banner {
-  /* background: linear-gradient(135deg, #007bff, #00c6ff); */
-  color: white;
+  color: #111;
   text-align: center;
-  padding: 60px 20px;
+  padding: 3rem 1.5rem;
 }
 .cta-buttons {
-  margin-top: 20px;
+  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
-  gap: 15px;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 .btn-light, .btn-dark {
   padding: 12px 20px;
@@ -209,24 +153,30 @@
   border: none;
 }
 .btn-light {
-  background: white;
+  background: #f1f1f1;
   color: #007bff;
 }
 .btn-dark {
-  background: rgba(0,0,0,0.8);
+  background: #333;
   color: white;
 }
 
 /* Responsive */
+@media (max-width: 992px) {
+  .careers-hero h1 { font-size: 2.2rem; }
+  .careers-hero p { font-size: 1.1rem; }
+  .timeline-item { width: 180px; }
+}
 @media (max-width: 768px) {
-  .careers-hero h1 {
-    font-size: 1.8rem;
-  }
-  .timeline {
-    flex-direction: column;
-    align-items: center;
-  }
-  .evp-section, .life-section {
-    flex-direction: column;
-  }
+  .careers-hero { min-height: 50vh; padding: 1.5rem; }
+  .careers-hero h1 { font-size: 1.9rem; }
+  .careers-hero p { font-size: 1rem; }
+  .timeline { flex-direction: column; align-items: center; }
+  .openings-table { font-size: 0.9rem; }
+}
+@media (max-width: 480px) {
+  .careers-hero h1 { font-size: 1.6rem; }
+  .careers-hero p { font-size: 0.95rem; }
+  .careers-hero .overlay { padding: 1rem; }
+  .btn-light, .btn-dark, .btn.primary { width: 100%; text-align: center; }
 }
