@@ -210,3 +210,111 @@
     gap: 10px;
   }
 }
+
+
+
+/* ===== Section Wrapper ===== */
+.why-clients-stay {
+  padding: 60px 20px;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+/* ===== Container ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Section Title ===== */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #011f4b;
+}
+
+/* ===== Overview Text ===== */
+.overview-text {
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #333;
+}
+
+/* ===== Cards Container ===== */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* mobile default */
+  gap: 30px;
+}
+
+/* Medium screens: 2 cards */
+@media (min-width: 600px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large screens: 3 cards */
+@media (min-width: 900px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Extra large screens: 4 cards */
+@media (min-width: 1200px) {
+  .cards-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===== Individual Card ===== */
+.benefit-card {
+  background-color: #fff; /* default card background */
+  border-radius: 15px;
+  padding: 30px 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0,0,0,0.12);
+  background-color: #e3e7ea; /* hover background color */
+  color: #000; /* change text color on hover */
+}
+
+/* Ensure all inner elements inherit hover color */
+.benefit-card:hover h3,
+.benefit-card:hover p,
+.benefit-card:hover .icon {
+  color: #000;
+}
+
+/* ===== Card Icon ===== */
+.benefit-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #0077b6; /* icon color */
+  transition: color 0.3s ease;
+}
+
+/* ===== Card Title ===== */
+.benefit-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #0077b6; /* title color */
+  transition: color 0.3s ease;
+}
+
+/* ===== Card Description ===== */
+.benefit-card p {
+  font-size: 1rem;
+  color: #555;
+  transition: color 0.3s ease;
+}

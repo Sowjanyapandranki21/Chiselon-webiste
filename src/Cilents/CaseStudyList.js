@@ -67,41 +67,52 @@ const caseStudiesData = [
   }
 ];
 
-const CaseStudyList = () => (
-  <div className="case-studies">
-    {caseStudiesData.map((cs, index) => (
-      <div className="case-study-card" key={index}>
-        <h3>{cs.title}</h3>
+const CaseStudyList = () => {
+  return (
+    <div className="case-studies-wrapper">
+      <h2 className="section-title">Case Studies</h2>
+      <div className="case-studies">
+        {caseStudiesData.map((cs, index) => (
+          <div className="case-study-card" key={index}>
+            <h3>{cs.title}</h3>
 
-        {/* Logo with clickable link */}
-        {cs.logo && cs.website && (
-          <a href={cs.website} target="_blank" rel="noopener noreferrer">
-            <img
-              src={cs.logo}
-              alt={`${cs.title} Logo`}
-              className="case-study-logo"
-            />
-          </a>
-        )}
+            {/* Logo with clickable link */}
+            {cs.logo && cs.website && (
+              <a href={cs.website} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={cs.logo}
+                  alt={`${cs.title} Logo`}
+                  className="case-study-logo"
+                />
+              </a>
+            )}
 
-        <p><strong>Client Challenge:</strong> {cs.challenge}</p>
+            <p>
+              <strong>Client Challenge:</strong> {cs.challenge}
+            </p>
 
-        <div className="solution">
-          <strong>Chiselon Solution:</strong>
-          <ul>
-            {cs.solution.map((item, i) => (<li key={i}>{item}</li>))}
-          </ul>
-        </div>
+            <div className="solution">
+              <strong>Chiselon Solution:</strong>
+              <ul>
+                {cs.solution.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </div>
 
-        <div className="outcome">
-          <strong>Outcome:</strong>
-          <ul>
-            {cs.outcome.map((item, i) => (<li key={i}>{item}</li>))}
-          </ul>
-        </div>
+            <div className="outcome">
+              <strong>Outcome:</strong>
+              <ul>
+                {cs.outcome.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
       </div>
-    ))}
-  </div>
-);
+    </div>
+  );
+};
 
 export default CaseStudyList;

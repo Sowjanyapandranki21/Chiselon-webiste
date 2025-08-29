@@ -1,15 +1,50 @@
 import React from "react";
 
-const WhyClientsStay = () => (
-  <div className="overview">
-    <h2 className="section-title">Why Clients Stay With Us</h2>
-    <ul style={{color:"black"}}>
-      <li>Proven Track Record: 640+ successful placements and multiple product implementations.</li>
-      <li>Domain Expertise: Deep understanding of IT, healthcare, education, and consulting industries.</li>
-      <li>Client-Centric Model: Transparent processes and tailored solutions.</li>
-      <li>Long-Term Value: Over 90% client retention — proof of trust and consistent delivery.</li>
-    </ul>
-  </div>
-);
+
+const WhyClientsStay = () => {
+  const points = [
+    {
+      icon: "📈",
+      title: "Proven Track Record",
+      description: "640+ successful placements and multiple product implementations."
+    },
+    {
+      icon: "🏥",
+      title: "Domain Expertise",
+      description: "Deep understanding of IT, healthcare, education, and consulting industries."
+    },
+    {
+      icon: "🤝",
+      title: "Client-Centric Model",
+      description: "Transparent processes and tailored solutions."
+    },
+    {
+      icon: "💎",
+      title: "Long-Term Value",
+      description: "Over 90% client retention — proof of trust and consistent delivery."
+    }
+  ];
+
+  return (
+    <section className="why-clients-stay">
+      <div className="container">
+        <h2 className="section-title">Why Clients Stay With Us</h2>
+        <p className="overview-text">
+          Empowering businesses with <strong>640+ successful placements</strong>, 
+          <strong> industry expertise</strong>, and solutions built on <strong>trust and long-term value</strong>.
+        </p>
+        <div className="cards-container">
+          {points.map((point, index) => (
+            <div key={index} className="benefit-card">
+              <div className="icon">{point.icon}</div>
+              <h3>{point.title}</h3>
+              <p>{point.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default WhyClientsStay;

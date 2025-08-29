@@ -2,12 +2,7 @@ import React from "react";
 import "./ProductsAndIndustries.css";
 
 const ProductsAndIndustries = () => {
-  const products = [
-    { icon: "📘", title: "NITO (Electus)", description: "Mock-test platform for IIT/JEE, GATE, TTC, competitive exams." },
-    { icon: "🏥", title: "AestheTech", description: "AI-powered clinic management system with imaging & doctor collaboration." },
-    { icon: "⚕️", title: "Quantum Quest (SureCare)", description: "Healthcare staffing platform — “Uber for Nurses”." },
-    { icon: "📊", title: "HRMS Suite", description: "Timesheet & Leave Management system for HR operations." }
-  ];
+
 
   const industries = [
     { icon: "💻", title: "Technology", description: "IT teams & enterprise software." },
@@ -17,40 +12,18 @@ const ProductsAndIndustries = () => {
   ];
 
   return (
-    <section className="products-industries">
+    <section className="tech-services">
       <div className="container">
-        <div className="side-by-side">
-          {/* Left section */}
-          <div className="section-block left-block">
-            <h3 className="section-title">Proprietary Products</h3>
-            <div className="card-container">
-              {products.map((p, i) => (
-                <div key={i} className="card">
-                  <span className="card-icon">{p.icon}</span>
-                  <div className="card-content">
-                    <strong>{p.title}:</strong> {p.description}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right section */}
-          <div className="section-block right-block">
-            <h2 className="section-title">Industries We Serve</h2>
-            <div className="card-container">
-              {industries.map((ind, i) => (
-                <div key={i} className="card">
-                  <span className="card-icon">{ind.icon}</span>
-                  <div className="card-content">
-                    <strong>{ind.title}:</strong> {ind.description}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
+        <h6 className="section-title">Industries We Serve</h6>
+        <ul className="expertise">
+          {industries.map((service, index) => (
+            <li key={index} className="card">
+              <span className="card-icon">{service.icon}</span>
+              <h4 className="card-title">{service.title}</h4>
+              <p className="card-description">{service.description}</p>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

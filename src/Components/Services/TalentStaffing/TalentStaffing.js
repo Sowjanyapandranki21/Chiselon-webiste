@@ -8,12 +8,12 @@ const TalentStaffing = () => {
       <div className="talent-container">
         
         {/* Left Side Image */}
-        <div className="talent-image">
+        {/* <div className="talent-image">
           <img src={talentImg} alt="Talent Acquisition & Staffing Solutions" />
-        </div>
+        </div> */}
 
         {/* Right Side Content */}
-        <div className="talent-content">
+        {/* <div className="talent-content">
           <h6 className="section-title">
              Talent Acquisition & Staffing Solutions
           </h6>
@@ -44,7 +44,7 @@ const TalentStaffing = () => {
             <p>✅ Scalable solutions customized for startups, SMEs, and enterprises</p>
             <p>✅ Over 90% client retention rate</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
