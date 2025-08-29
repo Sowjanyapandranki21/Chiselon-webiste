@@ -1,6 +1,6 @@
 import React from "react";
 import "./OurStory.css";
-import storyImg from "../../Assests/Dashboard.png"; // ✅ Make sure the path is correct
+import storyImg from "../../Assests/story.jpg"; // ✅ Make sure the path is correct
 
 const OurStory = () => {
   return (

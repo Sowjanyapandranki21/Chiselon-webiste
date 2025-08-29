@@ -27,7 +27,7 @@ const CallToAction = () => {
               <div className="particles"></div>
               <div className="cta-container">
       <h6 className="cta-title">At Chiselon, our products are enablers of growth and transformation.</h6>
-      <p style={{color:"black"}}>👉 Ready to explore how our products can work for you?</p>
+      <p >👉 Ready to explore how our products can work for you?</p>
       <div className="cta-buttons">
         <button className="btn primary" onClick={handleBuildClick}>Request a Demo</button>
         <button className="btn secondary" onClick={handleContactClick}>Contact Us</button>

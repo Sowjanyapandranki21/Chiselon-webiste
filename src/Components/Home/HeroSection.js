@@ -1,6 +1,6 @@
 import React from "react";
 import "./HeroSection.css";
-import logo from "../../Assests/home.png"; // replace with your actual image path
+import logo from "../../Assests/home.jpg"; // replace with your actual image path
 import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {

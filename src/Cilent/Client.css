@@ -8,6 +8,7 @@
 html, body {
   width: 100%;
   height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #b6f300;
 }
@@ -17,6 +18,7 @@ html, body {
   width: 100%;
   padding: 3rem 1rem;
   background-color: #b6f300;
+  overflow-x: hidden; /* Extra safety */
 }
 
 /* Container styling */
@@ -24,6 +26,7 @@ html, body {
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+  padding: 0 1rem; /* Prevent edge overflow */
 }
 
 /* Title styling */
@@ -40,13 +43,12 @@ html, body {
   color: #555;
   margin-bottom: 2.5rem;
   line-height: 1.6;
-  padding: 0 1rem;
 }
 
-/* Logo grid: default for large screens */
+/* Logo grid: 6 per row on large screens */
 .clients-logos {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6 logos per row */
+  grid-template-columns: repeat(6, 1fr);
   gap: 1.5rem;
   justify-items: center;
   align-items: center;
@@ -57,10 +59,12 @@ html, body {
   padding: 0.75rem;
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 150px;
 }
 
 .client-logo img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   object-fit: contain;
 }
@@ -90,7 +94,6 @@ html, body {
 
   .clients-names {
     font-size: 0.85rem;
-    padding: 0;
   }
 
   .clients-section {
@@ -99,5 +102,6 @@ html, body {
 
   .client-logo {
     padding: 0.5rem;
+    max-width: 120px;
   }
 }
