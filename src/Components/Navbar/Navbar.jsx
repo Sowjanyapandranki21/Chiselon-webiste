@@ -5,7 +5,7 @@ import {
   AiOutlineDown,
   AiOutlineUp,
 } from "react-icons/ai";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./navbar.css";
 import logo from "../../Assests/logochiselon1.png";
 
@@ -13,6 +13,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setDropdownOpen(false);
@@ -25,7 +26,6 @@ const Navbar = () => {
         {/* Logo */}
         <div className="logo">
           <img src={logo} alt="Chiselon Logo" />
-         
         </div>
 
         {/* Navbar */}
@@ -38,19 +38,44 @@ const Navbar = () => {
 
             {/* Dropdown */}
             <li className="dropdown">
-              <div
-                className="dropdown-toggle"
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-                aria-expanded={dropdownOpen}
-                aria-controls="industries-dropdown"
-              >
-                Clients {dropdownOpen ? <AiOutlineUp /> : <AiOutlineDown />}
+              <div className="dropdown-toggle">
+                {/* Click text to navigate */}
+                <span
+                  className="dropdown-text"
+                  onClick={() => navigate("/clients")}
+                >
+                  Clients
+                </span>
+
+                {/* Click arrow to toggle dropdown */}
+                <span
+                  className="dropdown-arrow"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setDropdownOpen(!dropdownOpen);
+                  }}
+                >
+                  {dropdownOpen ? <AiOutlineUp /> : <AiOutlineDown />}
+                </span>
               </div>
+
               {dropdownOpen && (
                 <ul className="dropdown-menu" id="industries-dropdown">
-                  <li><Link to="/industries" className="dropdown-link">Industries We Serve</Link></li>
-                  <li><Link to="/caseStudies" className="dropdown-link">Case Studies</Link></li>
-                  <li><Link to="/blog" className="dropdown-link">Trends and Readings</Link></li>
+                  <li>
+                    <Link to="/industries" className="dropdown-link">
+                      Industries We Serve
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/caseStudies" className="dropdown-link">
+                      Case Studies
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/blog" className="dropdown-link">
+                      Trends and Readings
+                    </Link>
+                  </li>
                 </ul>
               )}
             </li>

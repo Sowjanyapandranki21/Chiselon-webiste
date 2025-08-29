@@ -15,24 +15,19 @@ const WhoWeAre = () => {
         <div className="whowe-text fade-in-right">
           <h3 className="section-title">Who We Are</h3>
           <p>
-            We are a premier{" "}
-            <strong>
-              Recruitment Consulting, RPO, Staffing, and Product Development
-            </strong>{" "}
-            company, helping startups, SMEs, and enterprises scale smarter and
-            innovate faster.
+            We are a premier product development, recruitment consulting, RPO, 
+            and staffing company, helping startups, SMEs, and enterprises scale 
+            smarter and innovate faster.
           </p>
           <p>
-            Our dual focus — <span className="highlight">people</span> and{" "}
-            <span className="highlight">technology</span> — allows us to create
-            holistic solutions that address the evolving challenges of modern
+            Our dual focus — people and technology — allows us to create 
+            holistic solutions that address the evolving challenges of modern 
             businesses.
           </p>
           <p>
-            At Chiselon, every project, whether it’s a{" "}
-            <strong>C-suite leadership hire</strong> or a{" "}
-            <strong>full-scale technology platform</strong>, is guided by our
-            commitment to <em>excellence, innovation, and integrity</em>.
+            At Chiselon, every project, whether it’s a C-suite leadership hire 
+            or a full-scale technology platform, is guided by our commitment to 
+            <em> excellence, innovation, and integrity</em>.
           </p>
         </div>
       </div>

@@ -6,36 +6,36 @@ const Blog = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const posts = [
-    {
-      title: "The Future of RPO: AI and Automation in Hiring",
-      desc: "AI-driven recruitment is transforming efficiency in hiring processes.",
-      full: "Artificial Intelligence is changing recruitment by automating resume screening, reducing time-to-hire, and improving candidate matching. Automation tools also help in sourcing talent from multiple platforms efficiently.",
-      img: "https://iplaceusa.com/wp-content/uploads/2023/08/The-Future-is-RPO-scaled.jpg",
-      link: "https://www.weareams.com/p/102j87v/the-future-of-rpo-how-ai-is-transforming-talent-acquisition/" // example link
-    },
-    {
-      title: "How Cloud & DevOps Accelerate Digital Transformation",
-      desc: "Cloud-native solutions are helping businesses scale like never before.",
-      full: "Cloud and DevOps work hand in hand to speed up software delivery, enhance collaboration, and ensure scalability. Modern businesses rely on containerization, CI/CD pipelines, and automation to thrive in digital transformation.",
-      img: "https://www.heliossolutions.co/blog/wp-content/uploads/2018/11/Devops-And-Cloud-The-Synergy-Driving-Digital-Transformation-In-Enterprises.jpg",
-      link: "https://appinventiv.com/blog/how-cloud-and-devops-accelerating-digital-transformation/"
-    },
-    {
-      title: "AI in Healthcare: Improving Diagnostics and Outcomes",
-      desc: "From early detection to patient care, AI is revolutionizing healthcare.",
-      full: "AI in healthcare is enabling early diagnosis of diseases, personalized treatment plans, and predictive analytics. Machine learning models are helping doctors improve patient outcomes and reduce errors.",
-      img: "https://media.licdn.com/dms/image/v2/D5612AQHf63ijupDVsA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1707018163137?e=2147483647&v=beta&t=FMr_4yxNXLYtrynVwxJPTpDQBt1UQnK_A5sEfxc2ZEk",
-      link: "https://www.weforum.org/stories/2024/09/ai-diagnostics-health-outcomes/"
-    },
-    {
-      title: "Carving Excellence: 640+ Successful Placements",
-      desc: "Our journey in transforming careers and driving growth.",
-      full: "Chiselon has successfully placed more than 640 candidates across industries. Our approach blends deep industry knowledge, client needs assessment, and personalized candidate support to ensure long-term success.",
-      img: "https://www.cbit.ac.in/wp-content/uploads/2019/03/Placements-CBIT.png",
-      link: "https://www.chiselon.com/career-success-stories"
-    },
-    {
+const posts = [
+  {
+    title: "The Future of RPO: AI and Automation in Hiring",
+    desc: "AI-driven recruitment is transforming efficiency in hiring processes.",
+    full: "Artificial Intelligence is changing recruitment by automating resume screening, reducing time-to-hire, and improving candidate matching. Automation tools also help in sourcing talent from multiple platforms efficiently.",
+    img: "https://iplaceusa.com/wp-content/uploads/2023/08/The-Future-is-RPO-scaled.jpg",
+    link: "https://www.weareams.com/p/102j87v/the-future-of-rpo-how-ai-is-transforming-talent-acquisition/"
+  },
+  {
+    title: "How Cloud & DevOps Accelerate Digital Transformation",
+    desc: "Cloud-native solutions are helping businesses scale like never before.",
+    full: "Cloud and DevOps work hand in hand to speed up software delivery, enhance collaboration, and ensure scalability. Modern businesses rely on containerization, CI/CD pipelines, and automation to thrive in digital transformation.",
+    img: "https://www.heliossolutions.co/blog/wp-content/uploads/2018/11/Devops-And-Cloud-The-Synergy-Driving-Digital-Transformation-In-Enterprises.jpg",
+    link: "https://appinventiv.com/blog/how-cloud-and-devops-accelerating-digital-transformation/"
+  },
+  {
+    title: "AI in Healthcare: Improving Diagnostics and Outcomes",
+    desc: "From early detection to patient care, AI is revolutionizing healthcare.",
+    full: "AI in healthcare is enabling early diagnosis of diseases, personalized treatment plans, and predictive analytics. Machine learning models are helping doctors improve patient outcomes and reduce errors.",
+    img: "https://media.licdn.com/dms/image/v2/D5612AQHf63ijupDVsA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1707018163137?e=2147483647&v=beta&t=FMr_4yxNXLYtrynVwxJPTpDQBt1UQnK_A5sEfxc2ZEk",
+    link: "https://www.weforum.org/stories/2024/09/ai-diagnostics-health-outcomes/"
+  },
+  {
+    title: "Carving Excellence: 640+ Successful Placements",
+    desc: "Our journey in transforming careers and driving growth.",
+    full: "Chiselon has successfully placed more than 640 candidates across industries. Our approach blends deep industry knowledge, client needs assessment, and personalized candidate support to ensure long-term success.",
+    img: "https://www.cbit.ac.in/wp-content/uploads/2019/03/Placements-CBIT.png",
+    link: "https://www.chiselon.com/career-success-stories"
+  },
+  {
     title: "AI-Powered Imaging: Transforming Radiology",
     desc: "Machine learning algorithms are enhancing medical imaging analysis.",
     full: "AI-powered imaging tools help radiologists detect anomalies faster and with greater accuracy. These solutions assist in early diagnosis of conditions such as tumors and cardiovascular diseases.",
@@ -62,8 +62,23 @@ const Blog = () => {
     full: "AI algorithms analyze chemical compounds and biological data to identify potential drug candidates faster than traditional methods, significantly reducing development time and costs.",
     img: "https://images.nature.com/lw1200/magazine-assets/d41586-018-05267-x/d41586-018-05267-x_15789480.jpg",
     link: "https://www.cas.org/solutions/biofinder-discovery-platform?utm_campaign=GLO_GEN_ANY_BDP_LDG&utm_medium=SCH_SUP_PAD&utm_source=Google_Neutral&utm_content=APAC-Other&gad_source=1&gad_campaignid=21547860436&gbraid=0AAAAAD_fAwCNLQhwYdAvWCQAugGWFcDKX&gclid=CjwKCAjwtrXFBhBiEiwAEKen12KRMlRvFs-BRo8n0-ZPDDubw7IahDH4qmVJW0WQIV7YhU8VLnEHZhoC7QAQAvD_BwE"
-  }
-  ];
+  },
+  // {
+  //   title: "Blockchain in Healthcare: Ensuring Data Security",
+  //   desc: "Blockchain technology is safeguarding patient data and medical records.",
+  //   full: "Blockchain ensures secure and immutable medical records, improves data sharing between providers, and enhances patient privacy. It provides transparency and traceability for all healthcare transactions.",
+  //   img: "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41598-024-68529-x/MediaObjects/41598_2024_68529_Fig2_HTML.png",
+  //   link: "https://www.weforum.org/stories/2023/12/healthcare-data-breaches-blockchain-cybersecurity/"
+  // },
+  // {
+  //   title: "Telemedicine and AI: Expanding Access to Care",
+  //   desc: "AI-powered telemedicine platforms bring healthcare to remote locations.",
+  //   full: "Telemedicine uses AI for triage, symptom checking, and virtual consultations. It enables doctors to reach patients in rural or underserved areas, improving access to healthcare and reducing costs.",
+  //   img: "https://d3lkc3n5th01x7.cloudfront.net/wp-content/uploads/2023/12/14223048/ai-in-telemedicine.png",
+  //   link: "https://sciresjournals.com/ijlsra/sites/default/files/IJLSRA-2024-0061.pdf"
+  // }
+];
+
 
   const handleSubscribe = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

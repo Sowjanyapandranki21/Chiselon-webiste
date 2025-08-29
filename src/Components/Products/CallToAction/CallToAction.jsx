@@ -9,7 +9,7 @@ const CallToAction = () => {
     navigate("/contact"); // ✅ route to your contact page
   };
   const handleBuildClick = () => {
-  const phoneNumber = "8688767603"; // include country code
+  const phoneNumber = "8807981081"; // include country code
   const message = encodeURIComponent("Hello! I would like to request a Demo."); // Matches "Request a Case Study Deck"
   
   const whatsappAppUrl = `whatsapp://send?phone=${phoneNumber}&text=${message}`;

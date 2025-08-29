@@ -1,3 +1,4 @@
+/* ---------- Products Section ---------- */
 .products-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -7,7 +8,6 @@
   margin: 0 auto;
   font-family: 'Arial', sans-serif;
   align-items: start;
-  /* background: linear-gradient(145deg, #b6f300 0%,  #b6f300 100%); */
 }
 
 .product-card {
@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: column;
   transition: all 0.4s ease;
-  min-height: 250px; /* uniform starting height */
+  min-height: 300px; /* slightly taller for uniform look */
 }
 
 .product-card:hover {
@@ -27,9 +27,12 @@
 }
 
 .card-content {
-  flex-grow: 1; /* ensures equal height initially */
+  flex-grow: 1; /* ensures equal height distribution */
+  display: flex;
+  flex-direction: column;
 }
 
+/* Title and Subheadings */
 .product-card h2 {
   color: #007bff;
   font-size: 1.4rem;
@@ -43,6 +46,7 @@
   color: #333;
 }
 
+/* Paragraphs */
 .product-card p {
   font-size: 0.95rem;
   line-height: 1.5;
@@ -50,7 +54,23 @@
   color: #555;
 }
 
-/* Center the button and push it to bottom */
+/* ---------- Challenge Section ---------- */
+.challenge {
+  min-height: 100px;          /* equal height for all */
+  display: flex;
+  align-items: center;        /* vertical center */
+  justify-content: center;    /* horizontal center */
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #f8f9fa;  /* subtle background */
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #444;
+}
+
+/* ---------- Button ---------- */
 .btn-wrapper {
   display: flex;
   justify-content: center;
@@ -59,7 +79,7 @@
 }
 
 .view-btn {
-  padding: 5px 12px;
+  padding: 6px 14px;
   font-size: 0.85rem;
   border-radius: 50px;
   border: none;
@@ -74,7 +94,7 @@
   transform: translateY(-2px);
 }
 
-/* Hidden expandable content */
+/* ---------- Hidden Expandable Content ---------- */
 .product-details {
   display: none;
   margin-top: 10px;
@@ -83,17 +103,15 @@
 .product-details.active {
   display: block;
 }
-/* Industries.css */
 
-/* Overview container */
+/* ---------- Overview Section ---------- */
 .overview {
-  max-width: 900px;       /* Limit width for readability */
-  margin: 0 auto 40px;    /* Center horizontally and add bottom spacing */
+  max-width: 900px;
+  margin: 0 auto 40px;
   padding: 20px;
   text-align: center;
 }
 
-/* Overview title */
 .overview-title {
   font-size: 2rem;
   font-weight: 700;
@@ -101,37 +119,14 @@
   color: #1a1a1a;
 }
 
-/* Overview paragraph */
 .overview-text {
   font-size: 1rem;
   line-height: 1.7;
   color: #4a4a4a;
   margin: 0 auto;
-  max-width: 800px;       /* Keeps text readable */
+  max-width: 800px;
 }
 
-/* Optional: responsive */
-@media (max-width: 768px) {
-  .overview-title {
-    font-size: 1.6rem;
-  }
-
-  .overview-text {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-}
-
-@media (max-width: 480px) {
-  .overview-title {
-    font-size: 1.4rem;
-  }
-
-  .overview-text {
-    font-size: 0.9rem;
-  }
-}
-/* ---------- Expertise Section ---------- */
 /* ---------- Expertise Section ---------- */
 .expertise-section {
   max-width: 900px;
@@ -141,7 +136,6 @@
   font-family: 'Arial', sans-serif;
 }
 
-/* Section Title */
 .expertise-title {
   font-size: 2rem;
   font-weight: 700;
@@ -149,22 +143,20 @@
   color: #1a1a1a;
 }
 
-/* Expertise List Grid */
 .expertise-list {
   list-style: none;
   padding: 0;
   margin: 0 auto;
   max-width: 700px;
   display: grid;
-  grid-template-columns: repeat( minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
-/* Individual List Item */
 .expertise-list li {
   position: relative;
   background-color: #f5f5f5;
-  padding: 15px 20px 15px 40px; /* space for checkmark */
+  padding: 15px 20px 15px 40px;
   border-radius: 8px;
   font-size: 1rem;
   line-height: 1.5;
@@ -173,11 +165,10 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Add Checkmark Before Each Item */
 .expertise-list li::before {
-              /* checkmark symbol */
+  content: "✔"; /* checkmark */
   position: absolute;
-  left: 15px;                  /* consistent alignment */
+  left: 15px;
   top: 50%;
   transform: translateY(-50%);
   color: #007bff;
@@ -185,15 +176,19 @@
   font-weight: bold;
 }
 
-/* Hover Effect */
 .expertise-list li:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #f0f8ff;   /* subtle hover background */
+  background-color: #f0f8ff;
 }
 
-/* ---------- Responsive Adjustments ---------- */
+/* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
+  .products-section {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
   .expertise-list {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 18px;
@@ -201,6 +196,37 @@
 }
 
 @media (max-width: 768px) {
+  .products-section {
+    grid-template-columns: 1fr;
+    padding: 30px 15px;
+  }
+
+  .product-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .product-card h3 {
+    font-size: 1rem;
+  }
+
+  .product-card p, .product-card ul {
+    font-size: 0.9rem;
+  }
+
+  .view-btn {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+  }
+
+  .overview-title {
+    font-size: 1.6rem;
+  }
+
+  .overview-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
   .expertise-title {
     font-size: 1.6rem;
   }
@@ -222,6 +248,14 @@
 }
 
 @media (max-width: 480px) {
+  .overview-title {
+    font-size: 1.4rem;
+  }
+
+  .overview-text {
+    font-size: 0.9rem;
+  }
+
   .expertise-title {
     font-size: 1.4rem;
   }
@@ -239,39 +273,5 @@
   .expertise-list li::before {
     left: 10px;
     font-size: 0.85rem;
-  }
-}
-
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .products-section {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .products-section {
-    grid-template-columns: 1fr;
-    padding: 30px 15px;
-  }
-
-
-  .product-card h2 {
-    font-size: 1.3rem;
-  }
-
-  .product-card h3 {
-    font-size: 1rem;
-  }
-
-  .product-card p, .product-card ul {
-    font-size: 0.9rem;
-  }
-
-  .view-btn {
-    font-size: 0.75rem;
-    padding: 4px 10px;
   }
 }

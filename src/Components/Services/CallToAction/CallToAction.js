@@ -7,7 +7,7 @@ const CallToAction = () => {
   };
 
   const handleHireClick = () => {
-    const phoneNumber = "8688767603"; // include country code
+    const phoneNumber = "8807981081"; // include country code
     const message = encodeURIComponent("Hello! I am interested in hiring talent.");
     
     // WhatsApp app link (works on mobile)

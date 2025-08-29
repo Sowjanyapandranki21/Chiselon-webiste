@@ -42,7 +42,8 @@ const TechnologyServices = () => {
       <div className="container">
         <h6 className="section-title">Technology Services & Product Development</h6>
         <p >
-          Beyond staffing, Chiselon helps businesses design, build, and scale software
+          Beyond product development, recruitment consulting, RPO, 
+            and staffing company, Chiselon helps businesses design, build, and scale software
           solutions that drive innovation and growth.
         </p>
         <ul className="expertise">

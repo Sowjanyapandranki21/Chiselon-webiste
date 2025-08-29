@@ -1,20 +1,24 @@
 .blog-clean {
   font-family: Arial, sans-serif;
   padding: 20px;
-  background:   #b6f300;
+  background: #b6f300;
 }
 
+/* Hero Section */
 .blog-hero {
   text-align: center;
   margin-bottom: 40px;
+  padding: 0 10px;
 }
 
+/* Blog Grid */
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
+/* Blog Card */
 .blog-card {
   background: #fff;
   border-radius: 10px;
@@ -68,12 +72,12 @@
   background: #005fcc;
 }
 
-/* Subscribe */
+/* Subscribe Section */
 .subscribe {
   margin-top: 50px;
   text-align: center;
   background: #f7f7f7;
-  padding: 30px;
+  padding: 30px 15px;
   border-radius: 10px;
 }
 
@@ -82,6 +86,7 @@
   display: flex;
   justify-content: center;
   gap: 10px;
+
 }
 
 .subscribe-box input {
@@ -104,13 +109,52 @@
   background: #005fcc;
 }
 
+/* Responsive Styles */
 
-/* Responsive */
+/* Mobile: small devices */
+@media (max-width: 480px) {
+  .card-content h2 {
+    font-size: 16px;
+  }
+  .card-content p,
+  .full-post {
+    font-size: 13px;
+  }
+  .blog-card img {
+    height: 150px;
+  }
+}
+
+/* Tablets */
 @media (max-width: 768px) {
   .subscribe-box {
     flex-direction: column;
+    align-items: stretch;
   }
   .subscribe-box input {
     width: 100%;
+  }
+  .blog-card img {
+    height: 160px;
+  }
+}
+
+/* Small laptops */
+@media (max-width: 1024px) {
+  .blog-card img {
+    height: 170px;
+  }
+}
+
+/* Large desktops */
+@media (min-width: 1200px) {
+  .blog-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .card-content h2 {
+    font-size: 20px;
+  }
+  .card-content p {
+    font-size: 15px;
   }
 }

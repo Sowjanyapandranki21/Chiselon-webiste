@@ -30,8 +30,8 @@ const WhyClientsStay = () => {
       <div className="container">
         <h2 className="section-title">Why Clients Stay With Us</h2>
         <p className="overview-text">
-          Empowering businesses with <strong>640+ successful placements</strong>, 
-          <strong> industry expertise</strong>, and solutions built on <strong>trust and long-term value</strong>.
+          Empowering businesses with 640+ successful placements, 
+           industry expertise, and solutions built on trust and long-term value.
         </p>
         <div className="cards-container">
           {points.map((point, index) => (

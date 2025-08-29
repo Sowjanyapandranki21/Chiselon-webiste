@@ -1,23 +1,8 @@
 import React, { useState } from "react";
-import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from "@react-google-maps/api";
+import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import "./ContactUs.css";
 
-const containerStyle = {
-  width: "100%",
-  height: "400px",
-};
-
-// Coordinates for the corporate office
-const center = {
-  lat: 11.0306,
-  lng: 76.9817,
-};
-
 const ContactUs = () => {
-  const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyA5n7jcIhsI-7JiUjMkRT8TO3kKYuGy2Qo",
-  });
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -31,8 +16,6 @@ const ContactUs = () => {
     success: null,
     error: null,
   });
-
-  const [showInfoWindow, setShowInfoWindow] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -78,137 +61,128 @@ const ContactUs = () => {
     }
   };
 
-  if (!isLoaded) return <p>Loading map...</p>;
-
   return (
-      <div className="homepage">
-    <div className="contact-page">
-      {/* Headline Section */}
-      <section className="headline">
-        <h2 className="section-title">Let’s Build Success Together.</h2>
-        <p style={{color:"black"}}>
-          At <b>Chiselon Technologies Pvt. Ltd.</b>, we’re always ready to listen,
-          collaborate, and deliver. Whether you’re a business looking for talent
-          acquisition services, a partner exploring technology solutions, or a
-          professional seeking career opportunities — we’d love to hear from you.
-        </p>
-      </section>
-
-      {/* Contact Section */}
-      <section className="contact-section">
-        <div className="contact-info">
-          <h2 className="section-title">Get in Touch</h2>
-
-          <p>
-            📍 <b>Registered Office</b><br />
-            Chiselon Technologies Pvt. Ltd.<br />
-            Plot No. 413, 2nd Floor, Road No. 22, Jubilee Hills, Hyderabad<br />
-            Pincode: 500033
+    <div className="homepage">
+      <div className="contact-page">
+        {/* Headline Section */}
+        <section className="headline">
+          <h2 className="section-title">Let’s Build Success Together.</h2>
+          <p style={{ color: "black" }}>
+            At <b>Chiselon Technologies Pvt. Ltd.</b>, we’re always ready to listen,
+            collaborate, and deliver. Whether you’re a business looking for talent
+            acquisition services, a partner exploring technology solutions, or a
+            professional seeking career opportunities — we’d love to hear from you.
           </p>
+        </section>
 
+        {/* Contact Section */}
+        <section className="contact-section">
+          <div className="contact-info">
+            <h2 className="section-title">Get in Touch</h2>
+
+            <p>
+              📍 <b>Registered Office</b><br />
+              Chiselon Technologies Pvt. Ltd.<br />
+              Plot No. 413, 2nd Floor, Road No. 22, Jubilee Hills, Hyderabad<br />
+              Pincode: 500033
+            </p>
+
+            <p>
+              📍 <b>Corporate Office</b><br />
+              Chiselon Technologies Pvt. Ltd.<br />
+              Plot # 80, P&K Nest, CHIL IT Park Road, Saravanampatti, Coimbatore, Tamilnadu <br />
+              Pincode: 641035
+            </p>
+
+            <p>
+              📧 Email: <a href="mailto:support@chiselontechnologies.com">support@chiselontechnologies.com</a>
+            </p>
+            <p>📞 Phone: +91-8807981081</p>
+
+            {/* Social Media */}
+            <div className="social-icons">
+              <a href="#"><FaFacebookF /></a>
+              <a href="#"><FaInstagram /></a>
+              <a href="https://wa.me/918807981081" target="_blank" rel="noopener noreferrer">
+                <FaWhatsapp />
+              </a>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="contact-form-section">
+            <h2 className="section-title">Contact Form</h2>
+            <form onSubmit={handleSubmit} className="contact-form">
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                value={formData.phone}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                name="company"
+                placeholder="Organization / Company"
+                value={formData.company}
+                onChange={handleChange}
+              />
+              <textarea
+                name="message"
+                placeholder="Message / Inquiry"
+                value={formData.message}
+                onChange={handleChange}
+                required
+              />
+              <button type="submit" disabled={status.submitting}>
+                📩 {status.submitting ? "Sending..." : "Get in Touch"}
+              </button>
+            </form>
+            {status.success && <p className="success-msg">{status.success}</p>}
+            {status.error && <p className="error-msg">{status.error}</p>}
+          </div>
+        </section>
+
+        {/* Map Section */}
+       <section className="map-section">
+  <h2 className="section-title">Find Us Here</h2>
+  <iframe
+    title="Chiselon Technologies Pvt. Ltd."
+    src="https://www.google.com/maps?q=Chiselon+Technologies+Pvt.+Ltd.@11.0306,76.9817&z=15&output=embed"
+    width="100%"
+    height="400"
+    style={{ border: 0 }}
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  ></iframe>
+</section>
+
+        {/* Closing Note */}
+        <section className="closing-note">
           <p>
-            📍 <b>Corporate Office</b><br />
-            Chiselon Technologies Pvt. Ltd.<br />
-            Plot # 80, P&K Nest, CHIL IT Park Road, Saravanampatti, Coimbatore, Tamilnadu <br />
-            Pincode: 641035
+            No matter your need — hiring, staffing, product development, or innovation consulting — 
+            <b> Chiselon is here to partner with you.</b>
           </p>
-
-          <p>
-            📧 Email: <a href="mailto:info@chiselon.com">info@chiselon.com</a>
-          </p>
-          <p>📞 Phone: +91-XXXXXXXXXX</p>
-          
-        </div>
-
-        <div className="contact-form-section">
-          <h2 className="section-title">Contact Form</h2>
-          <form onSubmit={handleSubmit} className="contact-form">
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number"
-              value={formData.phone}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              name="company"
-              placeholder="Organization / Company"
-              value={formData.company}
-              onChange={handleChange}
-            />
-            <textarea
-              name="message"
-              placeholder="Message / Inquiry"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            />
-            <button type="submit" disabled={status.submitting}>
-              📩 {status.submitting ? "Sending..." : "Get in Touch"}
-            </button>
-          </form>
-          {status.success && <p className="success-msg">{status.success}</p>}
-          {status.error && <p className="error-msg">{status.error}</p>}
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="map-section">
-        <h2 className="section-title">Find Us Here</h2>
-        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
-          <Marker
-    position={center}
-    title="Chiselon Technologies Pvt. Ltd. - Corporate Office, Coimbatore"
-    onClick={() => {
-      const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${center.lat},${center.lng}`;
-      window.open(googleMapsUrl, "_blank");
-    }}
-  />
-
-          {showInfoWindow && (
-            <InfoWindow
-              position={center}
-              onCloseClick={() => setShowInfoWindow(false)}
-            >
-              <div style={{ maxWidth: "200px" }}>
-                <p>
-                  Chiselon Technologies Pvt. Ltd.<br />
-                  Plot # 80, P&K Nest, CHIL IT Park Road,<br />
-                  Saravanampatti, Coimbatore, Tamilnadu<br />
-                  Pincode: 641035
-                </p>
-              </div>
-            </InfoWindow>
-          )}
-        </GoogleMap>
-      </section>
-
-      {/* Closing Note */}
-      <section className="closing-note">
-        <p>
-          No matter your need — hiring, staffing, product development, or innovation consulting — 
-          <b> Chiselon is here to partner with you.</b>
-        </p>
-        <p  >👉 Let’s carve your success story today.</p>
-      </section>
-    </div>
+          <p>👉 Let’s carve your success story today.</p>
+        </section>
+      </div>
     </div>
   );
 };

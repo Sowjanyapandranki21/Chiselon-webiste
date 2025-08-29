@@ -10,7 +10,7 @@ const OurStory = () => {
         <div className="ourstory-text fade-in-left">
           <h2 className="section-title">Our Story</h2>
           <p>
-            At <strong>Chiselon Technologies Pvt. Ltd.</strong>, we believe in
+            At Chiselon Technologies Pvt. Ltd., we believe in
             carving possibilities into realities. Founded with the mission to bridge
             the gap between talent and technology, Chiselon has emerged as a trusted
             partner for businesses across industries.

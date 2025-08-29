@@ -34,6 +34,7 @@ const Careers = () => {
             { emoji: "🎉", title: "Celebrating Milestones", desc: "Recognizing achievements across teams." },
             { emoji: "🏆", title: "Recognition & Rewards", desc: "Incentives for excellence and impact." },
             { emoji: "🌍", title: "Diversity & Inclusion", desc: "Commitment to an equitable workplace." },
+         { emoji: "💼", title: "Careers", desc: "Grow your career with us." }
           ].map((item, index) => (
             <div key={index} className="timeline-item">
               <span>{item.emoji}</span>

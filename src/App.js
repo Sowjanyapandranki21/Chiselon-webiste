@@ -16,6 +16,7 @@ import Blog from "./Components/Blog/Blog";
 
 // ScrollToTop
 import ScrollToTop from "./Components/ScrollToTop"; // ✅ import
+import Clients from "./Cilent/Client";
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
       <Route path="/caseStudies" element={<CaseStudies />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/contact" element={<ContactUs />} />
+      <Route path="/clients" element={<Clients />} />
     </Routes>
   </div>
 </Router>

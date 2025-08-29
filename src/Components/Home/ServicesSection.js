@@ -21,11 +21,13 @@ const servicesData = [
   },
   {
     title: "🔹 Proprietary Products",
-    items: [
-      "NITO – AI-powered test prep",
-      "AestheTech – AI-driven clinic solution",
-      "HRMS with Integrated Timesheet",
-    ],
+items: [
+  "NITO – AI-powered mock test prep platform",
+  "AestheTech – AI-powered clinic management system",
+  "CHRMS – HRMS with integrated time & leave management",
+  "SureCare – Uber-style platform for nursing and geriatric care",
+  "DermaCare – Public app to book dermatology consultations at discounted prices"
+]
   },
 ];
 

@@ -14,8 +14,9 @@ const HomePage = () => {
       <HeroSection />
       {/* <IntroSection /> */}
       <ServicesSection />
+        <ImpactSection />
       <TrustSection />
-      <ImpactSection />
+    
       {/* <Testimonials /> */}
       <CTASection />
     </div>
