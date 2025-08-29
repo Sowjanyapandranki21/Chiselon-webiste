@@ -2,20 +2,23 @@
   font-family: "Segoe UI", sans-serif;
   color: #333;
   line-height: 1.6;
+  background: #b6f300;
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
-    background: #b6f300;
 }
 
 /* Hero */
 .careers-hero {
-  background: url("https://source.unsplash.com/1600x600/?technology,team") center/cover no-repeat;
-  min-height: 60vh;
+  background: url("https://source.unsplash.com/1600x600/?technology,team")
+    center/cover no-repeat;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  padding: 0 2rem; /* no top padding */
   position: relative;
-  padding: 2rem;
 }
 
 .careers-hero::before {
@@ -23,73 +26,76 @@
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-
-  z-index: 1;
+  /* background: rgba(0, 0, 0, 0.55); */
 }
 
 .careers-hero .overlay {
   position: relative;
   z-index: 2;
-  background: rgba(255,255,255,0.8);
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 800px;
-  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #0e0202;
 }
 
-.careers-hero h1 {
+.careers-hero h3.section-title {
+  margin: 0 0 1rem 0;   /* remove all top margin */
+  padding: 0;
   font-size: 2.8rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: #111;
+  font-weight: 800;
+  line-height: 1.2;
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .careers-hero p {
-  font-size: 1.3rem;
-  color: #333;
-  line-height: 1.5;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: black;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
-/* Section Titles */
+/* Section Title */
 .section-title {
   font-size: 2rem;
-  color: #1e3a8a;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 0 0 2rem 0; /* only bottom margin */
+  padding: 0;         /* remove all padding */
+  color: #1e3a8a;
 }
 
 /* Timeline */
-.careers-timeline {
-  padding: 3rem 1.5rem;
-}
 .timeline {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
+  justify-content: center;
 }
 .timeline-item {
+  background: #fff;
   border-radius: 10px;
   padding: 1.2rem;
-  width: 220px;
   text-align: center;
   font-size: 1rem;
+  border: 3px solid #fff;
   transition: transform 0.2s ease;
-  background: none;
-  border: 1px solid #e5e7eb;
 }
 .timeline-item:hover {
   transform: translateY(-4px);
 }
+.timeline-item span {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
 
 /* Employee Value */
 .employee-value {
-  padding: 3rem 1.5rem;
+  padding: 0 1.5rem 3rem; /* removed top padding */
   text-align: center;
-}
-.employee-value h2 {
-  margin-bottom: 1rem;
 }
 .employee-value p {
   max-width: 800px;
@@ -99,8 +105,8 @@
 }
 
 /* Current Openings */
-.careers-openings {
-  padding: 3rem 1.5rem;
+.table-wrapper {
+  overflow-x: auto;
 }
 .openings-table {
   width: 100%;
@@ -112,12 +118,12 @@
 .openings-table td {
   padding: 14px;
   text-align: left;
-  border: 1px solid #ddd;
+  border: 1.5px solid #fff;
 }
 .openings-table th {
   color: #007bff;
   font-weight: bold;
-  background: none;
+  background: #f1f1f1;
 }
 .btn.primary {
   background: #007bff;
@@ -162,21 +168,14 @@
 }
 
 /* Responsive */
-@media (max-width: 992px) {
-  .careers-hero h1 { font-size: 2.2rem; }
-  .careers-hero p { font-size: 1.1rem; }
-  .timeline-item { width: 180px; }
-}
 @media (max-width: 768px) {
-  .careers-hero { min-height: 50vh; padding: 1.5rem; }
-  .careers-hero h1 { font-size: 1.9rem; }
+  .careers-hero { min-height: 50vh; }
+  .careers-hero h3 { font-size: 1.8rem; }
   .careers-hero p { font-size: 1rem; }
-  .timeline { flex-direction: column; align-items: center; }
-  .openings-table { font-size: 0.9rem; }
 }
 @media (max-width: 480px) {
-  .careers-hero h1 { font-size: 1.6rem; }
+  .careers-hero h3 { font-size: 1.5rem; }
   .careers-hero p { font-size: 0.95rem; }
-  .careers-hero .overlay { padding: 1rem; }
-  .btn-light, .btn-dark, .btn.primary { width: 100%; text-align: center; }
+  .overlay { padding: 1rem; }
+  .btn-light, .btn-dark, .btn.primary { width: 100%; }
 }

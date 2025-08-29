@@ -12,14 +12,12 @@ const Careers = () => {
   return (
     <div className="careers-page">
       {/* Hero */}
-      <section className="careers-hero">
-  <div className="hero-content">
-    <h3 className="section-title">Join Us in Shaping the Future of Talent and Technology</h3>
-    <p>
-      At Chiselon Technologies Pvt. Ltd., we believe people are the foundation of innovation.
-      Come grow your career with us.
-    </p>
-        </div>
+     <section className="overview">
+        <h5 className="section-title">Join Us in Shaping the Future of Talent and Technology</h5>
+        <p>
+          At Chiselon Technologies Pvt. Ltd., we believe people are the foundation of innovation.
+          Come grow your career with us.
+        </p>
       </section>
 
       {/* Life at Chiselon - Timeline */}
@@ -38,7 +36,8 @@ const Careers = () => {
             { emoji: "🌍", title: "Diversity & Inclusion", desc: "Commitment to an equitable workplace." },
           ].map((item, index) => (
             <div key={index} className="timeline-item">
-              {item.emoji} <strong>{item.title}</strong>
+              <span>{item.emoji}</span>
+              <strong>{item.title}</strong>
               <p>{item.desc}</p>
             </div>
           ))}
@@ -59,39 +58,43 @@ const Careers = () => {
       {/* Current Openings */}
       <section className="employee-value">
         <h3 className="section-title">Current Openings</h3>
-        <table className="openings-table">
-          <thead>
-            <tr>
-              <th>Role</th>
-              <th>Experience</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {jobs.map((job, index) => (
-              <tr key={index}>
-                <td>{job.role}</td>
-                <td>{job.exp}</td>
-                <td>
-                  <button
-                    className="btn primary"
-                    onClick={() => {
-                      const email = "udaypukkalla@gmail.com";
-                      const subject = encodeURIComponent(`${job.role} – Job Application`);
-                      const body = encodeURIComponent(
-                        `Dear Chiselon Team,\n\nI am interested in applying for the ${job.role} position at Chiselon Technologies Pvt. Ltd. Please find my resume attached.\n\nLooking forward to your response.\n\nBest regards,\n[Your Name]`
-                      );
-                      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
-                      window.open(gmailUrl, "_blank");
-                    }}
-                  >
-                    Apply
-                  </button>
-                </td>
+        <div className="table-wrapper">
+          <table className="openings-table">
+            <thead >
+              <tr>
+                <th style={{textAlign:"center"}}>Role</th>
+                <th style={{textAlign:"center"}}>Experience</th>
+                <th style={{textAlign:"center"}}>Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {jobs.map((job, index) => (
+                <tr key={index}>
+                  <td style={{textAlign:"center"}}>{job.role}</td>
+                  <td style={{textAlign:"center"}}>{job.exp}</td>
+                  <td style={{textAlign:"center"}}>
+                    <button
+                      className="btn primary"
+                      onClick={() => {
+                        const email = "udaypukkalla@gmail.com";
+                        const subject = encodeURIComponent(
+                          `${job.role} – Job Application`
+                        );
+                        const body = encodeURIComponent(
+                          `Dear Chiselon Team,\n\nI am interested in applying for the ${job.role} position at Chiselon Technologies Pvt. Ltd. Please find my resume attached.\n\nLooking forward to your response.\n\nBest regards,\n[Your Name]`
+                        );
+                        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+                        window.open(gmailUrl, "_blank");
+                      }}
+                    >
+                      Apply
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </section>
 
       {/* CTA Banner */}

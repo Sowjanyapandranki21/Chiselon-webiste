@@ -86,8 +86,8 @@ const Blog = () => {
   return (
     <div className="blog-clean">
       <header className="blog-hero">
-        <h1 style={{color:"black"}}>Insights, Innovation & Ideas That Matter</h1>
-        <p style={{color:"black"}}>
+        <h6 className="section-title">Insights, Innovation & Ideas That Matter</h6>
+        <p>
           Explore the latest trends in recruitment, technology, and digital
           transformation. Stay ahead with Chiselon.
         </p>
