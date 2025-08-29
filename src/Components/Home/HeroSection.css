@@ -1,13 +1,13 @@
 /* ===== Hero Section Base ===== */
 .hero {
   width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh;  ⛔ Remove this */
+  padding: 80px 20px 40px; /* normal top/bottom padding */
   display: flex;
-  align-items: flex-start; /* Align content at the top */
+  align-items: flex-start;
   justify-content: center;
-  padding: 80px 20px 40px; /* Top-heavy padding */
   box-sizing: border-box;
-  background: #ccff00; /* optional if you want background like screenshot */
+  /* background: #ccff00; optional background */
 }
 
 .heroContent {
@@ -29,13 +29,13 @@
   font-size: 1.2rem;
   line-height: 1.7;
   margin-bottom: 20px;
-  color: #000; /* black text */
+  color: #000;
 }
 
 .heroBtns {
   display: flex;
-  justify-content: center; /* centers horizontally */
-  align-items: center;     /* centers vertically if multiple lines */
+  justify-content: center; /* keep button aligned left on desktop */
+  align-items: center;
   gap: 15px;
   flex-wrap: wrap;
   margin-top: 20px;
@@ -82,7 +82,6 @@
 /* Tablets */
 @media (max-width: 992px) {
   .hero {
-    align-items: flex-start;
     padding: 60px 20px;
   }
 
@@ -97,7 +96,7 @@
   }
 
   .heroBtns {
-    justify-content: center;
+    justify-content: center; /* center button on tablets */
   }
 
   .heroImage img {
@@ -108,7 +107,6 @@
 /* Mobile */
 @media (max-width: 600px) {
   .hero {
-    align-items: flex-start;
     padding: 40px 15px;
   }
 
