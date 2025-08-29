@@ -50,12 +50,12 @@ const Navbar = () => {
                 <ul className="dropdown-menu" id="industries-dropdown">
                   <li><Link to="/industries" className="dropdown-link">Industries We Serve</Link></li>
                   <li><Link to="/caseStudies" className="dropdown-link">Case Studies</Link></li>
-                  <li><Link to="/careers" className="dropdown-link">Trends and Readings</Link></li>
+                  <li><Link to="/blog" className="dropdown-link">Trends and Readings</Link></li>
                 </ul>
               )}
             </li>
 
-            <li><Link to="/blog" className="navLink">Careers</Link></li>
+            <li><Link to="/careers" className="navLink">Careers</Link></li>
             <li><Link to="/contact" className="navLink">Contact</Link></li>
           </ul>
         </nav>
