@@ -16,7 +16,7 @@ const HomePage = () => {
       <ServicesSection />
       <TrustSection />
       <ImpactSection />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <CTASection />
     </div>
   );

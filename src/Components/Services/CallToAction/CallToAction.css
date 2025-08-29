@@ -21,7 +21,7 @@
 }
 
 .cta-title span {
-  background: linear-gradient(90deg, #ff7a18, #ff3c7e, #ffd700);
+/* //  background: linear-gradient(90deg, #ff7a18, #ff3c7e, #ffd700); */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

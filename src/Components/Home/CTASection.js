@@ -29,7 +29,7 @@ const CTASection = () => {
       <div className="particles"></div>
       <div className="cta-container">
         <h2 className="cta-title">
-          <span className="highlight">Ready to build smarter teams or innovative solutions ?</span> {" "}
+          <p className="section-titles">Ready to build smarter teams or innovative solutions ?</p> {" "}
 
         </h2>
         <p className="cta-subtext" >👉 Let’s shape your future together.</p>

@@ -22,7 +22,7 @@
 }
 
 .cta-title span {
-  background: linear-gradient(90deg, #ff7a18, #ff3c7e, #ffd700);
+color:#1e3a8a;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
