@@ -13,9 +13,9 @@ const products = [
       "Adaptive test engine with customizable difficulty levels.",
       "Real-time analytics & performance reports for students.",
       "Secure, scalable cloud-based architecture.",
-      "Multi-device compatibility",
+      "Multi-device compatibility"
     ],
-    impact: "Helps students build confidence and track progress effectively.",
+    impact: "Helps students build confidence and track progress effectively."
   },
   {
     description: "Comprehensive clinic management platform for dermatology and multi-specialty clinics.",
@@ -24,9 +24,9 @@ const products = [
       "Patient management (records, history, appointments).",
       "AI-assisted imaging & diagnosis support.",
       "Doctor support modules and task management.",
-      "Digital prescriptions, billing, and inventory integration",
+      "Digital prescriptions, billing, and inventory integration"
     ],
-    impact: "Improves patient outcomes and operational efficiency.",
+    impact: "Improves patient outcomes and operational efficiency."
   },
   {
     description: "On-demand healthcare staffing platform connecting nurses with hospitals and patients.",
@@ -35,28 +35,28 @@ const products = [
       "Real-time nurse availability matching.",
       "Secure scheduling and shift management.",
       "Verified nursing professionals.",
-      "Integrated payments and compliance tracking",
+      "Integrated payments and compliance tracking"
     ],
-    impact: "Ensures timely patient care and flexible work opportunities.",
+    impact: "Ensures timely patient care and flexible work opportunities."
   },
   {
-    description: "Smart HR platform to manage workforce seamlessly.",
+    description: "Smart HR platform to manage your workforce seamlessly.Streamline recruitment, onboarding, and employee management with ease.",
     image: HRMS,
     features: [
       "Timesheet management with project-wise tracking.",
       "Leave management with approval workflows.",
       "Integrated payroll compatibility.",
-      "Employee self-service portal",
+      "Employee self-service portal"
     ],
-    impact: "Increases productivity and reduces manual errors.",
-  },
+    impact: "Increases productivity and reduces manual errors."
+  }
 ];
 
 const ProductsSection = () => {
-  const [expanded, setExpanded] = useState({});
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleExpand = (index) => {
-    setExpanded((prev) => ({ ...prev, [index]: !prev[index] }));
+    setActiveIndex(prev => (prev === index ? null : index)); // only one open at a time
   };
 
   return (
@@ -73,15 +73,13 @@ const ProductsSection = () => {
 
           <div className="btn-wrapper">
             <button className="view-btn" onClick={() => toggleExpand(index)}>
-              {expanded[index] ? "View Less" : "View More"}
+              {activeIndex === index ? "View Less" : "View More"}
             </button>
           </div>
 
-          <div className={`product-details ${expanded[index] ? "active" : ""}`}>
+          <div className={`product-details ${activeIndex === index ? "active" : ""}`}>
             <ul>
-              {p.features.map((f, i) => (
-                <li key={i}>{f}</li>
-              ))}
+              {p.features.map((f, i) => <li key={i}>{f}</li>)}
             </ul>
             <p><strong>Impact:</strong> {p.impact}</p>
           </div>
