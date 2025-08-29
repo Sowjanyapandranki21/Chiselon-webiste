@@ -8,7 +8,7 @@ const ServicesOverview = () => {
       <div className="talent-container">
         
         {/* Left Side - Text */}
-        <div className="talent-content">
+        {/* <div className="talent-content">
           <h2 className="section-title">🌐 Our Services</h2>
           <p >
             At Chiselon Technologies, our services are designed to meet the dual needs of
@@ -18,7 +18,7 @@ const ServicesOverview = () => {
             With expertise spanning Talent Acquisition, RPO, Staffing Solutions, and
             Technology Product Development, we bring together the best of both worlds.
           </p>
-        </div>
+        </div> */}
 
     
       </div>
