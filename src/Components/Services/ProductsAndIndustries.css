@@ -2,8 +2,13 @@
   font-family: 'Arial', sans-serif;
   color: #333;
   padding: 40px 20px;
-
+  display: flex;
+  justify-content: center;
+  align-items: center; /* optional: for vertical centering */
+  flex-direction: column; /* keeps items stacked vertically */
+  text-align: center; /* centers text inside child elements */
 }
+
 
 .container {
   max-width: 1200px;

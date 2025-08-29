@@ -9,7 +9,7 @@ const ClientsView = () => {
   ];
 
   return (
-    <div className="overview">
+    <div className="overview" style={{ marginTop: "-50px" }}>
       <h2 className="section-title">Our Esteemed Clients</h2>
       <p>{clientsList.join(", ")}</p>
     </div>
