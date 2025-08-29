@@ -1,54 +1,109 @@
-.clients-section {
-  background-color:  #b6f300; /* Full screen background */
-  min-height: 100vh;      /* Full viewport height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 20px;
+/* Reset default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color:#b6f300;
+}
+
+/* Section styling */
+.clients-section {
+  width: 100%;
+  padding: 3rem 1rem;
+  background-color: #b6f300;
+}
+
+/* Container styling */
 .clients-container {
   max-width: 1200px;
+  margin: 0 auto;
   text-align: center;
-  margin-top: -10rem;
 }
 
+/* Title styling */
 .section-title {
   font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.clients-names {
-  margin-bottom: 40px;
+  font-weight: 600;
   color: #333;
-  font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
+/* Client names paragraph */
+.clients-names {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+/* Logo grid */
 .clients-logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Individual logo styling */
+.client-logo {
+  /* background-color: #fff; */
+  padding: 0.75rem;
+  border-radius: 10px;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .client-logo img {
-  max-width: 150px;
+  max-width: 100%;
   height: auto;
-  transition: transform 0.3s ease;
+  object-fit: contain;
 }
 
-.client-logo img:hover {
+/* Hover effect */
+.client-logo:hover {
   transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* Optional: Responsive */
+/* Responsive tweaks */
 @media (max-width: 768px) {
-  .clients-logos {
-    gap: 20px;
+  .section-title {
+    font-size: 2rem;
   }
 
-  .client-logo img {
-    max-width: 100px;
+  .clients-names {
+    font-size: 0.95rem;
+  }
+
+  .clients-logos {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .clients-names {
+    font-size: 0.85rem;
+    padding: 0;
+  }
+
+  .clients-section {
+    padding: 2rem 0.5rem;
+  }
+
+  .client-logo {
+    padding: 0.5rem;
   }
 }
