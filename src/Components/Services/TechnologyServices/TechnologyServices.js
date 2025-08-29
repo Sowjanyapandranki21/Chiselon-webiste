@@ -47,7 +47,7 @@ const TechnologyServices = () => {
         </p>
         <ul className="expertise">
           {services.map((service, index) => (
-            <li key={index} className="card">
+            <li key={index} className="mission-card">
               <img src={service.icon} alt={service.title} className="card-icon" />
               <h4 className="card-title">{service.title}</h4>
               <p className="card-description">{service.description}</p>

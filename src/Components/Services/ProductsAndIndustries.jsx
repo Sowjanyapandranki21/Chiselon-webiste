@@ -17,7 +17,7 @@ const ProductsAndIndustries = () => {
         <h6 className="section-title">Industries We Serve</h6>
         <ul className="expertise">
           {industries.map((service, index) => (
-            <li key={index} className="card">
+            <li key={index} className="mission-card">
               <span className="card-icon">{service.icon}</span>
               <h4 className="card-title">{service.title}</h4>
               <p className="card-description">{service.description}</p>
