@@ -1,6 +1,6 @@
 import React from "react";
 import "./OurStory.css";
-import storyImg from "../../Assests/Dashboard.png"; // 👈 replace with your image path
+import storyImg from "../../Assests/Dashboard.png"; // ✅ Make sure the path is correct
 
 const OurStory = () => {
   return (
@@ -9,13 +9,13 @@ const OurStory = () => {
         {/* Left Content */}
         <div className="ourstory-text fade-in-left">
           <h2 className="section-title">Our Story</h2>
-          <p style={{color:"black"}}>
+          <p>
             At <strong>Chiselon Technologies Pvt. Ltd.</strong>, we believe in
             carving possibilities into realities. Founded with the mission to bridge
             the gap between talent and technology, Chiselon has emerged as a trusted
             partner for businesses across industries.
           </p>
-          <p style={{color:"black"}}>
+          <p>
             From our beginnings as a recruitment consulting firm, we have grown into
             a multi-dimensional organization that delivers both talent acquisition
             excellence and cutting-edge technology solutions. Today, we work with
@@ -26,7 +26,7 @@ const OurStory = () => {
 
         {/* Right Image */}
         <div className="ourstory-image fade-in-right">
-          <img src={storyImg} alt="Our Story" />
+          <img src={storyImg} alt="Our Story at Chiselon Technologies" />
         </div>
       </div>
     </section>

@@ -1,8 +1,7 @@
-/* Impact Section Container */
+/* ---------- SECTION CONTAINER ---------- */
 .impact-section {
   width: 100%;
   padding: 4rem 1rem;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,30 +10,37 @@
 .impact-container {
   max-width: 1200px;
   width: 100%;
+  margin-top: 50px;
   text-align: center;
 }
 
-/* Title */
-.impact-title {
-  font-size: 2rem;
+/* ---------- TITLE ---------- */
+.section-title {
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   font-weight: 700;
-  margin-bottom: 2rem;
-  color: #111827;
+  color: hsl(26, 93%, 50%);
+  margin-bottom: 2.5rem;
 }
 
-/* Stats wrapper (flex row, animated cards) */
+/* ---------- STATS WRAPPER ---------- */
+.impact-stats-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
 .impact-stats {
   display: flex;
   gap: 1.5rem;
-  overflow: hidden; /* hide animated overflow */
-  position: relative;
-  justify-content: flex-start;
   flex-wrap: nowrap;
+  justify-content: flex-start;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* Each Card */
 .impact-card {
-  min-width: 220px; /* base width for desktop */
+  scroll-snap-align: start;
+  min-width: 220px;
   background: white;
   border-radius: 1rem;
   padding: 1.25rem;
@@ -45,43 +51,35 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease;
+  cursor: pointer;
+  touch-action: manipulation;
 }
 
 .impact-card:hover {
   transform: scale(1.05);
 }
 
-/* Icon */
+/* ---------- ICON & TEXT ---------- */
 .impact-icon {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
   margin-bottom: 0.5rem;
 }
 
-/* Text */
 .impact-text {
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 1vw, 1.1rem);
   font-weight: 500;
   color: #374151;
   text-align: center;
   line-height: 1.4;
 }
 
-/* ---------- RESPONSIVE DESIGN ---------- */
+/* ---------- RESPONSIVE BREAKPOINTS ---------- */
 
 /* Tablets (<= 1024px) */
 @media (max-width: 1024px) {
-  .impact-title {
-    font-size: 1.75rem;
-  }
   .impact-card {
     min-width: 180px;
     padding: 1rem;
-  }
-  .impact-icon {
-    font-size: 1.8rem;
-  }
-  .impact-text {
-    font-size: 0.95rem;
   }
 }
 
@@ -90,10 +88,6 @@
   .impact-section {
     padding: 3rem 1rem;
   }
-  .impact-title {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
   .impact-stats {
     gap: 1rem;
   }
@@ -101,34 +95,23 @@
     min-width: 160px;
     padding: 0.9rem;
   }
-  .impact-icon {
-    font-size: 1.6rem;
-  }
-  .impact-text {
-    font-size: 0.9rem;
-  }
-}
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: hsl(26, 93%, 50%); /* Use your PrimaryColor or any preferred color */
-  text-align: center;
-  margin-top: 2.5rem;
 }
 
 /* Small Mobile (<= 480px) */
 @media (max-width: 480px) {
-  .impact-title {
-    font-size: 1.25rem;
-  }
   .impact-card {
     min-width: 140px;
     padding: 0.75rem;
   }
-  .impact-icon {
-    font-size: 1.4rem;
+}
+
+/* Ultra-wide screens (>= 1440px) */
+@media (min-width: 1440px) {
+  .impact-card {
+    min-width: 260px;
+    padding: 1.5rem;
   }
   .impact-text {
-    font-size: 0.85rem;
+    font-size: 1.1rem;
   }
 }

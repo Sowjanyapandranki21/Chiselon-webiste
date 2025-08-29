@@ -15,23 +15,24 @@ const ImpactSection = () => {
       <div className="impact-container">
         <h2 className="section-title">Impact in Numbers</h2>
 
-        <div className="impact-stats">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              className="impact-card"
-             animate={{ x: ["0%", "-100%"] }}
-            transition={{
-              ease: "linear",
-              duration: 12, // speed of scroll
-              repeat: Infinity,
-            }}
-            >
-              <span className="impact-icon">{stat.icon}</span>
-              <p className="impact-text">{stat.text}</p>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          className="impact-stats-wrapper"
+          animate={{ x: ["0%", "-100%"] }}
+          transition={{
+            ease: "linear",
+            duration: 20,
+            repeat: Infinity,
+          }}
+        >
+          <div className="impact-stats">
+            {stats.map((stat, index) => (
+              <div key={index} className="impact-card">
+                <span className="impact-icon">{stat.icon}</span>
+                <p className="impact-text">{stat.text}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

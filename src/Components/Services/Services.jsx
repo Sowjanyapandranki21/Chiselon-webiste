@@ -17,7 +17,7 @@ const Services = () => {
       
       <ProductsAndIndustries />
   
-      <WhyChiselon />
+      {/* <WhyChiselon /> */}
       <CallToAction />
    </div>
   );

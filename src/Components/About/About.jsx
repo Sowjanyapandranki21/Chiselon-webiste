@@ -19,7 +19,7 @@ const About = () => {
       <CoreValues/>
 
       <Timeline />
-      <Closing />
+      {/* <Closing /> */}
     </div>
   );
 };

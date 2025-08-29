@@ -7,7 +7,7 @@ const CoreValues = () => {
     <div className="values-card">
       {/* Left Section */}
       <div>
-        <h3 className="section-titles" style={{textAlign:"center"}}>Our Core Values</h3>
+        <h3 className="section-titles">Our Core Values</h3>
         <ul className="values-list">
           <li>
             <FaCheckCircle className="icon check" />
