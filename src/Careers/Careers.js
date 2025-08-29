@@ -23,7 +23,7 @@ const Careers = () => {
       {/* Life at Chiselon - Timeline */}
       <section className="employee-value" style={{marginTop:"-4rem"}}>
         <h3 className="section-title">Life at Chiselon</h3>
-        <div className="timeline">
+        <div className="timeline" >
           {[
             { emoji: "🚀", title: "Global Exposure", desc: "Work with clients worldwide." },
             { emoji: "💡", title: "Cutting-Edge Tech", desc: "Hands-on AI, Cloud & DevOps." },
@@ -36,7 +36,7 @@ const Careers = () => {
             { emoji: "🌍", title: "Diversity & Inclusion", desc: "Commitment to an equitable workplace." },
          { emoji: "💼", title: "Careers", desc: "Grow your career with us." }
           ].map((item, index) => (
-            <div key={index} className="timeline-item">
+            <div key={index} className="timeline-item mission-card">
               <span>{item.emoji}</span>
               <strong>{item.title}</strong>
               <p>{item.desc}</p>
