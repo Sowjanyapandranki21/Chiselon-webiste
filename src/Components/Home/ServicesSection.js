@@ -38,7 +38,8 @@ const ServicesSection = () => {
 
   return (
     <section className="services-wrapper" >
-      <h3 className="section-title">What We Do</h3>
+    <h3 className="section-title" style={{ marginLeft: "45%" }}>What We Do</h3>
+
 
       <div className="services-container">
         {servicesData.map((service, idx) => (
