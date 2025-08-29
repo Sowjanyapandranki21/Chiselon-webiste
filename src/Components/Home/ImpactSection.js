@@ -10,29 +10,41 @@ const stats = [
 ];
 
 const ImpactSection = () => {
+  // Duplicate stats twice for seamless scroll
+  const repeatedStats = [...stats, ...stats];
+
   return (
     <section className="impact-section">
       <div className="impact-container">
         <h2 className="section-title">Impact in Numbers</h2>
-
-        <motion.div
-          className="impact-stats-wrapper"
-          animate={{ x: ["0%", "-100%"] }}
-          transition={{
-            ease: "linear",
-            duration: 20,
-            repeat: Infinity,
-          }}
-        >
-          <div className="impact-stats">
-            {stats.map((stat, index) => (
+        <div className="impact-stats-wrapper">
+          <motion.div
+            className="impact-stats"
+            animate={{ x: ["0%", "-50%"] }} // move left by half
+            transition={{
+              repeat: Infinity,
+              duration: 20,  // slower for smoothness
+              ease: "linear",
+            }}
+          >
+            {repeatedStats.map((stat, index) => (
               <div key={index} className="impact-card">
-                <span className="impact-icon">{stat.icon}</span>
+                <motion.span
+                  className="impact-icon"
+                  animate={{ rotate: 360 }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 15,
+                    ease: "linear",
+                  }}
+                >
+                  {stat.icon}
+                </motion.span>
                 <p className="impact-text">{stat.text}</p>
               </div>
             ))}
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

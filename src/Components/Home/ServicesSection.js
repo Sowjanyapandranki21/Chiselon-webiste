@@ -45,7 +45,7 @@ const ServicesSection = () => {
         {servicesData.map((service, idx) => (
           <div
             key={idx}
-            className="service-block"
+            className="mission-card"
             onClick={goToServices}
             role="button"
             tabIndex={0}
