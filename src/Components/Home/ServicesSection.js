@@ -40,7 +40,7 @@ const ServicesSection = () => {
 
   return (
     <section className="services-wrapper" >
-    <h3 className="section-title" style={{ marginLeft: "45%" }}>What We Do</h3>
+    <h3 className="section-title" style={{ marginLeft: "40%" }}>What We Do</h3>
 
 
       <div className="services-container">

@@ -21,7 +21,7 @@ const Careers = () => {
       </section>
 
       {/* Life at Chiselon - Timeline */}
-      <section className="employee-value">
+      <section className="employee-value" style={{marginTop:"-4rem"}}>
         <h3 className="section-title">Life at Chiselon</h3>
         <div className="timeline">
           {[
