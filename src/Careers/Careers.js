@@ -100,7 +100,7 @@ const Careers = () => {
 
       {/* CTA Banner */}
       <section className="cta-banner">
-        <h2>Shape Your Future with Us 🚀</h2>
+        <h6 className="section-title">Shape Your Future with Us 🚀</h6>
         <div className="cta-buttons">
           <button className="btn-light">Explore Opportunities</button>
           <button className="btn-dark">Submit Your Resume</button>

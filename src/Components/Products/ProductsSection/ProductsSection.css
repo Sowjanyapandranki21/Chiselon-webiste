@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
-  padding: 40px 20px;
+  padding: 20px 20px; /* 👈 reduced from 40px to 20px */
   max-width: 1200px;
   margin: 0 auto;
   font-family: 'Arial', sans-serif;
