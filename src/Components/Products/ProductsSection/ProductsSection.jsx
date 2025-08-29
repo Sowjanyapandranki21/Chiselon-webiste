@@ -40,7 +40,7 @@ const products = [
     impact: "Ensures timely patient care and flexible work opportunities."
   },
   {
-    description: "Smart HR platform to manage your workforce seamlessly. Streamline recruitment, onboarding, and employee management with ease.",
+    description: "Smart HR platform to streamline workforce management and boost productivity.",
     image: HRMS,
     features: [
       "Timesheet management with project-wise tracking.",
