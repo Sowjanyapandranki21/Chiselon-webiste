@@ -12,8 +12,8 @@ const Careers = () => {
   return (
     <div className="careers-page">
       {/* Hero */}
-     <section className="overview">
-        <h5 className="section-title">Join Us in Shaping the Future of Talent and Technology</h5>
+      <section className="overview">
+        <h6 className="section-title">Join Us in Shaping the Future of Talent and Technology</h6>
         <p>
           At Chiselon Technologies Pvt. Ltd., we believe people are the foundation of innovation.
           Come grow your career with us.
@@ -21,7 +21,7 @@ const Careers = () => {
       </section>
 
       {/* Life at Chiselon - Timeline */}
-      <section className="employee-value" style={{marginTop:"-4rem"}}>
+      <section className="employee-value" style={{ marginTop: "-4rem" }}>
         <h3 className="section-title">Life at Chiselon</h3>
         <div className="timeline" >
           {[
@@ -34,7 +34,7 @@ const Careers = () => {
             { emoji: "🎉", title: "Celebrating Milestones", desc: "Recognizing achievements across teams." },
             { emoji: "🏆", title: "Recognition & Rewards", desc: "Incentives for excellence and impact." },
             { emoji: "🌍", title: "Diversity & Inclusion", desc: "Commitment to an equitable workplace." },
-         { emoji: "💼", title: "Careers", desc: "Grow your career with us." }
+            { emoji: "💼", title: "Careers", desc: "Grow your career with us." }
           ].map((item, index) => (
             <div key={index} className="timeline-item mission-card">
               <span>{item.emoji}</span>
@@ -63,21 +63,21 @@ const Careers = () => {
           <table className="openings-table">
             <thead >
               <tr>
-                <th style={{textAlign:"center"}}>Role</th>
-                <th style={{textAlign:"center"}}>Experience</th>
-                <th style={{textAlign:"center"}}>Action</th>
+                <th style={{ textAlign: "center" }}>Role</th>
+                <th style={{ textAlign: "center" }}>Experience</th>
+                <th style={{ textAlign: "center" }}>Action</th>
               </tr>
             </thead>
             <tbody>
               {jobs.map((job, index) => (
                 <tr key={index}>
-                  <td style={{textAlign:"center"}}>{job.role}</td>
-                  <td style={{textAlign:"center"}}>{job.exp}</td>
-                  <td style={{textAlign:"center"}}>
+                  <td style={{ textAlign: "center" }}>{job.role}</td>
+                  <td style={{ textAlign: "center" }}>{job.exp}</td>
+                  <td style={{ textAlign: "center" }}>
                     <button
                       className="btn primary"
                       onClick={() => {
-                        const email = "udaypukkalla@gmail.com";
+                        const email = "support@chiselontechnologies.com";
                         const subject = encodeURIComponent(
                           `${job.role} – Job Application`
                         );
@@ -100,10 +100,33 @@ const Careers = () => {
 
       {/* CTA Banner */}
       <section className="cta-banner">
-        <h2>Shape Your Future with Us 🚀</h2>
+        <h6 className="section-title">Shape Your Future with Us</h6>
         <div className="cta-buttons">
-          <button className="btn-light">Explore Opportunities</button>
-          <button className="btn-dark">Submit Your Resume</button>
+          {/* <button className="btn-light">Explore Opportunities</button> */}
+          <button
+            className="btn-light"
+            onClick={() => {
+              const email = "support@chiselontechnologies.com";
+              const subject = encodeURIComponent("Job Application – Chiselon Technologies");
+              const body = encodeURIComponent(
+                `Dear Chiselon Team,
+
+I am interested in applying for a position at Chiselon Technologies Pvt. Ltd. Please find my resume attached.
+
+Looking forward to your response.
+
+Best regards,
+[Your Name]`
+              );
+
+              // Using mailto to open default mail client
+              const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}`;
+              window.location.href = mailtoUrl;
+            }}
+          >
+            Submit Your Resume
+          </button>
+
         </div>
       </section>
     </div>

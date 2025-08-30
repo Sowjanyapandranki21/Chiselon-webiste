@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const servicesData = [
   {
-    title: "🔹 Technology Services",
+    title: " Technology Services",
     items: [
       "Software Development (Java, .NET, React, Flutter, etc.)",
       "Cloud & DevOps (AWS, Azure, GCP, Kubernetes, Docker)",
@@ -12,7 +12,7 @@ const servicesData = [
     ],
   },
   {
-    title: "🔹 Talent Acquisition & Staffing",
+    title: " Talent Acquisition & Staffing",
     items: [
       "Recruitment Process Outsourcing (RPO)",
       "Contract & Permanent Staffing",
@@ -20,7 +20,7 @@ const servicesData = [
     ],
   },
   {
-    title: "🔹 Proprietary Products",
+    title: " Proprietary Products",
 items: [
   "NITO – AI-powered mock test prep platform",
   "AestheTech – AI-powered clinic management system",

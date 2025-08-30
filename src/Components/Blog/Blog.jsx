@@ -65,7 +65,10 @@ const Blog = () => {
     }
   ];
 
-  const handleSubscribe = () => {
+
+
+  // Subscribe function using Formspree
+  const handleSubscribe = async () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!email) {
@@ -78,9 +81,27 @@ const Blog = () => {
       return;
     }
 
-    console.log("Subscribed with email:", email);
-    setMessage("🎉 Thank you for subscribing!");
-    setEmail("");
+    try {
+      const response = await fetch("https://formspree.io/f/xgvlwdkq", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        setMessage("🎉 Thank you for subscribing!");
+        setEmail("");
+
+        // Remove the message after 5 seconds
+        setTimeout(() => setMessage(""), 5000);
+      } else {
+        setMessage("❌ Something went wrong. Please try again.");
+        setTimeout(() => setMessage(""), 5000);
+      }
+    } catch (err) {
+      setMessage("⚠️ Network error. Try again later.");
+      setTimeout(() => setMessage(""), 5000);
+    }
   };
 
   return (
@@ -129,14 +150,17 @@ const Blog = () => {
       </section>
 
       <section className="subscribe">
-        <h2>📩 Stay Ahead of the Curve</h2>
+        <h6 className="section-title">📩 Stay Ahead of the Curve</h6>
         <p>Get Chiselon’s insights delivered straight to your inbox.</p>
         <div className="subscribe-box">
           <input
             type="email"
             placeholder="Enter your email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setMessage(""); // Clear message on typing
+            }}
           />
           <button onClick={handleSubscribe}>Subscribe</button>
         </div>

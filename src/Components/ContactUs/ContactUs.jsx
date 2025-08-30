@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaWhatsapp, FaLinkedin } from "react-icons/fa";
 import "./ContactUs.css";
-
+import emailjs from 'emailjs-com';
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -60,7 +60,10 @@ const ContactUs = () => {
       });
     }
   };
-
+  // function sendEmail(e){
+  //   e.preventDefault();
+  //   emailjs.sendForm
+  // }
   return (
     <div className="homepage">
       <div className="contact-page">
@@ -94,17 +97,41 @@ const ContactUs = () => {
               Pincode: 641035
             </p>
 
-            <p>
-              📧 Email: <a href="mailto:support@chiselontechnologies.com">support@chiselontechnologies.com</a>
-            </p>
+            <p>📧 Email: <a href="mailto:support@chiselontechnologies.com">support@chiselontechnologies.com</a></p>
             <p>📞 Phone: +91-8807981081</p>
 
             {/* Social Media */}
             <div className="social-icons">
-              <a href="#"><FaFacebookF /></a>
-              <a href="#"><FaInstagram /></a>
-              <a href="https://wa.me/918807981081" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.facebook.com/profile.php?id=100077512130654"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaFacebookF />
+              </a>
+
+              <a
+                href="https://www.instagram.com/chiselon_tech?igsh=MWV5bnptejVhMmsyag=="
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagram />
+              </a>
+
+              <a
+                href="https://wa.me/918807981081"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaWhatsapp />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/company/chiselon-technologies-pvt-ltd/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin />
               </a>
             </div>
           </div>
@@ -150,8 +177,15 @@ const ContactUs = () => {
                 onChange={handleChange}
                 required
               />
-              <button type="submit" disabled={status.submitting}>
-                📩 {status.submitting ? "Sending..." : "Get in Touch"}
+              <button
+                type="button"
+                onClick={() =>
+                  window.location.href = `mailto:soujipandranki@gmail.com?subject=Contact Form&body=${encodeURIComponent(
+                    `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany: ${formData.company}\nMessage: ${formData.message}`
+                  )}`
+                }
+              >
+                📩 Get in Touch
               </button>
             </form>
             {status.success && <p className="success-msg">{status.success}</p>}
@@ -160,24 +194,24 @@ const ContactUs = () => {
         </section>
 
         {/* Map Section */}
-       <section className="map-section">
-  <h2 className="section-title">Find Us Here</h2>
-  <iframe
-    title="Chiselon Technologies Pvt. Ltd."
-    src="https://www.google.com/maps?q=Chiselon+Technologies+Pvt.+Ltd.@11.0306,76.9817&z=15&output=embed"
-    width="100%"
-    height="400"
-    style={{ border: 0 }}
-    allowFullScreen=""
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-  ></iframe>
-</section>
+        <section className="map-section">
+          <h2 className="section-title">Find Us Here</h2>
+          <iframe
+            title="Chiselon Technologies Pvt. Ltd."
+            src="https://www.google.com/maps?q=Chiselon+Technologies+Pvt.+Ltd.@11.0306,76.9817&z=15&output=embed"
+            width="100%"
+            height="400"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </section>
 
         {/* Closing Note */}
         <section className="closing-note">
           <p>
-            No matter your need — hiring, staffing, product development, or innovation consulting — 
+            No matter your need — hiring, staffing, product development, or innovation consulting —
             <b> Chiselon is here to partner with you.</b>
           </p>
           <p>👉 Let’s carve your success story today.</p>
