@@ -1,25 +1,33 @@
 {
   "files": {
-    "main.css": "/static/css/main.46836ae8.css",
-    "main.js": "/static/js/main.63c93a84.js",
+    "main.css": "/static/css/main.5b8257e6.css",
+    "main.js": "/static/js/main.1e35a29d.js",
     "static/media/team.png": "/static/media/team.2b52eb4e6f333285acfb.png",
-    "static/media/teamwork.png": "/static/media/teamwork.f598a099ae53829b2d1a.png",
-    "static/media/image1.png": "/static/media/image1.8b18bd849fe67082b111.png",
-    "static/media/talent.png": "/static/media/talent.6b64a4ec3df4a6a27f62.png",
     "static/media/Services.png": "/static/media/Services.0515fb418e1c6c5f094c.png",
+    "static/media/talent1.png": "/static/media/talent1.ef997bcf90bb308b6987.png",
+    "static/media/AI.jpg": "/static/media/AI.55460140953e23672e9e.jpg",
     "static/media/logochiselon1.png": "/static/media/logochiselon1.bb2cfdbf4966222a7216.png",
-    "static/media/recurtiment3.png": "/static/media/recurtiment3.8e0183cfecf3256e5c41.png",
+    "static/media/bbss.png": "/static/media/bbss.e379deedd5216d13c9ed.png",
+    "static/media/NITO.jpg": "/static/media/NITO.02d93b50ef227dc9440c.jpg",
+    "static/media/CHMS.jpg": "/static/media/CHMS.4dcd08f60ae76016aaab.jpg",
+    "static/media/SureCare.jpg": "/static/media/SureCare.243b0d21e96868a37c7a.jpg",
+    "static/media/home1.jpg": "/static/media/home1.df69255ac1cea1095e01.jpg",
+    "static/media/home.jpg": "/static/media/home.ca60cd169c2362551456.jpg",
+    "static/media/ACG.png": "/static/media/ACG.61105ae40847b5fcb427.png",
+    "static/media/story.jpg": "/static/media/story.857e30661086e1b922d3.jpg",
     "static/media/security.png": "/static/media/security.2cf627c019588ba30797.png",
     "static/media/software.png": "/static/media/software.1299f6dc2e3100780cfd.png",
     "static/media/Iot.png": "/static/media/Iot.38b9d94e113a5d9f8bb3.png",
+    "static/media/rpwebapps.png": "/static/media/rpwebapps.012524131b73c6d63bea.png",
+    "static/media/Exwyn.png": "/static/media/Exwyn.839c4be6ca5ce4168edb.png",
     "static/media/data.png": "/static/media/data.eedc0e6b20ebe5d44ae2.png",
     "static/media/cloud.png": "/static/media/cloud.2d37e174bf9a700f57cd.png",
     "index.html": "/index.html",
-    "main.46836ae8.css.map": "/static/css/main.46836ae8.css.map",
-    "main.63c93a84.js.map": "/static/js/main.63c93a84.js.map"
+    "main.5b8257e6.css.map": "/static/css/main.5b8257e6.css.map",
+    "main.1e35a29d.js.map": "/static/js/main.1e35a29d.js.map"
   },
   "entrypoints": [
-    "static/css/main.46836ae8.css",
-    "static/js/main.63c93a84.js"
+    "static/css/main.5b8257e6.css",
+    "static/js/main.1e35a29d.js"
   ]
 }
