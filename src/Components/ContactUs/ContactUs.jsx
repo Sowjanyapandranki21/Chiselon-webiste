@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaFacebookF, FaInstagram, FaWhatsapp, FaLinkedin } from "react-icons/fa";
 import "./ContactUs.css";
-
+import emailjs from "@emailjs/browser";
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -42,60 +42,87 @@ const ContactUs = () => {
       }
     }
   };
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const newErrors = {};
 
-    const newErrors = {};
+  // Email validation
+  if (!emailRegex.test(formData.email)) {
+    newErrors.email = "Please enter a valid email.";
+  }
 
-    // Email validation
-    if (!emailRegex.test(formData.email)) newErrors.email = "Please enter a valid email.";
+  // Phone validation
+  if (!formData.phone) {
+    newErrors.phone = "Phone number is required.";
+  } else if (formData.phone.length !== 10) {
+    newErrors.phone = "Phone number must be exactly 10 digits.";
+  }
 
-    // Phone validation
-    if (!formData.phone) {
-      newErrors.phone = "Phone number is required.";
-    } else if (formData.phone.length !== 10) {
-      newErrors.phone = "Phone number must be exactly 10 digits.";
-    }
+  if (Object.keys(newErrors).length > 0) {
+    setErrors(newErrors);
+    return;
+  }
 
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
+  setStatus({ submitting: true, success: null, error: null });
 
-    setStatus({ submitting: true, success: null, error: null });
+  // Add India time
+  const indiaTime = new Date().toLocaleString("en-IN", {
+    timeZone: "Asia/Kolkata",
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+  });
 
-    // India time
-    const indiaTime = new Date().toLocaleString("en-IN", {
-      timeZone: "Asia/Kolkata",
-      day: "2-digit",
-      month: "short",
-      year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: true,
-    });
+ const dataToSend = {
+  name: formData.name,
+  email: formData.email,
+  phone: formData.phone,
+  company: formData.company,
+  message: formData.message,
+  submittedAt: indiaTime,
+};
 
-    const dataToSend = { ...formData, submittedAt: indiaTime };
+  try {
+    const response = await emailjs.send(
+      "service_o5jy4mk",     // ✅ your Service ID
+      "template_etxr8ld",    // ✅ your Template ID
+      dataToSend,            // ✅ must match variables in template
+      "dB2WIEgwSZqaXZd1l"    // ✅ your Public Key (not private key)
+    );
 
-    try {
-      const response = await fetch("https://formspree.io/f/xgvlwdkq", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(dataToSend),
+    console.log("EmailJS Response:", response);
+
+    if (response.status === 200) {
+      setStatus({
+        submitting: false,
+        success: "✅ Message sent successfully!",
+        error: null,
       });
-
-      if (response.ok) {
-        setStatus({ submitting: false, success: "✅ Message sent successfully!", error: null });
-        setFormData({ name: "", email: "", phone: "", company: "", message: "" });
-        setErrors({});
-      } else {
-        setStatus({ submitting: false, success: null, error: "❌ Something went wrong." });
-      }
-    } catch {
-      setStatus({ submitting: false, success: null, error: "⚠ Network error. Try again later." });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        message: "",
+      });
+      setErrors({});
+    } else {
+      throw new Error("Unexpected response: " + response.text);
     }
-  };
+  } catch (err) {
+    console.error("EmailJS Error:", err);
+    setStatus({
+      submitting: false,
+      success: null,
+      error: "❌ Something went wrong.",
+    });
+  }
+};
+
 
   return (
     <div className="homepage">
