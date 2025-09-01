@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 // Pages
 import HomePage from "./Components/Home/Home";
 import About from "./Components/About/About";
@@ -21,23 +21,23 @@ import Clients from "./Cilent/Client";
 const App = () => {
   return (
     <Router>
-  <Navbar />
-  <div className="main-content">
-    <ScrollToTop /> {/* scroll only inside this container */}
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/products" element={<Products />} />
-      <Route path="/industries" element={<Industries />} />
-      <Route path="/careers" element={<Careers />} />
-      <Route path="/caseStudies" element={<CaseStudies />} />
-      <Route path="/trendsReading" element={<Blog />} />
-      <Route path="/contact" element={<ContactUs />} />
-      <Route path="/clients" element={<Clients />} />
-    </Routes>
-  </div>
-</Router>
+      <Navbar />
+      <div className="main-content">
+        <ScrollToTop /> {/* scroll only inside this container */}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/industries" element={<Industries />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/caseStudies" element={<CaseStudies />} />
+          <Route path="/trendsReading" element={<Blog />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/clients" element={<Clients />} />
+        </Routes>
+      </div>
+    </Router>
 
   );
 };
