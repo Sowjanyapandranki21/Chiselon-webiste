@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 // Pages
 import HomePage from "./Components/Home/Home";
 import About from "./Components/About/About";
@@ -13,17 +13,17 @@ import Industries from "./Components/Industries/Industries";
 import Careers from "./Careers/Careers";
 import CaseStudies from "./Cilents/CaseStudies";
 import Blog from "./Components/Blog/Blog";
+import Clients from "./Cilent/Client";
 
 // ScrollToTop
-import ScrollToTop from "./Components/ScrollToTop"; // ✅ import
-import Clients from "./Cilent/Client";
+import ScrollToTop from "./Components/ScrollToTop";
 
 const App = () => {
   return (
     <Router>
       <Navbar />
       <div className="main-content">
-        <ScrollToTop /> {/* scroll only inside this container */}
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
@@ -38,7 +38,6 @@ const App = () => {
         </Routes>
       </div>
     </Router>
-
   );
 };
 
