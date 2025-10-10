@@ -119,11 +119,179 @@
   background-color: #e0e0e0;
   transform: translateY(-3px);
 }
+/* Dark background section */
+.ccms-demo-section {
+  background-color: #fff; 
+  color: #000;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.ccms-demo-section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.ccms-demo-section p {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #000;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* White card form */
+.ccms-demo-form {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form rows for two-column layout */
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-row input {
+  flex: 1;
+  padding: 15px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.form-row input:focus {
+  border-color: #1a73e8;
+}
+
+/* Submit button */
+.ccms-demo-form button {
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background-color: #c2eb00; /* bright green */
+  color: #1c1c1c;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.ccms-demo-form button:hover {
+  background-color: #a3d600;
+  transform: translateY(-2px);
+}
+/* FLOW SECTION */
+.clinic-flow-section {
+  text-align: center;
+  padding: 80px 20px;
+
+}
+
+.clinic-flow-section h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.clinic-flow-section p {
+  color: #666;
+  max-width: 750px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+}
+
+.flow-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Each row of cards */
+.flow-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.flow-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 24px;
+  width: 230px;
+  height: 120px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.flow-card p {
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+.flow-card.dark {
+  background-color: #2e3c90;
+  color: #fff;
+}
+
+.flow-card.light {
+  background-color: #a5b8ff;
+  color: #1a1a1a;
+}
+
+.flow-arrow {
+  font-size: 1.8rem;
+  color: #2e3c90;
+  font-weight: bold;
+}
+
+.flow-arrow.reverse {
+  transform: rotate(180deg);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
 
 /* Responsive */
 @media (max-width: 900px) {
   .ccms-cards {
     flex-direction: column;
     gap: 20px;
+  }
+   .flow-row {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .flow-arrow {
+    display: none;
+  }
+
+  .flow-card {
+    width: 90%;
   }
 }
