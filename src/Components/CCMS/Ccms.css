@@ -1,0 +1,129 @@
+/* Container */
+.ccms-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.ccms-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.ccms-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a73e8;
+  margin-bottom: 15px;
+}
+
+.ccms-hero p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Cards */
+.ccms-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.ccms-card {
+  flex: 1 1 300px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ccms-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+.ccms-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #1c1c1c;
+}
+
+.ccms-card p {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.ccms-card ul {
+  padding-left: 20px;
+}
+
+.ccms-card li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+/* Ecosystem Section */
+.ccms-ecosystem {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.ccms-ecosystem h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.ccms-ecosystem p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* CTA Section */
+.ccms-cta {
+  text-align: center;
+  background: linear-gradient(90deg, #1a73e8, #4285f4);
+  color: #fff;
+  padding: 50px 20px;
+  border-radius: 12px;
+}
+
+.ccms-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.ccms-cta p {
+  margin-bottom: 25px;
+}
+
+.ccms-cta button {
+  padding: 15px 35px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #fff;
+  color: #1a73e8;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.ccms-cta button:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ccms-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -18,6 +18,7 @@ import Clients from "./Cilent/Client";
 
 // ScrollToTop
 import ScrollToTop from "./Components/ScrollToTop";
+import Ccms from "./Components/CCMS/CCMS";
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="/trendsReading" element={<Blog />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/clients" element={<Clients />} />
+          <Route path="/ccms" element={<Ccms />} />
         </Routes>
       </div>
     </Router>

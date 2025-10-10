@@ -133,6 +133,14 @@ const Navbar = () => {
                 Careers
               </Link>
             </li>
+              <li>
+              <Link
+                to="/ccms"
+                className={`navLink ${isActive("/ccms") ? "active" : ""}`}
+              >
+                CCMS
+              </Link>
+            </li>
             <li>
               <Link
                 to="/contact"
@@ -141,6 +149,7 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
+           
           </ul>
         </nav>
 
