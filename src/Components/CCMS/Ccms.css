@@ -43,57 +43,205 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
+  gap: 2rem;
 }
+
 .flow-row {
   display: flex;
   align-items: center;
-  margin: 1rem 0;
-}
-.flow-row.row-1,
-.flow-row.row-3 {
   justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
 }
-.flow-row.row-2 {
-  justify-content: flex-end;
-  width: 100%;
-  max-width: 900px;
-  margin-left: -120px; /* optional alignment */
-}
+
 .flow-card {
-  background: #fff;
-  border-radius: 10px;
-  padding: 1rem 1.5rem;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  min-width: 180px;
+  background: #d9e0f8;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  width: 260px;       /* ✅ increased width */
+  height: 110px;      /* ✅ reduced height */
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
+
+.flow-card:hover {
+  transform: translateY(-5px);
+}
+
 .flow-icon {
+  font-size: 2rem;
+  color: #0115ae;
+  margin-bottom: 6px;
+}
+
+.flow-arrow {
   font-size: 1.8rem;
   color: #0115ae;
-  margin-bottom: 0.5rem;
-}
-.flow-arrow {
-  font-size: 1.5rem;
-  margin: 0 0.75rem;
-  color: #0115ae;
-  transition: all 0.3s ease;
-}
-.vertical-arrow {
-  font-size: 2rem;
-  color:#0115ae;
   font-weight: bold;
-  margin: 10px 0;
-  animation: arrowPulse 1.5s infinite ease-in-out;
 }
+
+
 @keyframes arrowPulse {
   0% { opacity: 0.4; transform: translateY(0); }
   50% { opacity: 1; transform: translateY(6px); }
   100% { opacity: 0.4; transform: translateY(0); }
 }
+/* =========================
+   SLIDER STYLES
+========================= */
+.overview-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+  width: 200%; /* for 2 slides */
+}
+
+.overview-slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overview-card {
+
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 90%;
+  max-width: 650px;
+  text-align: center;
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.slider-dots .dot {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.slider-dots .dot.active {
+  background-color: #0115ae;
+  transform: scale(1.2);
+}
+/* Ccms.css */
+
+/* Section */
+.ccms-video-cards {
+  padding: 50px 20px;
+
+}
+
+.ccms-video-cards .section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #0115ae;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+/* Cards container */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards in a row */
+  gap: 30px;
+  justify-items: center;
+}
+
+/* Video card */
+.video-card {
+
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 350px;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Image */
+.video-card .icon {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e0e0;
+}
+
+.video-card .card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover .card-image {
+  transform: scale(1.05);
+}
+
+/* Video */
+.video-card .video-container {
+  margin-top: 10px;
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 15px 15px;
+}
+
+/* Title */
+.video-card h4 {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+/* Link */
+.video-card .card-link {
+  color: #0115ae;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.video-card .card-link:hover {
+  text-decoration: underline;
+}
+
 
 /* =========================
    CARDS SECTION
@@ -216,11 +364,12 @@
   background: #a3d600;
   transform: translateY(-2px);
 }
+
 /* =========================
-   OVERVIEW SECTION
+   OVERVIEW SECTION (Charts)
 ========================= */
 .ccms-overview-section {
-  background: #f0fcff;
+  background: #d9e0f8;
   padding: 80px 20px;
   border-radius: 12px;
   margin-bottom: 60px;
@@ -236,14 +385,14 @@
 }
 
 .overview-card {
-  background: #fff;
+  background: transparent; /* removed white background */
   border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  flex: 1 1 450px;
-  padding: 30px;
+  box-shadow: none; /* remove shadow */
+  padding: 40px;
+  width: 90%;
+  max-width: 650px;
   text-align: center;
 }
-
 .overview-card h3 {
   font-size: 1.2rem;
   color: #0115ae;
@@ -259,7 +408,14 @@
 
 .chart-container {
   width: 100%;
-  height: 260px;
+  max-width: 400px;
+  height: 350px;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.recharts-pie-sector {
+  stroke: none !important;
 }
 
 .chart-legend {
@@ -289,6 +445,9 @@
 @media (max-width: 1200px) {
   .ccms-hero h1 { font-size: 2.5rem; }
   .flow-card { min-width: 160px; }
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards in a row on smaller screens */
+  }
 }
 
 @media (max-width: 1024px) {
@@ -300,19 +459,33 @@
   .flow-row-horizontal { flex-direction: column; gap: 25px; }
   .flow-arrow { transform: rotate(90deg); margin: 10px 0; animation: none; }
   .flow-card { width: 90%; }
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards in a row on tablets */
+  }
 }
 
 @media (max-width: 768px) {
-  .flow-diagram { align-items: stretch; }
-  .flow-row { flex-direction: column; align-items: center; text-align: center; }
-  .flow-row.row-2 { justify-content: center; }
-  .flow-arrow, .vertical-arrow { margin: 0.5rem auto; }
+  .flow-card {
+    width: 200px;
+    height: 100px;
+  }
+
+  .flow-icon {
+    font-size: 1.7rem;
+  }
+
+  .flow-arrow {
+    font-size: 1.4rem;
+  }
 }
 
 @media (max-width: 600px) {
   .form-row { flex-direction: column; }
   .ccms-hero h1 { font-size: 2.2rem; }
   .clinic-flow-section { padding: 50px 10px; }
+  .cards-container {
+    grid-template-columns: 1fr; /* 1 card per row on mobile */
+  }
 }
 
 @media (max-width: 400px) {

@@ -1,8 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.a6ec5889.css",
-    "main.js": "/static/js/main.58dac803.js",
+    "main.css": "/static/css/main.1b6d6dcf.css",
+    "main.js": "/static/js/main.dbace66e.js",
     "static/media/team.png": "/static/media/team.2b52eb4e6f333285acfb.png",
+    "static/media/Clinic Admin.png": "/static/media/Clinic Admin.ea14bb12be61325ca151.png",
+    "static/media/Doctor Web.png": "/static/media/Doctor Web.ed62a2a29aed29501eb0.png",
+    "static/media/Customer.png": "/static/media/Customer.73cb952a4ee8f52a9936.png",
+    "static/media/Main Admin.png": "/static/media/Main Admin.589aaeb2e539fad78e37.png",
     "static/media/Services.png": "/static/media/Services.0515fb418e1c6c5f094c.png",
     "static/media/talent1.png": "/static/media/talent1.ef997bcf90bb308b6987.png",
     "static/media/AI.jpg": "/static/media/AI.55460140953e23672e9e.jpg",
@@ -23,11 +27,11 @@
     "static/media/data.png": "/static/media/data.eedc0e6b20ebe5d44ae2.png",
     "static/media/cloud.png": "/static/media/cloud.2d37e174bf9a700f57cd.png",
     "index.html": "/index.html",
-    "main.a6ec5889.css.map": "/static/css/main.a6ec5889.css.map",
-    "main.58dac803.js.map": "/static/js/main.58dac803.js.map"
+    "main.1b6d6dcf.css.map": "/static/css/main.1b6d6dcf.css.map",
+    "main.dbace66e.js.map": "/static/js/main.dbace66e.js.map"
   },
   "entrypoints": [
-    "static/css/main.a6ec5889.css",
-    "static/js/main.58dac803.js"
+    "static/css/main.1b6d6dcf.css",
+    "static/js/main.dbace66e.js"
   ]
 }
