@@ -54,12 +54,13 @@
   flex-wrap: wrap;
 }
 
+/* Add entry animation for flow cards */
 .flow-card {
   background: #d9e0f8;
   border: 2px solid #e0e0e0;
   border-radius: 16px;
-  width: 260px;       /* ✅ increased width */
-  height: 110px;      /* ✅ reduced height */
+  width: 260px;
+  height: 110px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,7 +68,25 @@
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  animation: cardBounce 2s infinite ease-in-out;
 }
+
+/* Hover lift effect */
+.flow-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Bounce animation keyframes */
+@keyframes cardBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
 
 .flow-card:hover {
   transform: translateY(-5px);
@@ -83,14 +102,21 @@
   font-size: 1.8rem;
   color: #0115ae;
   font-weight: bold;
+  animation: arrowBounce 1.5s infinite ease-in-out;
+}
+
+@keyframes arrowBounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
 }
 
 
-@keyframes arrowPulse {
-  0% { opacity: 0.4; transform: translateY(0); }
-  50% { opacity: 1; transform: translateY(6px); }
-  100% { opacity: 0.4; transform: translateY(0); }
-}
 /* =========================
    SLIDER STYLES
 ========================= */

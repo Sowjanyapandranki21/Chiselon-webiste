@@ -33,7 +33,19 @@ const Ccms = () => {
     phone: "",
   });
   const [activeSlide, setActiveSlide] = useState(0);
+// 🔄 Animation cycle every 100 seconds
+const animations = ["rotateX", "rotateY", "scaleUp", "fadeIn"];
+const [animationClass, setAnimationClass] = useState(animations[0]);
 
+React.useEffect(() => {
+  let index = 0;
+  const interval = setInterval(() => {
+    index = (index + 1) % animations.length;
+    setAnimationClass(animations[index]);
+  }, 100000); // change every 100 seconds
+
+  return () => clearInterval(interval);
+}, []);
   // Auto-scroll effect
   React.useEffect(() => {
     const interval = setInterval(() => {
