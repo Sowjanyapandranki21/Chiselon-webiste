@@ -1,12 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.1b6d6dcf.css",
-    "main.js": "/static/js/main.dbace66e.js",
+    "main.css": "/static/css/main.5323b694.css",
+    "main.js": "/static/js/main.b241a4c2.js",
+    "static/media/ic_launcher.png": "/static/media/ic_launcher.7493eb0f6dbc3a4a8866.png",
     "static/media/team.png": "/static/media/team.2b52eb4e6f333285acfb.png",
-    "static/media/Clinic Admin.png": "/static/media/Clinic Admin.ea14bb12be61325ca151.png",
-    "static/media/Doctor Web.png": "/static/media/Doctor Web.ed62a2a29aed29501eb0.png",
-    "static/media/Customer.png": "/static/media/Customer.73cb952a4ee8f52a9936.png",
-    "static/media/Main Admin.png": "/static/media/Main Admin.589aaeb2e539fad78e37.png",
     "static/media/Services.png": "/static/media/Services.0515fb418e1c6c5f094c.png",
     "static/media/talent1.png": "/static/media/talent1.ef997bcf90bb308b6987.png",
     "static/media/AI.jpg": "/static/media/AI.55460140953e23672e9e.jpg",
@@ -17,6 +14,7 @@
     "static/media/SureCare.jpg": "/static/media/SureCare.243b0d21e96868a37c7a.jpg",
     "static/media/home1.jpg": "/static/media/home1.df69255ac1cea1095e01.jpg",
     "static/media/home.jpg": "/static/media/home.ca60cd169c2362551456.jpg",
+    "static/media/DermaLOgo_1.png": "/static/media/DermaLOgo_1.fa9cda2ad4924eb9fcb7.png",
     "static/media/ACG.png": "/static/media/ACG.61105ae40847b5fcb427.png",
     "static/media/story.jpg": "/static/media/story.857e30661086e1b922d3.jpg",
     "static/media/security.png": "/static/media/security.2cf627c019588ba30797.png",
@@ -27,11 +25,11 @@
     "static/media/data.png": "/static/media/data.eedc0e6b20ebe5d44ae2.png",
     "static/media/cloud.png": "/static/media/cloud.2d37e174bf9a700f57cd.png",
     "index.html": "/index.html",
-    "main.1b6d6dcf.css.map": "/static/css/main.1b6d6dcf.css.map",
-    "main.dbace66e.js.map": "/static/js/main.dbace66e.js.map"
+    "main.5323b694.css.map": "/static/css/main.5323b694.css.map",
+    "main.b241a4c2.js.map": "/static/js/main.b241a4c2.js.map"
   },
   "entrypoints": [
-    "static/css/main.1b6d6dcf.css",
-    "static/js/main.dbace66e.js"
+    "static/css/main.5323b694.css",
+    "static/js/main.b241a4c2.js"
   ]
 }

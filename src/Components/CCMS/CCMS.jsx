@@ -21,10 +21,10 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import "./Ccms.css";
-import DoctorWebImage from "../../Assests/Doctor Web.png";
-import ClinicImage from "../../Assests/Clinic Admin.png";
-import Customer from "../../Assests/Customer.png";
-import MainAdmin from "../../Assests/Main Admin.png";
+import DoctorWebImage from "../../Assests/ic_launcher.png";
+import ClinicImage from "../../Assests/DermaLOgo_1.png";
+import Customer from "../../Assests/DermaLOgo_1.png";
+import MainAdmin from "../../Assests/DermaLOgo_1.png";
 const Ccms = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -397,19 +397,19 @@ const Ccms = () => {
         <div className="cards-container">
           {[
             {
-
+              title: "Main Admin",
               image: MainAdmin,
               video: "https://www.youtube.com/embed/u8dyZ3Vo5RY?autoplay=1&mute=1&loop=1&playlist=u8dyZ3Vo5RY",
               link: "https://youtu.be/u8dyZ3Vo5RY",
             },
             {
-
+              title: "Clinic Admin",
               image: ClinicImage,
               video: "https://www.youtube.com/embed/u8dyZ3Vo5RY?autoplay=1&mute=1&loop=1&playlist=u8dyZ3Vo5RY",
               link: "https://youtu.be/u8dyZ3Vo5RY",
             },
             {
-
+              title: "Doctor Web App",
               image: DoctorWebImage,
               video: "https://www.youtube.com/embed/u8dyZ3Vo5RY?autoplay=1&mute=1&loop=1&playlist=u8dyZ3Vo5RY",
               link: "https://youtu.be/u8dyZ3Vo5RY",
@@ -417,7 +417,7 @@ const Ccms = () => {
 
 
             {
-
+              title: "Patient App",
               image: Customer,
               video: "https://www.youtube.com/embed/u8dyZ3Vo5RY?autoplay=1&mute=1&loop=1&playlist=u8dyZ3Vo5RY",
               link: "https://youtu.be/u8dyZ3Vo5RY",
@@ -427,7 +427,7 @@ const Ccms = () => {
               <div className="icon">
                 <img src={card.image} alt={card.title} className="card-image" />
               </div>
-              <h4 style={{ textAlign: "center" }}>{card.title}</h4>
+              <h4 style={{ textAlign: "center",color:"#0115ae" }}>{card.title}</h4>
 
               <div className="video-container">
                 <iframe
