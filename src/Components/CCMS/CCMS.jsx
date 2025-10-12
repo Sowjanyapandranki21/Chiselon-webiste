@@ -25,7 +25,17 @@ import DoctorWebImage from "../../Assests/ic_launcher.png";
 import ClinicImage from "../../Assests/DermaLOgo_1.png";
 import Customer from "../../Assests/DermaLOgo_1.png";
 import MainAdmin from "../../Assests/DermaLOgo_1.png";
+import useWindowWidth from "./useWindowWidth.js";
 const Ccms = () => {
+  const width = useWindowWidth();
+
+  // Dynamic sizes based on screen width
+  const pieHeight = width < 480 ? 250 : width < 768 ? 220 : 260;
+  const innerRadius = width < 480 ? 50 : 90;
+  const outerRadius = width < 480 ? 80 : 130;
+  const xFontSize = width < 480 ? 8 : 10;
+  const yFontSize = width < 480 ? 8 : 10;
+  const labelFontSize = width < 480 ? 10 : 14;
   const [formData, setFormData] = useState({
     fullName: "",
     clinicName: "",
@@ -33,19 +43,19 @@ const Ccms = () => {
     phone: "",
   });
   const [activeSlide, setActiveSlide] = useState(0);
-// 🔄 Animation cycle every 100 seconds
-const animations = ["rotateX", "rotateY", "scaleUp", "fadeIn"];
-const [animationClass, setAnimationClass] = useState(animations[0]);
+  // 🔄 Animation cycle every 100 seconds
+  const animations = ["rotateX", "rotateY", "scaleUp", "fadeIn"];
+  const [animationClass, setAnimationClass] = useState(animations[0]);
 
-React.useEffect(() => {
-  let index = 0;
-  const interval = setInterval(() => {
-    index = (index + 1) % animations.length;
-    setAnimationClass(animations[index]);
-  }, 100000); // change every 100 seconds
+  React.useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      index = (index + 1) % animations.length;
+      setAnimationClass(animations[index]);
+    }, 100000); // change every 100 seconds
 
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
   // Auto-scroll effect
   React.useEffect(() => {
     const interval = setInterval(() => {
@@ -181,34 +191,29 @@ React.useEffect(() => {
         variants={fadeUp}
       >
         <h1>The Complete Clinical-Care Management Suite (CCMS)</h1>
-        <p>A Unified Platform for Patients, Doctors, and Clinic Administrators</p>
+        <p style={{ fontWeight: "bold", color: "black" }}>A Unified Platform for Patients, Doctors, and Clinic Administrators</p>
       </motion.section>
 
-      {/* ==========================
-           NEW SECTION STARTS HERE
-      =========================== */}
-      {/* ==========================
+      {/* =====================
      CHART SLIDER SECTION
-========================== */}
+====================== */}
       <motion.section
         className="ccms-overview-section"
         initial="hidden"
         whileInView="visible"
         variants={fadeUp}
       >
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2
-            className="text-3xl md:text-4xl font-bold text-[#0115ae] mb-6"
-            style={{ marginTop: "-50px" }}
-          >
+        <div className="text-center max-w-3xl mx-auto mt-8 mb-8">
+          <h3 className="text-3xl md:text-4xl font-bold text-[#0115ae] mb-4 text-center">
             Is Your Practice Overwhelmed?
-          </h2>
-          <p className="text-gray-600 text-lg md:text-xl">
+          </h3>
+          <p className="text-gray-600 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto px-4">
             The demands of a modern dermatology/dental practice are immense. From patient
-            communication gaps to inefficient workflows, the administrative burden
-            can detract from what truly matters: patient care.
+            communication gaps to inefficient workflows, the administrative burden can detract
+            from what truly matters: patient care.
           </p>
         </div>
+
 
         <div className="overview-slider">
           <div
@@ -219,19 +224,20 @@ React.useEffect(() => {
             <div className="overview-slide">
               <div className="overview-card">
                 <h3>🕒 Breakdown of a Dermatologist's Work Week</h3>
-                <p>
+                <p className="text-gray-600 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-center max-w-2xl mx-auto px-4">
                   A significant portion of the week is consumed by non-clinical tasks.
                   Our goal is to shift the balance back towards patient-focused activities.
                 </p>
+
                 <div className="chart-container">
-                  <ResponsiveContainer width="100%" height={260}>
+                  <ResponsiveContainer width="100%" height={pieHeight}>
                     <PieChart>
                       <Pie
                         data={workWeekData}
                         dataKey="value"
                         nameKey="name"
-                        innerRadius={90}
-                        outerRadius={130}
+                        innerRadius={innerRadius}
+                        outerRadius={outerRadius}
                         paddingAngle={0.5}
                         startAngle={90}
                         endAngle={-270}
@@ -239,15 +245,13 @@ React.useEffect(() => {
                         stroke="none"
                       >
                         {workWeekData.map((entry, index) => (
-                          <Cell
-                            key={`cell-${index}`}
-                            fill={COLORS[index % COLORS.length]}
-                          />
+                          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                         ))}
                       </Pie>
                       <Tooltip content={<CustomPieTooltip />} />
                     </PieChart>
                   </ResponsiveContainer>
+
                 </div>
                 <div className="chart-legend">
                   {workWeekData.map((item, i) => (
@@ -269,43 +273,83 @@ React.useEffect(() => {
             <div className="overview-slide">
               <div className="overview-card" style={{ padding: "20px 10px" }}>
                 <h3>↗ Top Practice Inefficiencies</h3>
-                <p>
+                <p className="text-gray-700 text-base sm:text-base md:text-lg leading-relaxed text-center break-words px-4">
                   Manual, repetitive tasks are the biggest drain on time and resources,
                   leading to potential errors and staff burnout.
                 </p>
-                <div className="chart-container" style={{ height: "450px", maxWidth: "600px" }}>
+
+                <div
+                  className="chart-container"
+                  style={{
+                    height: width < 480 ? 350 : width < 768 ? 400 : 450,
+                    maxWidth: "600px",
+                    margin: "0 auto",
+                  }}
+                >
                   <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                       data={inefficiencyData}
-                      margin={{ top: 20, right: 30, left: 20, bottom: 120 }}
+                      margin={{
+                        top: 20,
+                        right: 20,
+                        left: 20,
+                        bottom: width < 480 ? 140 : 120,
+                      }}
                     >
                       <XAxis
                         dataKey="name"
                         interval={0}
-                        tick={{ fontSize: 10 }}
-                        height={70}
-                        label={{ value: "Task Category", position: "insideBottom", offset: -50, fontSize: 12, fontWeight: 'bold' }}
+                        tick={({ x, y, payload }) => {
+                          const fontSize = width < 480 ? 8 : 10;
+                          const lines = payload.value.split("\n"); // split by \n for wrapping
+                          return (
+                            <g transform={`translate(${x},${y + 10})`}>
+                              {lines.map((line, index) => (
+                                <text
+                                  key={index}
+                                  x={0}
+                                  y={index * (fontSize + 2)}
+                                  textAnchor="middle"
+                                  fontSize={fontSize}
+                                  fill="#666"
+                                >
+                                  {line}
+                                </text>
+                              ))}
+                            </g>
+                          );
+                        }}
+                        height={width < 480 ? 100 : 70} // increase height for small screens
+                        label={{
+                          // value: "Task Category",
+                          position: "insideBottom",
+                          offset: width < 480 ? -70 : -50,
+                          fontSize: 12,
+                          fontWeight: "bold",
+                        }}
                       />
-
                       <YAxis
-                        tick={{ fontSize: 10 }}
+                        tick={{ fontSize: width < 480 ? 8 : 10 }}
                         label={{
                           value: "Hours Lost/Week",
                           angle: -90,
                           position: "insideLeft",
                           offset: 10,
                           fontSize: 12,
-                          fontWeight: 'bold'
+                          fontWeight: "bold",
                         }}
                       />
-
                       <Tooltip content={<CustomBarTooltip />} />
                       <Bar
                         dataKey="hours"
                         radius={[8, 8, 0, 0]}
                         fill="#2A3FAA"
-                        barSize={50}
-                        label={{ position: "top", fontSize: 14, fill: "#2A3FAA" }}
+                        barSize={width < 480 ? 30 : 50} // smaller bars for mobile
+                        label={{
+                          position: "top",
+                          fontSize: width < 480 ? 10 : 14,
+                          fill: "#2A3FAA",
+                        }}
                       />
                     </BarChart>
                   </ResponsiveContainer>
@@ -339,42 +383,29 @@ React.useEffect(() => {
         whileInView="visible"
         variants={fadeUp}
       >
-        <h3
-          className="section-title"
-          style={{ textAlign: "center" }}
-        >
-          The Solution: CCMS - Your Clinic’s Operating System
-        </h3>
-        <p
-          style={{
-            textAlign: "center",
-            fontSize: "1.25rem", // Increase font size (adjust as needed)
-            maxWidth: "800px",
-            margin: "0 auto", // center horizontally
-            lineHeight: "1.6",
-          }}
-        >
-          Chiselon Clinic Management System automates and streamlines every
-          aspect of your practice—from patient intake to billing and analytics.
-        </p>
+        <h3 className="section-title">The Solution: CCMS - Your Clinic’s Operating System</h3>
 
+        <p className="section-subtitle">
+          Chiselon Clinic Management System automates and streamlines every aspect of your
+          practice—from patient intake to billing and analytics.
+        </p>
         <br />
         <div className="flow-diagram">
           {/* Row 1 */}
           <div className="flow-row row-1">
             <div className="flow-card">
               <FaCalendarAlt className="flow-icon" />
-              <p style={{ fontWeight: "bold" }}>Patient Books Online</p>
+              <p><strong>Patient Books Online</strong></p>
             </div>
             <span className="flow-arrow">→</span>
             <div className="flow-card">
               <FaMobileAlt className="flow-icon" />
-              <p style={{ fontWeight: "bold" }}>Digital Check-in & Reminders</p>
+              <p><strong>Digital Check-in & Reminders</strong></p>
             </div>
             <span className="flow-arrow">→</span>
             <div className="flow-card">
               <FaFileAlt className="flow-icon" />
-              <p style={{ fontWeight: "bold" }}>E-Visit & Integrated Notes</p>
+              <p><strong>E-Visit & Integrated Notes</strong></p>
             </div>
           </div>
 
@@ -382,38 +413,34 @@ React.useEffect(() => {
           <div className="flow-row row-2">
             <div className="flow-card">
               <FaAt className="flow-icon" />
-              <p style={{ fontWeight: "bold" }}>Secure Patient Follow-up</p>
+              <p><strong>Secure Patient Follow-up</strong></p>
             </div>
             <span className="flow-arrow">←</span>
             <div className="flow-card">
               <FaCreditCard className="flow-icon" />
-              <p style={{ fontWeight: "bold" }}>Automated Billing</p>
+              <p><strong>Automated Billing</strong></p>
             </div>
             <span className="flow-arrow">←</span>
             <div className="flow-card">
               <FaChartBar className="flow-icon" />
-              <p style={{ fontWeight: "bold" }}>Practice Analytics</p>
+              <p><strong>Practice Analytics</strong></p>
             </div>
           </div>
         </div>
-
       </motion.section>
+
       <br />
       {/* ==========================
-      4 Cards Video Section
+      
+       3 Cards Video Section
 =========================== */}
       <section className="ccms-video-cards">
         <h3 className="section-title">
-          Explore Our Video Tutorials
+          Explore our CCMS suite - our patient App, Doctor App and Admin App
         </h3>
         <div className="cards-container">
           {[
-            {
-              title: "Main Admin",
-              image: MainAdmin,
-              video: "https://www.youtube.com/embed/u8dyZ3Vo5RY?autoplay=1&mute=1&loop=1&playlist=u8dyZ3Vo5RY",
-              link: "https://youtu.be/u8dyZ3Vo5RY",
-            },
+
             {
               title: "Clinic Admin",
               image: ClinicImage,
@@ -439,7 +466,7 @@ React.useEffect(() => {
               <div className="icon">
                 <img src={card.image} alt={card.title} className="card-image" />
               </div>
-              <h4 style={{ textAlign: "center",color:"#0115ae" }}>{card.title}</h4>
+              <h4 style={{ textAlign: "center", color: "#0115ae" }}>{card.title}</h4>
 
               <div className="video-container">
                 <iframe
@@ -466,11 +493,6 @@ React.useEffect(() => {
           ))}
         </div>
       </section>
-
-
-
-
-
       <br />
 
       {/* Cards Section */}
@@ -486,7 +508,7 @@ React.useEffect(() => {
       {/* Demo Form */}
       <section className="ccms-demo-section">
         <h3 className="section-title">Ready to Transform Your Practice?</h3>
-        <p style={{ fontWeight: "bold" }}>
+        <p style={{ fontWeight: "bold", marginTop: 0 }}>
           Schedule a free, no-obligation demo and discover how Chiselon can
           optimize your dermatology/dental workflow.
         </p>
