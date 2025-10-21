@@ -24,8 +24,47 @@ import "./Ccms.css";
 import DoctorWebImage from "../../Assests/ic_launcher.png";
 import ClinicImage from "../../Assests/DermaLOgo_1.png";
 import Customer from "../../Assests/DermaLOgo_1.png";
-import MainAdmin from "../../Assests/DermaLOgo_1.png";
+import Explore from "../../Assests/explore.png";
 import useWindowWidth from "./useWindowWidth.js";
+const testimonials = [
+  {
+    text: "CCMS changed our workflow completely!",
+    author: "Dr. Sharma",
+    region: "Telangana",
+    best: false
+  },
+  {
+    text: "Highly recommend for busy clinics.",
+    author: "Clinic Admin",
+    region: "Kerala",
+    best: false
+  },
+  {
+    text: "Easy to use and saves time daily.",
+    author: "Dr. Mehta",
+    region: "Chennai",
+    best: false
+  },
+  {
+    text: "Our staff loves the automation features.",
+    author: "Clinic Manager",
+    region: "Telangana",
+    best: false
+  },
+  {
+    text: "Fantastic support and easy onboarding.",
+    author: "Dr. Reddy",
+    region: "Kerala",
+    best: false
+  },
+  {
+    text: "Saves us hours of paperwork every week.",
+    author: "Clinic Supervisor",
+    region: "Chennai",
+    best: false
+  }
+];
+
 const Ccms = () => {
   const width = useWindowWidth();
 
@@ -37,10 +76,10 @@ const Ccms = () => {
   const yFontSize = width < 480 ? 8 : 10;
   const labelFontSize = width < 480 ? 10 : 14;
   const [formData, setFormData] = useState({
-    fullName: "",
-    clinicName: "",
+    fullNameOrClinicName: "",
     email: "",
     phone: "",
+    preferredTime: "",
   });
   const [activeSlide, setActiveSlide] = useState(0);
   // 🔄 Animation cycle every 100 seconds
@@ -71,20 +110,20 @@ const Ccms = () => {
     e.preventDefault();
 
     // Check if all fields are filled
-    const { fullName, clinicName, email, phone } = formData;
-    if (!fullName || !clinicName || !email || !phone) {
+    const { fullNameOrClinicName, email, phone, preferredTime } = formData;
+    if (!fullNameOrClinicName || !email || !phone || !preferredTime) {
       alert("Please fill all fields before submitting!");
       return;
     }
 
     // Prepare WhatsApp message
-    const message = `Hello! I would like to request a Demo.\n\nFull Name: ${fullName}\nClinic Name: ${clinicName}\nEmail: ${email}\nPhone: ${phone}`;
+    const message = `Hello! I would like to request a Demo.\n\nFull Name / Clinic Name: ${fullNameOrClinicName}\nEmail: ${email}\nPhone: ${phone}\nPreferred Time:${preferredTime}`;
 
     // Open WhatsApp
     openWhatsApp(message);
 
     // Reset form
-    setFormData({ fullName: "", clinicName: "", email: "", phone: "" });
+    setFormData({ fullNameOrClinicName: "", email: "", phone: "", preferredTime: "" });
   };
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
@@ -183,6 +222,25 @@ const Ccms = () => {
   };
   return (
     <div className="ccms-container">
+      <div className="ccms-topbar">
+        <motion.button
+          className="demo-top-btn"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.97 }}
+          onClick={() => {
+            const defaultMessage = `Hello! I would like to request a Demo.`;
+            const phoneNumber = "918688767603"; // country code + number
+            const encodedMessage = encodeURIComponent(defaultMessage);
+            const whatsappWebUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+            window.open(whatsappWebUrl, "_blank"); // opens WhatsApp in a new tab
+          }}
+        >
+          Request for Demo
+        </motion.button>
+
+      </div>
+
       {/* Hero Section */}
       <motion.section
         className="ccms-hero"
@@ -430,17 +488,35 @@ const Ccms = () => {
       </motion.section>
 
       <br />
+      {/* Cards Section */}
+      <section className="clinic-card-section">
+        <h3 className="section-title">Digitizing Indian Healthcare—From Clinic to Consultation</h3>
+
+        <div className="clinic-card-container">
+          <div className="clinic-card">
+            <img src={Explore} alt="Clinic Admin" className="clinic-card-image" />
+            <h4 className="clinic-card-title">Smart Healthcare Suite: Admin, Doctor & Patient Apps</h4>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              className="clinic-explore-btn"
+              onClick={() => window.open("https://youtu.be/u8dyZ3Vo5RY", "_blank")}
+            >
+              Explore More
+            </motion.button>
+          </div>
+        </div>
+      </section>
       {/* ==========================
       
        3 Cards Video Section
 =========================== */}
       <section className="ccms-video-cards">
         <h3 className="section-title">
-          Explore our CCMS suite - our patient App, Doctor App and Admin App
+          Explore our CCMS suite - our patient App, Doctor App and Admin App
         </h3>
         <div className="cards-container">
           {[
-
             {
               title: "Clinic Admin",
               image: ClinicImage,
@@ -453,8 +529,6 @@ const Ccms = () => {
               video: "https://www.youtube.com/embed/u8dyZ3Vo5RY?autoplay=1&mute=1&loop=1&playlist=u8dyZ3Vo5RY",
               link: "https://youtu.be/u8dyZ3Vo5RY",
             },
-
-
             {
               title: "Patient App",
               image: Customer,
@@ -468,7 +542,12 @@ const Ccms = () => {
               </div>
               <h4 style={{ textAlign: "center", color: "#0115ae" }}>{card.title}</h4>
 
-              <div className="video-container">
+              {/* Make the video clickable */}
+              <div
+                className="video-container"
+                style={{ cursor: "pointer" }}
+                onClick={() => window.open(card.link, "_blank")}
+              >
                 <iframe
                   width="100%"
                   height="200"
@@ -479,32 +558,34 @@ const Ccms = () => {
                   allowFullScreen
                 ></iframe>
               </div>
-
-              <a
-                href={card.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="card-link"
-                style={{ display: "block", textAlign: "center", marginTop: "10px" }}
-              >
-                Link
-              </a>
             </div>
           ))}
         </div>
       </section>
-      <br />
 
-      {/* Cards Section */}
-      <section className="ccms-cards">
-        {/* Your cards code unchanged */}
-      </section>
-
-      {/* Testimonials */}
       <section className="ccms-testimonials">
-        {/* Your testimonials code unchanged */}
+        <h3 className="section-title">What Our Clients Say</h3>
+        <div className="testimonial-slider">
+          <motion.div
+            className="testimonial-track"
+            animate={{ x: ["0%", "-50%"] }} // continuous scroll
+            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+          >
+            {/* Duplicate the testimonials for seamless scrolling */}
+            {[...testimonials, ...testimonials].map((t, index) => (
+              <div
+                key={index}
+                className={`testimonial-card ${t.best ? "best" : ""}`}
+              >
+                <p className="text">"{t.text}"</p>
+                <p className="author">- {t.author}</p>
+                <p className="region">{t.region}</p>
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </section>
-
+      <br />
       {/* Demo Form */}
       <section className="ccms-demo-section">
         <h3 className="section-title">Ready to Transform Your Practice?</h3>
@@ -517,22 +598,12 @@ const Ccms = () => {
           <div className="form-row">
             <input
               type="text"
-              name="fullName"
-              placeholder="Full Name"
-              value={formData.fullName}
+              name="fullNameOrClinicName"
+              placeholder="Full Name / Clinic Name"
+              value={formData.fullNameOrClinicName}
               onChange={handleChange}
               required
             />
-            <input
-              type="text"
-              name="clinicName"
-              placeholder="Clinic Name"
-              value={formData.clinicName}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-row">
             <input
               type="email"
               name="email"
@@ -541,6 +612,9 @@ const Ccms = () => {
               onChange={handleChange}
               required
             />
+          </div>
+          <div className="form-row">
+
             <input
               type="tel"
               name="phone"
@@ -549,6 +623,18 @@ const Ccms = () => {
               onChange={handleChange}
               required
             />
+            <select
+              name="preferredTime"
+              value={formData.preferredTime}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Preferred Time</option>
+              <option value="morning">Morning (8 AM - 10 AM)</option>
+              <option value="midday">Midday (11 AM - 1 PM)</option>
+              <option value="afternoon">Afternoon (3 PM - 5 PM)</option>
+              <option value="evening">Evening (6 PM - 8 PM)</option>
+            </select>
           </div>
           <motion.button
             type="submit"
