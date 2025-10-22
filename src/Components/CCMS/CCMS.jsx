@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { event } from "../../GA.js";
 import {
   FaCalendarAlt,
@@ -66,6 +66,17 @@ const testimonials = [
 ];
 
 const Ccms = () => {
+  const images = Array.from({ length: 20 }, (_, i) => require(`../../Assests/${i + 1}.jpg`));
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   const width = useWindowWidth();
 
   // Dynamic sizes based on screen width
@@ -222,36 +233,31 @@ const Ccms = () => {
   };
   return (
     <div className="ccms-container">
-      <div className="ccms-topbar">
-        <motion.button
-          className="demo-top-btn"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.97 }}
-          onClick={() => {
-            const defaultMessage = `Hello! I would like to request a Demo.`;
-            const phoneNumber = "918688767603"; // country code + number
-            const encodedMessage = encodeURIComponent(defaultMessage);
-            const whatsappWebUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-            window.open(whatsappWebUrl, "_blank"); // opens WhatsApp in a new tab
-          }}
-        >
-          Request for Demo
-        </motion.button>
-
-      </div>
-
-      {/* Hero Section */}
       <motion.section
         className="ccms-hero"
         initial="hidden"
         whileInView="visible"
         variants={fadeUp}
       >
-        <h1>The Complete Clinical-Care Management Suite (CCMS)</h1>
-        <p style={{ fontWeight: "bold", color: "black" }}>A Unified Platform for Patients, Doctors, and Clinic Administrators</p>
-      </motion.section>
+        <div className="ccms-topbar">
+          <motion.button
+            type="button"
+            className="demo-top-btn"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            onClick={() =>
+              openWhatsApp("Hello! I would like to request a Demo.")
+            }
+          >
+            Request for Demo
+          </motion.button>
+        </div>
 
+        <h1>The Complete Clinical-Care Management Suite (CCMS)</h1>
+        <p style={{ fontWeight: "bold", color: "black" }}>
+          A Unified Platform for Patients, Doctors, and Clinic Administrators
+        </p>
+      </motion.section>
       {/* =====================
      CHART SLIDER SECTION
 ====================== */}
@@ -489,79 +495,107 @@ const Ccms = () => {
 
       <br />
       {/* Cards Section */}
-      <section className="clinic-card-section">
-        <h3 className="section-title">Digitizing Indian Healthcare—From Clinic to Consultation</h3>
 
-        <div className="clinic-card-container">
-          <div className="clinic-card">
-            <img src={Explore} alt="Clinic Admin" className="clinic-card-image" />
-            <h4 className="clinic-card-title">Smart Healthcare Suite: Admin, Doctor & Patient Apps</h4>
+      <section className="clinic-card-section">
+        <h3 className="section-title">
+          Solving Real Problems in Indian Clinics—One Innovation at a Time
+        </h3>
+
+        <div className="clinic-slider-container">
+          <div className="clinic-card-wrapper">
+            <img
+              src={images[currentIndex]}
+              alt={`Clinic ${currentIndex + 1}`}
+              className="clinic-fullwidth-image"
+            />
+
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               className="clinic-explore-btn"
-              onClick={() => window.open("https://youtu.be/u8dyZ3Vo5RY", "_blank")}
+              onClick={() => setShowVideo(true)}
             >
               Explore More
             </motion.button>
           </div>
         </div>
+
+        {showVideo && (
+          <div className="video-modal-overlay" onClick={() => setShowVideo(false)}>
+            <div className="video-modal-content" onClick={(e) => e.stopPropagation()}>
+              <div className="video-container">
+                <video
+                  src={require("../../Assests/ccms_video.mp4")}
+                  autoPlay
+                  controls
+                  className="clinic-video"
+                ></video>
+                <button className="close-video-btn" onClick={() => setShowVideo(false)}>
+                  ✖
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
       </section>
+
       {/* ==========================
       
        3 Cards Video Section
 =========================== */}
-      <section className="ccms-video-cards">
-        <h3 className="section-title">
-          Explore our CCMS suite - our patient App, Doctor App and Admin App
-        </h3>
-        <div className="cards-container">
-          {[
-            {
-              title: "Clinic Admin",
-              image: ClinicImage,
-              video: "https://www.youtube.com/embed/u8dyZ3Vo5RY?autoplay=1&mute=1&loop=1&playlist=u8dyZ3Vo5RY",
-              link: "https://youtu.be/u8dyZ3Vo5RY",
-            },
-            {
-              title: "Doctor Web App",
-              image: DoctorWebImage,
-              video: "https://www.youtube.com/embed/u8dyZ3Vo5RY?autoplay=1&mute=1&loop=1&playlist=u8dyZ3Vo5RY",
-              link: "https://youtu.be/u8dyZ3Vo5RY",
-            },
-            {
-              title: "Patient App",
-              image: Customer,
-              video: "https://www.youtube.com/embed/u8dyZ3Vo5RY?autoplay=1&mute=1&loop=1&playlist=u8dyZ3Vo5RY",
-              link: "https://youtu.be/u8dyZ3Vo5RY",
-            },
-          ].map((card, index) => (
-            <div key={index} className="video-card">
-              <div className="icon">
-                <img src={card.image} alt={card.title} className="card-image" />
-              </div>
-              <h4 style={{ textAlign: "center", color: "#0115ae" }}>{card.title}</h4>
-
-              {/* Make the video clickable */}
-              <div
-                className="video-container"
-                style={{ cursor: "pointer" }}
-                onClick={() => window.open(card.link, "_blank")}
-              >
-                <iframe
-                  width="100%"
-                  height="200"
-                  src={card.video}
-                  title={card.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-          ))}
+    <section className="ccms-video-section">
+  <h3 className="section-title">
+    Explore our CCMS suite - our Patient App, Doctor App and Admin App
+  </h3>
+  <div className="video-cards-grid">
+    {[
+      {
+        title: "Clinic Admin",
+        image: ClinicImage,
+        videoId: "u8dyZ3Vo5RY",
+        link: "https://youtu.be/u8dyZ3Vo5RY",
+      },
+      {
+        title: "Doctor Web App",
+        image: DoctorWebImage,
+        videoId: "u8dyZ3Vo5RY",
+        link: "https://youtu.be/u8dyZ3Vo5RY",
+      },
+      {
+        title: "Patient App",
+        image: Customer,
+        videoId: "u8dyZ3Vo5RY",
+        link: "https://youtu.be/u8dyZ3Vo5RY",
+      },
+    ].map((card, index) => (
+      <div key={index} className="video-card-wrapper">
+        <div className="video-card-icon">
+          <img src={card.image} alt={card.title} className="video-card-image" />
         </div>
-      </section>
+        <h4 className="video-card-title">{card.title}</h4>
+
+        <div
+          className="video-card-frame"
+          style={{ cursor: "pointer" }}
+          onClick={() => window.open(card.link, "_blank")}
+        >
+          <iframe
+            width="100%"
+            height="200"
+            src={`https://www.youtube.com/embed/${card.videoId}?autoplay=1&mute=1&loop=1&playlist=${card.videoId}&controls=0&modestbranding=1`}
+            title={card.title}
+            frameBorder="0"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+
 
       <section className="ccms-testimonials">
         <h3 className="section-title">What Our Clients Say</h3>

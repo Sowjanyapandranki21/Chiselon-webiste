@@ -19,58 +19,63 @@
   max-width: 1200px;
   margin: auto;
 }
-
+/* 🧭 Button Container */
 .ccms-topbar {
-  position: absolute;
-  /* position relative to parent container */
-  top: 100px;
-  /* distance from top of page/container */
-  right: 20px;
-  /* distance from right edge */
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  /* space if multiple buttons */
-  z-index: 1000;
+display: flex;
+  justify-content: flex-end;   /* aligns button to the right */
+  margin-bottom: 20px;         /* spacing below button, above h1 */
+  padding-right: 40px; 
 }
 
+/* 🎯 Button Styles */
 .demo-top-btn {
-  position: relative;
-  /* needed for ::after animation */
-  background-color: #0115ae;
+  position: fixed;   /* stay fixed on the viewport */
+  top: 100px;            /* top of the screen */
+  right: 30px;          /* right edge */
+  margin: 0;
+  background: linear-gradient(135deg, #0115ae, #0b1fe0);
   color: #fff;
   border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
-  font-size: 0.9rem;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0 0 0 12px; /* rounded bottom-left corner */
   cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  z-index: 9999;     /* above everything else */
   transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
-  /* for shine effect */
 }
 
-.demo-top-btn:hover {
-  background-color: #0b1fe0;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+/* 📱 Responsive Adjustments */
+
+/* Tablet (below 768px) */
+@media (max-width: 768px) {
+  .ccms-topbar {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .demo-top-btn {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    border-radius: 9px;
+  }
 }
 
-/* Subtle shine animation */
-.demo-top-btn::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.2);
-  transform: skewX(-20deg);
-  transition: all 0.5s ease;
+/* Mobile (below 480px) */
+@media (max-width: 480px) {
+  .ccms-topbar {
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+
+  .demo-top-btn {
+    padding: 9px 14px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
 }
 
-.demo-top-btn:hover::after {
-  left: 125%;
-}
 
 
 
@@ -303,11 +308,14 @@
 /* =========================
    VIDEO CARDS
 ========================= */
-.ccms-video-cards {
-  padding: 5px 10px;
+/* =========================
+   VIDEO CARDS
+========================= */
+.ccms-video-section {
+  padding: 10px 15px;
 }
 
-.ccms-video-cards .section-title {
+.ccms-video-section .section-title {
   text-align: center;
   font-size: 2rem;
   color: #0115ae;
@@ -315,14 +323,14 @@
   font-weight: bold;
 }
 
-.cards-container {
+.video-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   justify-items: center;
 }
 
-.video-card {
+.video-card-wrapper {
   border-radius: 15px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -331,12 +339,12 @@
   max-width: 350px;
 }
 
-.video-card:hover {
+.video-card-wrapper:hover {
   transform: translateY(-5px);
   box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.video-card .icon {
+.video-card-icon {
   width: 100%;
   height: 180px;
   display: flex;
@@ -344,45 +352,64 @@
   align-items: center;
 }
 
-.video-card .card-image {
+.video-card-icon img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; 
   transition: transform 0.3s ease;
 }
 
-.video-card:hover .card-image {
+.video-card-wrapper:hover .video-card-icon img {
   transform: scale(1.05);
 }
 
-.video-card .video-container {
+.video-card-frame {
   margin-top: 10px;
   position: relative;
   width: 100%;
   height: 200px;
 }
 
-.video-card iframe {
+.video-card-frame iframe {
   width: 100%;
   height: 100%;
   border-radius: 0 0 15px 15px;
 }
 
-.video-card h4 {
+.video-card-title {
   font-size: 1.1rem;
   margin: 10px 0;
+  text-align: center;
   color: #333;
 }
 
-.video-card .card-link {
+.video-card-link {
   color: #0115ae;
   font-weight: 500;
   text-decoration: none;
 }
 
-.video-card .card-link:hover {
+.video-card-link:hover {
   text-decoration: underline;
 }
+
+/* Responsive */
+@media (max-width: 992px) {
+  .video-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .video-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .video-card-frame {
+    height: 180px;
+  }
+}
+
 
 /* =========================
    CARDS SECTION
@@ -487,71 +514,155 @@
   color: #0115ae;
   margin-bottom: 40px;
 }
-
-/* Center the card below heading */
+/* Section */
 .clinic-card-section {
-  text-align: center; /* center the heading */
-  padding: 60px 20px;
+  text-align: center;
+  padding: 40px 20px;
+  background: transparent;
 }
 
-.clinic-section-title {
+/* Title */
+.section-title {
+  color: #0115ae;
   font-size: 2rem;
   font-weight: 700;
-  color: #0115ae;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
-.clinic-card-container {
-  display: flex;
-  justify-content: center; /* center the card horizontally */
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.clinic-card {
-  background-color: #fff;
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
+/* Container */
+.clinic-slider-container {
   width: 100%;
-  padding: 30px 20px;
   display: flex;
-  flex-direction: column; /* stack image, h4, button vertically */
-  align-items: center; /* center content horizontally */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  justify-content: center;
 }
 
-.clinic-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+/* Card wrapper */
+.clinic-card-wrapper {
+  width: 95%;
+  max-width: 1000px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.clinic-card-image {
+/* Image */
+.clinic-fullwidth-image {
   width: 100%;
-  height: auto;
-  border-radius: 12px;
-  margin-bottom: 20px;
+  height: 500px;
+  object-fit: contain;
+  border-radius: 20px;
 }
 
-.clinic-card-title {
-
-  font-size: 1.0rem;
-  margin-bottom: 15px; /* space between h4 and button */
-}
-
+/* Explore button */
 .clinic-explore-btn {
-  padding: 12px 28px;
-  font-size: 1rem;
-  font-weight: 600;
+  margin-top: 20px;
+  background: linear-gradient(90deg, #0115ae, #5a67d8);
   color: #fff;
-  background-color: #0115ae;
+  font-size: 1.2rem;
+  font-weight: 600;
   border: none;
-  border-radius: 8px;
+  border-radius: 30px;
+  padding: 14px 40px;
   cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
 }
 
 .clinic-explore-btn:hover {
-  background-color: #0020d0;
+  background: linear-gradient(90deg, #0b21f5, #7b8efb);
+  transform: scale(1.05);
+}
+
+.video-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.video-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  background: transparent;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Container to maintain 16:9 aspect ratio */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+}
+
+/* Video styling */
+.clinic-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* ensures full video is visible */
+  border-radius: 15px;
+}
+
+/* Close Button */
+.close-video-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.close-video-btn:hover {
+  color: #ff4c4c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .video-modal-content { width: 100%; border-radius: 0; }
+}
+
+
+
+
+
+/* Fade Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===== Media Queries ===== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .clinic-fullwidth-image { height: 400px; }
+  .clinic-explore-btn { font-size: 1.1rem; padding: 12px 32px; }
+  .video-modal-content { width: 90%; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .clinic-fullwidth-image { height: 300px; border-radius: 15px; }
+  .clinic-explore-btn { font-size: 1rem; padding: 10px 28px; }
+  .video-modal-content { width: 95%; }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .clinic-fullwidth-image { height: 220px; border-radius: 10px; }
+  .clinic-explore-btn { font-size: 0.9rem; padding: 8px 24px; }
 }
 
 
