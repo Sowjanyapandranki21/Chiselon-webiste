@@ -79,13 +79,6 @@ const Ccms = () => {
 
   const width = useWindowWidth();
 
-  // Dynamic sizes based on screen width
-  const pieHeight = width < 480 ? 250 : width < 768 ? 220 : 260;
-  const innerRadius = width < 480 ? 50 : 90;
-  const outerRadius = width < 480 ? 80 : 130;
-  const xFontSize = width < 480 ? 8 : 10;
-  const yFontSize = width < 480 ? 8 : 10;
-  const labelFontSize = width < 480 ? 10 : 14;
   const [formData, setFormData] = useState({
     fullNameOrClinicName: "",
     email: "",
@@ -253,7 +246,7 @@ const Ccms = () => {
           </motion.button>
         </div>
 
-        <h1>The Complete Clinical-Care Management Suite (CCMS)</h1>
+        <h1>Chiselon Clinic Management Suite (CCMS)</h1>
         <p style={{ fontWeight: "bold", color: "black" }}>
           A Unified Platform for Patients, Doctors, and Clinic Administrators
         </p>
@@ -277,224 +270,7 @@ const Ccms = () => {
             from what truly matters: patient care.
           </p>
         </div>
-
-
-        <div className="overview-slider">
-          <div
-            className="slider-wrapper"
-            style={{ transform: `translateX(-${activeSlide * 100}%)` }}
-          >
-            {/* Slide 1 - Donut Chart */}
-            <div className="overview-slide">
-              <div className="overview-card">
-                <h3>🕒 Breakdown of a Dermatologist's Work Week</h3>
-                <p className="text-gray-600 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-center max-w-2xl mx-auto px-4">
-                  A significant portion of the week is consumed by non-clinical tasks.
-                  Our goal is to shift the balance back towards patient-focused activities.
-                </p>
-
-                <div className="chart-container">
-                  <ResponsiveContainer width="100%" height={pieHeight}>
-                    <PieChart>
-                      <Pie
-                        data={workWeekData}
-                        dataKey="value"
-                        nameKey="name"
-                        innerRadius={innerRadius}
-                        outerRadius={outerRadius}
-                        paddingAngle={0.5}
-                        startAngle={90}
-                        endAngle={-270}
-                        cornerRadius={2}
-                        stroke="none"
-                      >
-                        {workWeekData.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                        ))}
-                      </Pie>
-                      <Tooltip content={<CustomPieTooltip />} />
-                    </PieChart>
-                  </ResponsiveContainer>
-
-                </div>
-                <div className="chart-legend">
-                  {workWeekData.map((item, i) => (
-                    <div key={i} className="legend-item">
-                      <div
-                        className="legend-color"
-                        style={{ backgroundColor: COLORS[i] }}
-                      ></div>
-                      <span>
-                        {item.name}: {item.value}h
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Slide 2 - Bar Chart */}
-            <div className="overview-slide">
-              <div className="overview-card" style={{ padding: "20px 10px" }}>
-                <h3>↗ Top Practice Inefficiencies</h3>
-                <p className="text-gray-700 text-base sm:text-base md:text-lg leading-relaxed text-center break-words px-4">
-                  Manual, repetitive tasks are the biggest drain on time and resources,
-                  leading to potential errors and staff burnout.
-                </p>
-
-                <div
-                  className="chart-container"
-                  style={{
-                    height: width < 480 ? 350 : width < 768 ? 400 : 450,
-                    maxWidth: "600px",
-                    margin: "0 auto",
-                  }}
-                >
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={inefficiencyData}
-                      margin={{
-                        top: 20,
-                        right: 20,
-                        left: 20,
-                        bottom: width < 480 ? 140 : 120,
-                      }}
-                    >
-                      <XAxis
-                        dataKey="name"
-                        interval={0}
-                        tick={({ x, y, payload }) => {
-                          const fontSize = width < 480 ? 8 : 10;
-                          const lines = payload.value.split("\n"); // split by \n for wrapping
-                          return (
-                            <g transform={`translate(${x},${y + 10})`}>
-                              {lines.map((line, index) => (
-                                <text
-                                  key={index}
-                                  x={0}
-                                  y={index * (fontSize + 2)}
-                                  textAnchor="middle"
-                                  fontSize={fontSize}
-                                  fill="#666"
-                                >
-                                  {line}
-                                </text>
-                              ))}
-                            </g>
-                          );
-                        }}
-                        height={width < 480 ? 100 : 70} // increase height for small screens
-                        label={{
-                          // value: "Task Category",
-                          position: "insideBottom",
-                          offset: width < 480 ? -70 : -50,
-                          fontSize: 12,
-                          fontWeight: "bold",
-                        }}
-                      />
-                      <YAxis
-                        tick={{ fontSize: width < 480 ? 8 : 10 }}
-                        label={{
-                          value: "Hours Lost/Week",
-                          angle: -90,
-                          position: "insideLeft",
-                          offset: 10,
-                          fontSize: 12,
-                          fontWeight: "bold",
-                        }}
-                      />
-                      <Tooltip content={<CustomBarTooltip />} />
-                      <Bar
-                        dataKey="hours"
-                        radius={[8, 8, 0, 0]}
-                        fill="#2A3FAA"
-                        barSize={width < 480 ? 30 : 50} // smaller bars for mobile
-                        label={{
-                          position: "top",
-                          fontSize: width < 480 ? 10 : 14,
-                          fill: "#2A3FAA",
-                        }}
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          {/* Navigation Dots */}
-          <div className="slider-dots">
-            {[0, 1].map((index) => (
-              <span
-                key={index}
-                className={`dot ${activeSlide === index ? "active" : ""}`}
-                onClick={() => setActiveSlide(index)}
-              ></span>
-            ))}
-          </div>
-        </div>
       </motion.section>
-
-      {/* ==========================
-           NEW SECTION ENDS HERE
-      =========================== */}
-
-      {/* Flow Diagram Section */}
-      <motion.section
-        className="clinic-flow-section"
-        initial="hidden"
-        whileInView="visible"
-        variants={fadeUp}
-      >
-        <h3 className="section-title">The Solution: CCMS - Your Clinic’s Operating System</h3>
-
-        <p className="section-subtitle">
-          Chiselon Clinic Management System automates and streamlines every aspect of your
-          practice—from patient intake to billing and analytics.
-        </p>
-        <br />
-        <div className="flow-diagram">
-          {/* Row 1 */}
-          <div className="flow-row row-1">
-            <div className="flow-card">
-              <FaCalendarAlt className="flow-icon" />
-              <p><strong>Patient Books Online</strong></p>
-            </div>
-            <span className="flow-arrow">→</span>
-            <div className="flow-card">
-              <FaMobileAlt className="flow-icon" />
-              <p><strong>Digital Check-in & Reminders</strong></p>
-            </div>
-            <span className="flow-arrow">→</span>
-            <div className="flow-card">
-              <FaFileAlt className="flow-icon" />
-              <p><strong>E-Visit & Integrated Notes</strong></p>
-            </div>
-          </div>
-
-          {/* Row 2 */}
-          <div className="flow-row row-2">
-            <div className="flow-card">
-              <FaAt className="flow-icon" />
-              <p><strong>Secure Patient Follow-up</strong></p>
-            </div>
-            <span className="flow-arrow">←</span>
-            <div className="flow-card">
-              <FaCreditCard className="flow-icon" />
-              <p><strong>Automated Billing</strong></p>
-            </div>
-            <span className="flow-arrow">←</span>
-            <div className="flow-card">
-              <FaChartBar className="flow-icon" />
-              <p><strong>Practice Analytics</strong></p>
-            </div>
-          </div>
-        </div>
-      </motion.section>
-
-      <br />
-      {/* Cards Section */}
 
       <section className="clinic-card-section">
         <h3 className="section-title">
@@ -545,10 +321,6 @@ const Ccms = () => {
 
       </section>
 
-      {/* ==========================
-      
-       3 Cards Video Section
-=========================== */}
       <section className="ccms-video-section">
         <h3 className="section-title">
           Explore our CCMS suite - our Patient App, Doctor App and Admin App
@@ -575,9 +347,6 @@ const Ccms = () => {
             },
           ].map((card, index) => (
             <div key={index} className="video-card-wrapper">
-              <div className="video-card-icon">
-                <img src={card.image} alt={card.title} className="video-card-image" />
-              </div>
               <h4 className="video-card-title">{card.title}</h4>
 
               <div className="video-card-frame" style={{ cursor: "pointer" }}>
@@ -614,7 +383,7 @@ const Ccms = () => {
       </section>
 
       <section className="ccms-testimonials">
-        <h3 className="section-title">What Our Clients Say</h3>
+        <h3 className="section-title">Testimonials</h3>
         <div className="testimonial-slider">
           <motion.div
             className="testimonial-track"
