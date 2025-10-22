@@ -524,12 +524,17 @@ const Ccms = () => {
           <div className="video-modal-overlay" onClick={() => setShowVideo(false)}>
             <div className="video-modal-content" onClick={(e) => e.stopPropagation()}>
               <div className="video-container">
-                <video
-                  src={require("../../Assests/ccms_video.mp4")}
-                  autoPlay
-                  controls
+                <iframe
+                  width="100%"
+                  height="400"
+                  src="https://www.youtube.com/embed/Z_Whr7dd5aQ?autoplay=1&mute=1&controls=1&modestbranding=1"
+                  title="CCMS Video"
+                  frameBorder="0"
+                  allow="autoplay; encrypted-media; picture-in-picture"
+                  allowFullScreen
                   className="clinic-video"
-                ></video>
+                ></iframe>
+
                 <button className="close-video-btn" onClick={() => setShowVideo(false)}>
                   ✖
                 </button>
@@ -544,58 +549,69 @@ const Ccms = () => {
       
        3 Cards Video Section
 =========================== */}
-    <section className="ccms-video-section">
-  <h3 className="section-title">
-    Explore our CCMS suite - our Patient App, Doctor App and Admin App
-  </h3>
-  <div className="video-cards-grid">
-    {[
-      {
-        title: "Clinic Admin",
-        image: ClinicImage,
-        videoId: "u8dyZ3Vo5RY",
-        link: "https://youtu.be/u8dyZ3Vo5RY",
-      },
-      {
-        title: "Doctor Web App",
-        image: DoctorWebImage,
-        videoId: "u8dyZ3Vo5RY",
-        link: "https://youtu.be/u8dyZ3Vo5RY",
-      },
-      {
-        title: "Patient App",
-        image: Customer,
-        videoId: "u8dyZ3Vo5RY",
-        link: "https://youtu.be/u8dyZ3Vo5RY",
-      },
-    ].map((card, index) => (
-      <div key={index} className="video-card-wrapper">
-        <div className="video-card-icon">
-          <img src={card.image} alt={card.title} className="video-card-image" />
+      <section className="ccms-video-section">
+        <h3 className="section-title">
+          Explore our CCMS suite - our Patient App, Doctor App and Admin App
+        </h3>
+
+        <div className="video-cards-grid">
+          {[
+            {
+              title: "Clinic Admin",
+              image: ClinicImage,
+              videoId: "sgM_ycXNNRU",
+              link: "https://www.youtube.com/watch?v=sgM_ycXNNRU",
+            },
+            {
+              title: "Doctor Web App",
+              image: DoctorWebImage,
+              videoSrc: require("../../Assests/doctor_app.mp4"), // ✅ Local video
+            },
+            {
+              title: "Patient App",
+              image: Customer,
+              videoId: "u8dyZ3Vo5RY",
+              link: "https://youtu.be/u8dyZ3Vo5RY",
+            },
+          ].map((card, index) => (
+            <div key={index} className="video-card-wrapper">
+              <div className="video-card-icon">
+                <img src={card.image} alt={card.title} className="video-card-image" />
+              </div>
+              <h4 className="video-card-title">{card.title}</h4>
+
+              <div className="video-card-frame" style={{ cursor: "pointer" }}>
+                {card.videoSrc ? (
+                  // ✅ Local MP4 video
+                  <video
+                    src={card.videoSrc}
+                    width="100%"
+                    height="200"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    controls={false}
+                    style={{ borderRadius: "8px", objectFit: "cover" }}
+                  />
+                ) : (
+                  // ✅ YouTube embed with autoplay and mute
+                  <iframe
+                    width="100%"
+                    height="200"
+                    src={`https://www.youtube.com/embed/${card.videoId}?autoplay=1&mute=1&loop=1&playlist=${card.videoId}&controls=0&modestbranding=1&playsinline=1`}
+                    title={card.title}
+                    frameBorder="0"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowFullScreen
+                    style={{ borderRadius: "8px" }}
+                  ></iframe>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
-        <h4 className="video-card-title">{card.title}</h4>
-
-        <div
-          className="video-card-frame"
-          style={{ cursor: "pointer" }}
-          onClick={() => window.open(card.link, "_blank")}
-        >
-          <iframe
-            width="100%"
-            height="200"
-            src={`https://www.youtube.com/embed/${card.videoId}?autoplay=1&mute=1&loop=1&playlist=${card.videoId}&controls=0&modestbranding=1`}
-            title={card.title}
-            frameBorder="0"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </div>
-    ))}
-  </div>
-</section>
-
-
+      </section>
 
       <section className="ccms-testimonials">
         <h3 className="section-title">What Our Clients Say</h3>
