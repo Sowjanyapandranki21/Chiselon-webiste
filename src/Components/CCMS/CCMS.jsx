@@ -69,15 +69,26 @@ const testimonials = [
 
 
 const Ccms = () => {
-  const images = Array.from({ length: 20 }, (_, i) => require(`../../Assests/${i + 1}.jpg`));
-  const [currentIndex, setCurrentIndex] = useState(0);
+
   const [showVideo, setShowVideo] = useState(false);
 
+  const images = Array.from({ length: 20 }, (_, i) => require(`../../Assests/${i + 1}.jpg`));
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 7000);
-    return () => clearInterval(interval);
+    let firstTimeout = setTimeout(() => {
+      setCurrentIndex(1); // Move to second image after 1 minute (60000ms)
+
+      // After the first image, start regular 7s interval
+      const interval = setInterval(() => {
+        setCurrentIndex(prev => (prev + 1) % images.length);
+      }, 5000);
+
+      // Cleanup interval when component unmounts
+      return () => clearInterval(interval);
+    }, 30000);
+
+    return () => clearTimeout(firstTimeout);
   }, [images.length]);
 
   const width = useWindowWidth();
@@ -116,15 +127,15 @@ const Ccms = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Check if all fields are filled
-    const { fullNameOrClinicName, email, phone, preferredTime } = formData;
-    if (!fullNameOrClinicName || !email || !phone || !preferredTime) {
-      alert("Please fill all fields before submitting!");
+    // Check if required fields are filled
+    const { fullNameOrClinicName, email, phone } = formData;
+    if (!fullNameOrClinicName || !email || !phone) {
+      alert("Please fill all required fields before submitting!");
       return;
     }
 
     // Prepare WhatsApp message
-    const message = `Hello! I would like to request a Demo.\n\nFull Name / Clinic Name: ${fullNameOrClinicName}\nEmail: ${email}\nPhone: ${phone}\nPreferred Time:${preferredTime}`;
+    const message = `Hello! I would like to request a Demo.\n\nFull Name / Clinic Name: ${formData.fullNameOrClinicName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nPreferred Time: ${formData.preferredTime || "Not specified"}`;
 
     // Open WhatsApp
     openWhatsApp(message);
@@ -132,6 +143,7 @@ const Ccms = () => {
     // Reset form
     setFormData({ fullNameOrClinicName: "", email: "", phone: "", preferredTime: "" });
   };
+
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -237,7 +249,7 @@ const Ccms = () => {
         whileTap={{ scale: 0.97 }}
         onClick={() => openWhatsApp("Hello! I would like to request a Demo.")}
       >
-        Request for Demo
+        Request a Demo
       </motion.button>
       <br />
       {/* Hero Section */}
@@ -247,93 +259,99 @@ const Ccms = () => {
         whileInView="visible"
         variants={fadeUp}
       >
-        <h1>Chiselon Clinic Management Suite (CCMS)</h1>
-        <p style={{ fontWeight: "bold", color: "black" }}>
+        <h1 style={{ margin: 0 }}>Chiselon Clinic Management Suite (CCMS)</h1>
+        <p style={{ margin: 0, fontWeight: "bold", color: "black" }}>
           A Unified Platform for Patients, Doctors, and Clinic Administrators
         </p>
       </motion.section>
-
       {/* =====================
      CHART SLIDER SECTION
 ====================== */}
-      <motion.section
-        className="ccms-overview-section"
-        initial="hidden"
-        whileInView="visible"
-        variants={fadeUp}
+    <motion.section className="ccms-overview-section">
+  <h3 className="section-title" style={{ margin: 0 }}>
+    Solving Real Problems in Indian Clinics—One Innovation at a Time
+  </h3>
+
+  <section className="clinic-card-section" style={{ margin: 0, padding: 0 }}>
+    <div className="clinic-slider-container">
+      {/* Left arrow */}
+      <button
+        className="arrow-btn left"
+        onClick={() =>
+          setCurrentIndex((prev) =>
+            prev === 0 ? images.length - 1 : prev - 1
+          )
+        }
       >
-        <div className="text-center max-w-3xl mx-auto mt-8 mb-8">
-          <h3 className="section-title">
-            Solving Real Problems in Indian Clinics—One Innovation at a Time
-          </h3>
+        ‹
+      </button>
 
-          <p className="text-gray-600 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto px-4">
-            The demands of a modern dermatology/dental practice are immense. From patient
-            communication gaps to inefficient workflows, the administrative burden can detract
-            from what truly matters: patient care.
-          </p>
-        </div>
-      </motion.section>
+      {/* Image card */}
+      <div className="clinic-card-wrapper">
+        <img
+          src={images[currentIndex]}
+          alt={`Clinic ${currentIndex + 1}`}
+          className="clinic-fullwidth-image"
+        />
 
-      <section className="clinic-card-section">
-        <div className="clinic-slider-container">
-          <button
-            className="arrow-btn left"
-            onClick={() => setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))}
-          >
-            ‹
-          </button>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.97 }}
+          className="clinic-explore-btn"
+          onClick={() => setShowVideo(true)}
+        >
+          Explore More
+        </motion.button>
+      </div>
 
-          <div className="clinic-card-wrapper">
-            <img
-              src={images[currentIndex]}
-              alt={`Clinic ${currentIndex + 1}`}
-              className="clinic-fullwidth-image"
-            />
+      {/* Right arrow */}
+      <button
+        className="arrow-btn right"
+        onClick={() =>
+          setCurrentIndex((prev) =>
+            prev === images.length - 1 ? 0 : prev + 1
+          )
+        }
+      >
+        ›
+      </button>
+    </div>
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              className="clinic-explore-btn"
-              onClick={() => setShowVideo(true)}
+    {/* Video modal */}
+    {showVideo && (
+      <div
+        className="video-modal-overlay"
+        onClick={() => setShowVideo(false)}
+      >
+        <div
+          className="video-modal-content"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="video-container">
+            <iframe
+              width="100%"
+              height="400"
+              src="https://www.youtube.com/embed/Z_Whr7dd5aQ?autoplay=1&mute=1&controls=1&modestbranding=1"
+              title="CCMS Video"
+              frameBorder="0"
+              allow="autoplay; encrypted-media; picture-in-picture"
+              allowFullScreen
+              className="clinic-video"
+            ></iframe>
+
+            <button
+              className="close-video-btn"
+              onClick={() => setShowVideo(false)}
             >
-              Explore More
-            </motion.button>
+              ✖
+            </button>
           </div>
-
-          <button
-            className="arrow-btn right"
-            onClick={() => setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))}
-          >
-            ›
-          </button>
         </div>
-
-        {showVideo && (
-          <div className="video-modal-overlay" onClick={() => setShowVideo(false)}>
-            <div className="video-modal-content" onClick={(e) => e.stopPropagation()}>
-              <div className="video-container">
-                <iframe
-                  width="100%"
-                  height="400"
-                  src="https://www.youtube.com/embed/Z_Whr7dd5aQ?autoplay=1&mute=1&controls=1&modestbranding=1"
-                  title="CCMS Video"
-                  frameBorder="0"
-                  allow="autoplay; encrypted-media; picture-in-picture"
-                  allowFullScreen
-                  className="clinic-video"
-                ></iframe>
-
-                <button className="close-video-btn" onClick={() => setShowVideo(false)}>
-                  ✖
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-      </section>
-
-
+      </div>
+    )}
+  </section>
+</motion.section>
+<br/>
       <section className="ccms-video-section">
         <h3 className="section-title">
           Explore our CCMS suite - our Patient App, Doctor App and Admin App
@@ -394,16 +412,14 @@ const Ccms = () => {
           ))}
         </div>
       </section>
-
       <section className="ccms-testimonials">
-        <h3 className="section-title">Testimonials</h3>
+        <h3 className="section-title" style={{ margin: "0 0 10px 0" }}>Testimonials</h3>
         <div className="testimonial-slider">
           <motion.div
             className="testimonial-track"
             animate={{ x: ["0%", "-50%"] }} // continuous scroll
             transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
           >
-            {/* Duplicate the testimonials for seamless scrolling */}
             {[...testimonials, ...testimonials].map((t, index) => (
               <div
                 key={index}
@@ -417,14 +433,20 @@ const Ccms = () => {
           </motion.div>
         </div>
       </section>
-      <br />
+
+      <br /><br /><br />
       {/* Demo Form */}
       <section className="ccms-demo-section">
-        <h3 className="section-title">Ready to Transform Your Practice?</h3>
-        <p style={{ fontWeight: "bold", marginTop: 0 }}>
-          Schedule a free, no-obligation demo and discover how Chiselon can
-          optimize your dermatology/dental workflow.
-        </p>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <h3 className="section-title" style={{ margin: 0 }}>
+            Ready to Transform Your Practice?
+          </h3>
+          <p style={{ fontWeight: "bold", margin: 0 }}>
+            Schedule a free, no-obligation demo and discover how Chiselon can
+            optimize your dermatology/dental workflow.
+          </p>
+        </div>
+        <br />
 
         <form className="ccms-demo-form" onSubmit={handleSubmit}>
           <div className="form-row">
@@ -446,7 +468,6 @@ const Ccms = () => {
             />
           </div>
           <div className="form-row">
-
             <input
               type="tel"
               name="phone"
@@ -455,19 +476,15 @@ const Ccms = () => {
               onChange={handleChange}
               required
             />
-            <select
+            <input
+              type="text"
               name="preferredTime"
+              placeholder="Preferred Time (optional)"
               value={formData.preferredTime}
               onChange={handleChange}
-              required
-            >
-              <option value="">Preferred Time</option>
-              <option value="morning">Morning (8 AM - 10 AM)</option>
-              <option value="midday">Midday (11 AM - 1 PM)</option>
-              <option value="afternoon">Afternoon (3 PM - 5 PM)</option>
-              <option value="evening">Evening (6 PM - 8 PM)</option>
-            </select>
+            />
           </div>
+
           <motion.button
             type="submit"
             whileHover={{ scale: 1.05 }}
