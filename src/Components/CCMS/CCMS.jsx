@@ -9,6 +9,7 @@ import {
   FaChartBar,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import {
   PieChart,
   Pie,
@@ -26,44 +27,46 @@ import ClinicImage from "../../Assests/DermaLOgo_1.png";
 import Customer from "../../Assests/DermaLOgo_1.png";
 import Explore from "../../Assests/explore.png";
 import useWindowWidth from "./useWindowWidth.js";
+
 const testimonials = [
   {
-    text: "CCMS changed our workflow completely!",
+    text: "CCMS has made managing my clinic so much easier. The automation tools handle appointments, billing, and follow-ups seamlessly. It saves me valuable time that I can now spend with my patients.",
     author: "Dr. Sharma",
     region: "Telangana",
     best: false
   },
   {
-    text: "Highly recommend for busy clinics.",
-    author: "Clinic Admin",
-    region: "Kerala",
-    best: false
-  },
-  {
-    text: "Easy to use and saves time daily.",
-    author: "Dr. Mehta",
-    region: "Chennai",
-    best: false
-  },
-  {
-    text: "Our staff loves the automation features.",
-    author: "Clinic Manager",
-    region: "Telangana",
-    best: false
-  },
-  {
-    text: "Fantastic support and easy onboarding.",
+    text: "This system is perfect for busy doctors like me. From scheduling to patient reminders, everything runs smoothly. The support team is responsive and professional.",
     author: "Dr. Reddy",
     region: "Kerala",
     best: false
   },
   {
-    text: "Saves us hours of paperwork every week.",
-    author: "Clinic Supervisor",
+    text: "I appreciate how simple and intuitive CCMS is to use. It keeps my records organized and automates repetitive tasks, which makes daily practice stress-free.",
+    author: "Dr. Mehta",
+    region: "Chennai",
+    best: false
+  },
+  {
+    text: "The automation features are a game changer. My staff and I have noticed a big improvement in efficiency and patient satisfaction since we started using CCMS.",
+    author: "Dr. Anjali Menon",
+    region: "Kerala",
+    best: false
+  },
+  {
+    text: "CCMS has streamlined my workflow and reduced administrative hassles. I can now focus more on providing quality care rather than managing paperwork.",
+    author: "Dr. Ramesh Rao",
+    region: "Telangana",
+    best: false
+  },
+  {
+    text: "As a dentist, time management is crucial. CCMS automates so many routine tasks — it’s reliable, easy to learn, and a great asset for any medical professional.",
+    author: "Dr. Priya Subramanian",
     region: "Chennai",
     best: false
   }
 ];
+
 
 const Ccms = () => {
   const images = Array.from({ length: 20 }, (_, i) => require(`../../Assests/${i + 1}.jpg`));
@@ -73,7 +76,7 @@ const Ccms = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 3000);
+    }, 7000);
     return () => clearInterval(interval);
   }, [images.length]);
 
@@ -226,31 +229,30 @@ const Ccms = () => {
   };
   return (
     <div className="ccms-container">
+      {/* Fixed Button Outside the Section */}
+      <motion.button
+        type="button"
+        className="demo-top-btn"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.97 }}
+        onClick={() => openWhatsApp("Hello! I would like to request a Demo.")}
+      >
+        Request for Demo
+      </motion.button>
+
+      {/* Hero Section */}
       <motion.section
         className="ccms-hero"
         initial="hidden"
         whileInView="visible"
         variants={fadeUp}
       >
-        <div className="ccms-topbar">
-          <motion.button
-            type="button"
-            className="demo-top-btn"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            onClick={() =>
-              openWhatsApp("Hello! I would like to request a Demo.")
-            }
-          >
-            Request for Demo
-          </motion.button>
-        </div>
-
         <h1>Chiselon Clinic Management Suite (CCMS)</h1>
         <p style={{ fontWeight: "bold", color: "black" }}>
           A Unified Platform for Patients, Doctors, and Clinic Administrators
         </p>
       </motion.section>
+
       {/* =====================
      CHART SLIDER SECTION
 ====================== */}
@@ -261,9 +263,10 @@ const Ccms = () => {
         variants={fadeUp}
       >
         <div className="text-center max-w-3xl mx-auto mt-8 mb-8">
-          <h3 className="text-3xl md:text-4xl font-bold text-[#0115ae] mb-4 text-center">
-            Is Your Practice Overwhelmed?
+          <h3 className="section-title">
+            Solving Real Problems in Indian Clinics—One Innovation at a Time
           </h3>
+
           <p className="text-gray-600 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto px-4">
             The demands of a modern dermatology/dental practice are immense. From patient
             communication gaps to inefficient workflows, the administrative burden can detract
@@ -273,11 +276,14 @@ const Ccms = () => {
       </motion.section>
 
       <section className="clinic-card-section">
-        <h3 className="section-title">
-          Solving Real Problems in Indian Clinics—One Innovation at a Time
-        </h3>
-
         <div className="clinic-slider-container">
+          <button
+            className="arrow-btn left"
+            onClick={() => setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))}
+          >
+            ‹
+          </button>
+
           <div className="clinic-card-wrapper">
             <img
               src={images[currentIndex]}
@@ -294,6 +300,13 @@ const Ccms = () => {
               Explore More
             </motion.button>
           </div>
+
+          <button
+            className="arrow-btn right"
+            onClick={() => setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))}
+          >
+            ›
+          </button>
         </div>
 
         {showVideo && (
@@ -318,8 +331,8 @@ const Ccms = () => {
             </div>
           </div>
         )}
-
       </section>
+
 
       <section className="ccms-video-section">
         <h3 className="section-title">
