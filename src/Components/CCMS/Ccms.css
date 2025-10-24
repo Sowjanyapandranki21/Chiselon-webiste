@@ -30,60 +30,60 @@
   padding-right: 40px;
 }
 
-/* 🎯 Button Styles */
 .demo-top-btn {
   position: fixed;
-  /* stay fixed on the viewport */
-  top: 100px;
-  /* top of the screen */
-  right: 30px;
-  /* right edge */
+  top: 13vh;
+  /* 10% from top of viewport */
+  right: 2vw;
+  /* 2% from right edge */
   margin: 0;
   background: linear-gradient(135deg, #0115ae, #0b1fe0);
   color: #fff;
   border: none;
-  padding: 14px 28px;
+  padding: 1rem 2rem;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 0 0 0 12px;
-  /* rounded bottom-left corner */
   cursor: pointer;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
   z-index: 9999;
-  /* above everything else */
   transition: all 0.3s ease;
 }
 
-/* 📱 Responsive Adjustments */
+.demo-top-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
 
-/* Tablet (below 768px) */
-@media (max-width: 768px) {
-  .ccms-topbar {
-    margin-top: 20px;
-    margin-bottom: 30px;
-  }
-
+/* Tablets and smaller devices */
+@media (max-width: 1024px) {
   .demo-top-btn {
-    padding: 10px 16px;
+    padding: 0.9rem 1.8rem;
     font-size: 0.95rem;
-    border-radius: 9px;
+    border-radius: 0 0 0 10px;
   }
 }
 
-/* Mobile (below 480px) */
-@media (max-width: 480px) {
-  .ccms-topbar {
-    margin-top: 16px;
-    margin-bottom: 24px;
-  }
-
+@media (max-width: 768px) {
   .demo-top-btn {
-    padding: 9px 14px;
+    padding: 0.8rem 1.6rem;
     font-size: 0.9rem;
-    border-radius: 8px;
   }
 }
 
+@media (max-width: 480px) {
+  .demo-top-btn {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .demo-top-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+  }
+}
 
 
 
