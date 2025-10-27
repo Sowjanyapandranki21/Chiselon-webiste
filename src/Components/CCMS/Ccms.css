@@ -589,8 +589,10 @@
 /* Section */
 .clinic-card-section {
   text-align: center;
-  padding: 10px;              /* remove top/bottom padding */
-  margin: 0;               /* remove default margin */
+  padding: 10px;
+  /* remove top/bottom padding */
+  margin: 0;
+  /* remove default margin */
   background: transparent;
 }
 
@@ -599,7 +601,8 @@
   color: #0115ae;
   font-size: 2rem;
   font-weight: 700;
-  margin: 0 0 10px 0;      /* remove bottom margin to reduce gap */
+  margin: 0 0 10px 0;
+  /* remove bottom margin to reduce gap */
 }
 
 /* Slider container */
@@ -612,27 +615,35 @@
   width: 100%;
   margin: 0 auto;
   padding-top: 20px;
-  gap: 0;                  /* no extra gap between elements */
+  gap: 0;
+  /* no extra gap between elements */
 }
 
-/* Card wrapper */
 .clinic-card-wrapper {
   position: relative;
-  flex: 0 0 auto;          /* prevents flex item from stretching */
+  flex: 0 0 auto;
   width: 100%;
-  max-width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Full-width image */
+/* 🖼️ Clinic image (larger width, responsive, centered) */
 .clinic-fullwidth-image {
-  width: 100%;
-  height: 450px;           /* fixed height to prevent expanding */
-
+  width: 85%;
+  max-width: 1000px;
+  height: auto;
+  aspect-ratio: 16 / 9;
   border-radius: 20px;
   display: block;
-  margin: 0;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
 }
+
 
 /* Explore button */
 .clinic-explore-btn {
@@ -711,7 +722,8 @@
 .video-container {
   position: relative;
   width: 100%;
-  padding-top: 56.25%;  /* 16:9 aspect ratio */
+  padding-top: 56.25%;
+  /* 16:9 aspect ratio */
 }
 
 /* Video styling */

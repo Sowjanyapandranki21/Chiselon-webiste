@@ -267,91 +267,91 @@ const Ccms = () => {
       {/* =====================
      CHART SLIDER SECTION
 ====================== */}
-    <motion.section className="ccms-overview-section">
-  <h3 className="section-title" style={{ margin: 0 }}>
-    Solving Real Problems in Indian Clinics—One Innovation at a Time
-  </h3>
+      <motion.section className="ccms-overview-section">
+        <h3 className="section-title" style={{ margin: 0 }}>
+          Solving Real Problems in Indian Clinics—One Innovation at a Time
+        </h3>
 
-  <section className="clinic-card-section" style={{ margin: 0, padding: 0 }}>
-    <div className="clinic-slider-container">
-      {/* Left arrow */}
-      <button
-        className="arrow-btn left"
-        onClick={() =>
-          setCurrentIndex((prev) =>
-            prev === 0 ? images.length - 1 : prev - 1
-          )
-        }
-      >
-        ‹
-      </button>
-
-      {/* Image card */}
-      <div className="clinic-card-wrapper">
-        <img
-          src={images[currentIndex]}
-          alt={`Clinic ${currentIndex + 1}`}
-          className="clinic-fullwidth-image"
-        />
-
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.97 }}
-          className="clinic-explore-btn"
-          onClick={() => setShowVideo(true)}
-        >
-          Explore More
-        </motion.button>
-      </div>
-
-      {/* Right arrow */}
-      <button
-        className="arrow-btn right"
-        onClick={() =>
-          setCurrentIndex((prev) =>
-            prev === images.length - 1 ? 0 : prev + 1
-          )
-        }
-      >
-        ›
-      </button>
-    </div>
-
-    {/* Video modal */}
-    {showVideo && (
-      <div
-        className="video-modal-overlay"
-        onClick={() => setShowVideo(false)}
-      >
-        <div
-          className="video-modal-content"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div className="video-container">
-            <iframe
-              width="100%"
-              height="400"
-              src="https://www.youtube.com/embed/Z_Whr7dd5aQ?autoplay=1&mute=1&controls=1&modestbranding=1"
-              title="CCMS Video"
-              frameBorder="0"
-              allow="autoplay; encrypted-media; picture-in-picture"
-              allowFullScreen
-              className="clinic-video"
-            ></iframe>
-
+        <section className="clinic-card-section" style={{ margin: 0, padding: 0 }}>
+          <div className="clinic-slider-container">
+            {/* Left arrow */}
             <button
-              className="close-video-btn"
-              onClick={() => setShowVideo(false)}
+              className="arrow-btn left"
+              onClick={() =>
+                setCurrentIndex((prev) =>
+                  prev === 0 ? images.length - 1 : prev - 1
+                )
+              }
             >
-              ✖
+              ‹
+            </button>
+
+            {/* Image card */}
+            <div className="clinic-card-wrapper">
+              <img
+                src={images[currentIndex]}
+                alt={`Clinic ${currentIndex + 1}`}
+                className="clinic-fullwidth-image"
+              />
+
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                className="clinic-explore-btn"
+                onClick={() => setShowVideo(true)}
+              >
+                Explore More
+              </motion.button>
+            </div>
+
+            {/* Right arrow */}
+            <button
+              className="arrow-btn right"
+              onClick={() =>
+                setCurrentIndex((prev) =>
+                  prev === images.length - 1 ? 0 : prev + 1
+                )
+              }
+            >
+              ›
             </button>
           </div>
-        </div>
-      </div>
-    )}
-  </section>
-</motion.section>
-<br/>
+
+          {/* Video modal */}
+          {showVideo && (
+            <div
+              className="video-modal-overlay"
+              onClick={() => setShowVideo(false)}
+            >
+              <div
+                className="video-modal-content"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="video-container">
+                  <iframe
+                    width="100%"
+                    height="400"
+                    src="https://www.youtube.com/embed/Z_Whr7dd5aQ?autoplay=1&mute=1&controls=1&modestbranding=1"
+                    title="CCMS Video"
+                    frameBorder="0"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowFullScreen
+                    className="clinic-video"
+                  ></iframe>
+
+                  <button
+                    className="close-video-btn"
+                    onClick={() => setShowVideo(false)}
+                  >
+                    ✖
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+        </section>
+      </motion.section>
+      <br />
       <section className="ccms-video-section">
         <h3 className="section-title">
           Explore our CCMS suite - our Patient App, Doctor App and Admin App
