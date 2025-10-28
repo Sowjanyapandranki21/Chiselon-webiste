@@ -29,43 +29,83 @@ import Explore from "../../Assests/explore.png";
 import useWindowWidth from "./useWindowWidth.js";
 
 const testimonials = [
+  // 🟢 SHORT
   {
-    text: "CCMS has made managing my clinic so much easier. The automation tools handle appointments, billing, and follow-ups seamlessly. It saves me valuable time that I can now spend with my patients.",
+    text: "CCMS is fast, simple, and reliable. It makes clinic work effortless.",
     author: "Dr. Sharma",
     region: "Telangana",
     best: false
   },
   {
-    text: "This system is perfect for busy doctors like me. From scheduling to patient reminders, everything runs smoothly. The support team is responsive and professional.",
+    text: "Easy to use and very efficient. My team loves it!",
     author: "Dr. Reddy",
     region: "Kerala",
     best: false
   },
+
+  // 🟡 MEDIUM
   {
-    text: "I appreciate how simple and intuitive CCMS is to use. It keeps my records organized and automates repetitive tasks, which makes daily practice stress-free.",
+    text: "CCMS has organized my clinic like never before. Scheduling, billing, and follow-ups are smooth, and I hardly face any manual errors now.",
     author: "Dr. Mehta",
     region: "Chennai",
     best: false
   },
   {
-    text: "The automation features are a game changer. My staff and I have noticed a big improvement in efficiency and patient satisfaction since we started using CCMS.",
+    text: "The automation features are fantastic. My clinic runs smoother, and my patients appreciate the timely reminders. It’s a total upgrade for my practice.",
     author: "Dr. Anjali Menon",
     region: "Kerala",
     best: false
   },
   {
-    text: "CCMS has streamlined my workflow and reduced administrative hassles. I can now focus more on providing quality care rather than managing paperwork.",
+    text: "I’ve saved hours every week using CCMS. Reports, records, and appointments are all in one place — it’s exactly what I needed.",
     author: "Dr. Ramesh Rao",
     region: "Telangana",
     best: false
   },
+
+  // 🔵 LONG
   {
-    text: "As a dentist, time management is crucial. CCMS automates so many routine tasks — it’s reliable, easy to learn, and a great asset for any medical professional.",
+    text: "As a dentist, I juggle multiple patients and procedures daily. CCMS takes care of scheduling, billing, and patient communication automatically. It’s reliable, fast, and keeps my practice organized so I can focus on what truly matters — patient care.",
     author: "Dr. Priya Subramanian",
     region: "Chennai",
     best: false
+  },
+  {
+    text: "CCMS has transformed our entire clinic workflow. Appointment confirmations, reminders, billing, and reports are all handled seamlessly. Even my staff, who were initially hesitant about digital tools, now love using it because it’s intuitive and time-saving.",
+    author: "Dr. Vivek Nair",
+    region: "Karnataka",
+    best: false
+  },
+  {
+    text: "This system has made patient management so easy. I can check patient history, update records, and send follow-up messages with just a few clicks. It’s efficient and well-designed for doctors with busy schedules.",
+    author: "Dr. Sneha Kapoor",
+    region: "Maharashtra",
+    best: false
+  },
+
+  // 🟡 MEDIUM
+  {
+    text: "The reports and analytics help me understand my clinic’s performance better. CCMS has improved both my efficiency and decision-making.",
+    author: "Dr. Rajiv Iyer",
+    region: "Tamil Nadu",
+    best: false
+  },
+  {
+    text: "I appreciate how CCMS integrates every clinic function in one dashboard. It’s modern, clean, and saves a ton of time.",
+    author: "Dr. Neha Patel",
+    region: "Gujarat",
+    best: false
+  },
+
+  // 🔵 LONG
+  {
+    text: "Since adopting CCMS, we’ve seen a big difference in how smoothly our clinic operates. The automation reduced human errors, patient engagement improved, and billing became transparent. I’d recommend it to any clinic looking to grow efficiently.",
+    author: "Dr. Arun Joshi",
+    region: "Andhra Pradesh",
+    best: false
   }
 ];
+
 
 
 const Ccms = () => {
@@ -259,7 +299,7 @@ const Ccms = () => {
         whileInView="visible"
         variants={fadeUp}
       >
-        <h1 style={{ margin: 0 }}>Chiselon Clinic Management Suite (CCMS)</h1>
+        <h1 style={{ margin: 0 }}>Chiselon Clinic Management System (CCMS)</h1>
         <p style={{ margin: 0, fontWeight: "bold", color: "black" }}>
           A Unified Platform for Patients, Doctors, and Clinic Administrators
         </p>

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.14015f77.css",
-    "main.js": "/static/js/main.cfef1ed6.js",
+    "main.js": "/static/js/main.75276cdd.js",
     "static/media/doctor_app.mp4": "/static/media/doctor_app.dda0a0f3700340c38955.mp4",
     "static/media/explore.png": "/static/media/explore.4a6f5becc8faebc9bbc0.png",
     "static/media/ic_launcher.png": "/static/media/ic_launcher.7493eb0f6dbc3a4a8866.png",
@@ -50,10 +50,10 @@
     "static/media/cloud.png": "/static/media/cloud.2d37e174bf9a700f57cd.png",
     "index.html": "/index.html",
     "main.14015f77.css.map": "/static/css/main.14015f77.css.map",
-    "main.cfef1ed6.js.map": "/static/js/main.cfef1ed6.js.map"
+    "main.75276cdd.js.map": "/static/js/main.75276cdd.js.map"
   },
   "entrypoints": [
     "static/css/main.14015f77.css",
-    "static/js/main.cfef1ed6.js"
+    "static/js/main.75276cdd.js"
   ]
 }
