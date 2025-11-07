@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 export const industriesData = [
   {
-    title: "Information Technology & Digital Services",
-    challenge: "The IT industry is fast-paced, with continuous demand for niche skills, scalable products, and innovation.",
+    title: "Digital Innovation & IT Solutions",
+    challenge: "The IT industry is fast-paced, dynamic, and highly competitive, with continuous demand for niche skills, scalable and robust products, innovative solutions, and rapid adoption of emerging technologies.",
     solution: [
       "Talent acquisition for full-stack developers, cloud engineers, QA automation specialists, and niche tech roles.",
       "Development of enterprise-grade software using modern stacks like Java, .NET, Python, Node.js, React, Angular, Flutter.",
@@ -13,8 +13,8 @@ export const industriesData = [
     impact: "We help IT companies scale faster, reduce project delivery timelines, and build secure, high-performing platforms."
   },
   {
-    title: "Healthcare & Life Sciences",
-    challenge: "The healthcare sector faces challenges of patient management, skilled workforce availability, and adoption of AI-driven diagnostics.",
+    title: "Healthcare Technology & Life Sciences",
+    challenge: "The healthcare sector faces challenges in patient management, availability of skilled professionals, adoption of AI-driven diagnostics, operational efficiency, and ensuring high-quality patient care.",
     solution: [
       "AestheTech – AI-powered clinic management system with imaging support and AI-assist for junior doctors.",
       "Quantum Quest (SureCare) – On-demand staffing platform for nurses and healthcare professionals.",
@@ -22,10 +22,9 @@ export const industriesData = [
     ],
     impact: "Our solutions improve patient outcomes, reduce operational bottlenecks, and ensure availability of skilled professionals."
   },
-
   {
-    title: "Finance & Consulting",
-    challenge: "The financial sector requires precision, compliance, and secure IT solutions, while consulting firms need niche talent quickly.",
+    title: "Financial Services & Consulting Excellence",
+    challenge: "The financial sector requires precision, compliance, and secure IT solutions, while consulting firms need specialized talent to efficiently handle complex client projects, deliver timely results, and drive business growth.",
     solution: [
       "RPO services for BFSI and consulting firms to close niche roles faster.",
       "Development of secure, compliant digital platforms with AI/ML-driven analytics.",
@@ -33,11 +32,9 @@ export const industriesData = [
     ],
     impact: "Improved compliance, reduced costs, faster hiring, and secure technology systems."
   },
-  
-
   {
-    title: "Energy & Utilities",
-    challenge: "Energy and utility companies must adopt renewable sources, modernize infrastructure, ensure regulatory compliance, sustainability with affordability.",
+    title: "Energy, Utilities & Sustainable Solutions",
+    challenge: "Energy and utility companies must adopt renewable energy sources, modernize infrastructure, ensure regulatory compliance, maintain sustainability, and implement smart technologies for efficient operations.",
     solution: [
       "Smart grid and renewable energy management systems.",
       "AI-powered energy demand forecasting and consumption analytics.",
@@ -46,7 +43,6 @@ export const industriesData = [
     ],
     impact: "We drive sustainability, efficiency, and compliance for energy and utility providers worldwide."
   },
-
 ];
 
 const IndustriesContainer = () => {
@@ -61,7 +57,7 @@ const IndustriesContainer = () => {
       {industriesData.map((industry, index) => (
         <div key={industry.title} className="product-card">
           <div className="card-content">
-            <h2>{industry.title}</h2>
+            <h3>{industry.title}</h3>
             <p className="challenge-text">{industry.challenge}</p>
           </div>
 

@@ -7,7 +7,7 @@ import HRMS from "../../../Assests/CHMS.jpg";
 
 const products = [
   {
-    description: "Advanced mock test platform for students preparing for competitive exams.",
+    description: "AI-powered mock test and analytics platform that helps students prepare smarter and excel in competitive exams.",
     image: NITO,
     features: [
       "Adaptive test engine with customizable difficulty levels.",
@@ -18,7 +18,7 @@ const products = [
     impact: "Helps students build confidence and track progress effectively."
   },
   {
-    description: "Comprehensive clinic management platform for dermatology and multi-specialty clinics.",
+    description: "Comprehensive clinic management system for dermatology and multi-specialty healthcare centers.",
     image: AestheTech,
     features: [
       "Patient management (records, history, appointments).",
@@ -29,7 +29,7 @@ const products = [
     impact: "Improves patient outcomes and operational efficiency."
   },
   {
-    description: "On-demand healthcare staffing platform connecting nurses with hospitals and patients.",
+    description: "On-demand healthcare staffing solution connecting verified nurses with hospitals and patients.",
     image: QuantumQuest,
     features: [
       "Real-time nurse availability matching.",
@@ -40,7 +40,7 @@ const products = [
     impact: "Ensures timely patient care and flexible work opportunities."
   },
   {
-    description: "Smart HR platform to streamline workforce management and boost productivity.",
+    description: "Smart HR automation platform built to simplify workforce operations and boost team productivity.",
     image: HRMS,
     features: [
       "Timesheet management with project-wise tracking.",
@@ -51,6 +51,7 @@ const products = [
     impact: "Increases productivity and reduces manual errors."
   }
 ];
+
 
 const ProductsSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);

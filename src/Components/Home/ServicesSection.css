@@ -1,108 +1,107 @@
-/* ===== Wrapper Section ===== */
-.services-wrapper {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 80px 20px;
+/* Section wrapper */
+.services-section {
+  padding: 60px 20px;
+
+}
+
+/* Section heading */
+/* .services-heading {
   text-align: center;
-}
-
-.services-heading {
   font-size: 2.2rem;
-  margin-bottom: 50px;
   font-weight: 700;
-  color: #0115ae;
+  margin-bottom: 50px;
+  color: #1a1a1a;
+} */
+.section-heading {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #0115ae, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-
-/* ===== Container ===== */
-.services-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+/* Grid for cards */
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
 }
 
-
-/* ===== Service Card ===== */
-.service-block {
-  background: #ffffff;
+/* Individual card */
+.service-card {
+  background-color: #ffffff;
   border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   padding: 30px 25px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 320px;
   cursor: pointer;
-  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.service-block:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* ===== Title ===== */
-.service-title {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
+/* Card title */
+.service-card-title {
+  font-size: 1.4rem;
   font-weight: 600;
-  color: #0077ff;
+  margin-bottom: 20px;
+  color: #0d47a1;
 }
 
-/* ===== List Items ===== */
-.service-list {
-  list-style: none;
-  padding: 0;
+/* List in card */
+.service-card-list {
+  list-style: none; /* Remove default bullets */
+  padding-left: 0;
   margin: 0;
 }
 
-.service-item {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333;
-  padding-left: 20px;
+.service-card-item {
   position: relative;
-  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.7;
+  padding-left: 22px;
+  margin-bottom: 12px;
+  color: #333;
 }
 
-.service-item::before {
-  content: "✔";
+/* Custom bullet using pseudo-element */
+.service-card-item::before {
+  content: "•";
   position: absolute;
   left: 0;
-  color: #28a745;
-  font-size: 0.9rem;
+  color: #0d47a1; /* bullet color */
+  font-size: 1.2rem;
+  line-height: 1;
 }
 
-/* ===== Responsive Tweaks ===== */
-@media (max-width: 768px) {
+/* Responsive grid */
+@media screen and (max-width: 1024px) {
+  .service-card {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .service-card {
+    width: 80%;
+    padding: 25px 20px;
+  }
   .services-heading {
     font-size: 1.8rem;
   }
-
-  .service-block {
-    padding: 25px 20px;
-  }
-
-  .service-title {
-    font-size: 1.2rem;
-  }
-
-  .service-item {
-    font-size: 0.95rem;
-  }
 }
 
-@media (max-width: 480px) {
-  .services-heading {
-    font-size: 1.5rem;
-  }
-
-  .service-block {
+@media screen and (max-width: 480px) {
+  .service-card {
+    width: 95%;
     padding: 20px 15px;
   }
-
-  .service-title {
-    font-size: 1.1rem;
-  }
-
-  .service-item {
-    font-size: 0.9rem;
+  .services-heading {
+    font-size: 1.6rem;
   }
 }

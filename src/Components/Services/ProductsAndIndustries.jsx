@@ -3,13 +3,30 @@ import "./ProductsAndIndustries.css";
 
 const ProductsAndIndustries = () => {
 
-
-  const industries = [
-    { icon: "💻", title: "Technology", description: "IT teams & enterprise software." },
-    { icon: "🏥", title: "Healthcare", description: "AI-driven platforms & staffing." },
-    { icon: "📚", title: "Education", description: "eLearning & exam prep systems." },
-    { icon: "💰", title: "Finance", description: "Secure, compliance-focused digital platforms." }
+const industries = [
+    {
+      icon: "💻",
+      title: "Technology",
+      description: "IT services, product development, and enterprise solutions for digital transformation.",
+    },
+    {
+      icon: "🏥",
+      title: "Healthcare",
+      description: "AI-driven healthcare platforms, hospital management, and staffing solutions.",
+    },
+    {
+      icon: "📚",
+      title: "Education",
+      description: "eLearning, exam prep systems, and digital education platforms for institutions.",
+    },
+    {
+      icon: "💰",
+      title: "Finance",
+      description: "Secure fintech apps, compliance solutions, and digital banking systems.",
+    },
+   
   ];
+
 
   return (
     <section className="tech-services">
