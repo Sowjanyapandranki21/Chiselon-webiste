@@ -42,86 +42,86 @@ const ContactUs = () => {
       }
     }
   };
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const newErrors = {};
+    const newErrors = {};
 
-  // Email validation
-  if (!emailRegex.test(formData.email)) {
-    newErrors.email = "Please enter a valid email.";
-  }
+    // Email validation
+    if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Please enter a valid email.";
+    }
 
-  // Phone validation
-  if (!formData.phone) {
-    newErrors.phone = "Phone number is required.";
-  } else if (formData.phone.length !== 10) {
-    newErrors.phone = "Phone number must be exactly 10 digits.";
-  }
+    // Phone validation
+    if (!formData.phone) {
+      newErrors.phone = "Phone number is required.";
+    } else if (formData.phone.length !== 10) {
+      newErrors.phone = "Phone number must be exactly 10 digits.";
+    }
 
-  if (Object.keys(newErrors).length > 0) {
-    setErrors(newErrors);
-    return;
-  }
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
 
-  setStatus({ submitting: true, success: null, error: null });
+    setStatus({ submitting: true, success: null, error: null });
 
-  // Add India time
-  const indiaTime = new Date().toLocaleString("en-IN", {
-    timeZone: "Asia/Kolkata",
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: true,
-  });
+    // Add India time
+    const indiaTime = new Date().toLocaleString("en-IN", {
+      timeZone: "Asia/Kolkata",
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    });
 
- const dataToSend = {
-  name: formData.name,
-  email: formData.email,
-  phone: formData.phone,
-  company: formData.company,
-  message: formData.message,
-  submittedAt: indiaTime,
-};
+    const dataToSend = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      company: formData.company,
+      message: formData.message,
+      submittedAt: indiaTime,
+    };
 
-  try {
-    const response = await emailjs.send(
-      "service_o5jy4mk",     // ✅ your Service ID
-      "template_etxr8ld",    // ✅ your Template ID
-      dataToSend,            // ✅ must match variables in template
-      "dB2WIEgwSZqaXZd1l"    // ✅ your Public Key (not private key)
-    );
+    try {
+      const response = await emailjs.send(
+        "service_o5jy4mk",     // ✅ your Service ID
+        "template_etxr8ld",    // ✅ your Template ID
+        dataToSend,            // ✅ must match variables in template
+        "dB2WIEgwSZqaXZd1l"    // ✅ your Public Key (not private key)
+      );
 
-    console.log("EmailJS Response:", response);
+      console.log("EmailJS Response:", response);
 
-    if (response.status === 200) {
+      if (response.status === 200) {
+        setStatus({
+          submitting: false,
+          success: "✅ Message sent successfully!",
+          error: null,
+        });
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          message: "",
+        });
+        setErrors({});
+      } else {
+        throw new Error("Unexpected response: " + response.text);
+      }
+    } catch (err) {
+      console.error("EmailJS Error:", err);
       setStatus({
         submitting: false,
-        success: "✅ Message sent successfully!",
-        error: null,
+        success: null,
+        error: "❌ Something went wrong.",
       });
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        message: "",
-      });
-      setErrors({});
-    } else {
-      throw new Error("Unexpected response: " + response.text);
     }
-  } catch (err) {
-    console.error("EmailJS Error:", err);
-    setStatus({
-      submitting: false,
-      success: null,
-      error: "❌ Something went wrong.",
-    });
-  }
-};
+  };
 
 
   return (
@@ -150,9 +150,10 @@ const handleSubmit = async (e) => {
             </p>
             <p>
               📍 <b>Corporate Office</b><br />
-              Chiselon Technologies Pvt. Ltd.<br />
-              Plot # 80, P&K Nest, CHIL IT Park Road, Saravanampatti, Coimbatore, Tamilnadu <br />
-              Pincode: 641035
+              Chiselon Technologies Pvt Ltd,
+              4/329-7, First floor, Kottai Pirivu, C. Mathampalayam,
+              Above Apollo Pharmacy, Bilichi PO, Coimbatore<br />
+              Pincode: 641019
             </p>
             <p>📧 Email: <a href="mailto:support@chiselontechnologies.com">support@chiselontechnologies.com</a></p>
             <p>📞 Phone: +91-8807981081</p>
@@ -218,16 +219,24 @@ const handleSubmit = async (e) => {
         {/* Map Section */}
         <section className="map-section">
           <h2 className="section-title">Find Us Here</h2>
-          <iframe
-            title="Chiselon Technologies Pvt. Ltd."
-            src="https://www.google.com/maps?q=Chiselon+Technologies+Pvt.+Ltd.@11.0306,76.9817&z=15&output=embed"
-            width="100%"
-            height="400"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+          <p className="map-title">📍 Chiselon Technologies Pvt. Ltd.</p>
+
+          <div className="map-container">
+            <iframe
+              src="https://www.google.com/maps?q=11.20436,76.96581&hl=en&z=17&output=embed"
+              width="100%"
+              height="400"
+              style={{
+                border: 0,
+                borderRadius: "10px",
+                boxShadow: "0 0 10px rgba(0,0,0,0.2)",
+              }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Chiselon Technologies Pvt. Ltd. Location"
+            ></iframe>
+          </div>
         </section>
 
         {/* Closing Note */}

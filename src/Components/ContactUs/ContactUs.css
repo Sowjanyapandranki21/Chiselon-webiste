@@ -6,7 +6,12 @@
   color: #333;
 
 }
-
+.map-title {
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
 .headline h1 {
   font-size: 2rem;
   color: #0a3d62;
