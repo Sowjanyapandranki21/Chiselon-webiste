@@ -112,7 +112,7 @@ const Ccms = () => {
 
   const [showVideo, setShowVideo] = useState(false);
 
-  const images = Array.from({ length: 20 }, (_, i) => require(`../../Assests/${i + 1}.jpg`));
+  const images = Array.from({ length: 16 }, (_, i) => require(`../../Assests/${i + 1}.jpg`));
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
