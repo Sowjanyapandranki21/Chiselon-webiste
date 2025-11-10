@@ -112,7 +112,7 @@ const Ccms = () => {
 
   const [showVideo, setShowVideo] = useState(false);
 
-  const images = Array.from({ length: 16 }, (_, i) => require(`../../Assests/${i + 1}.jpg`));
+  const images = Array.from({ length: 15 }, (_, i) => require(`../../Assests/${i + 1}.jpg`));
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -122,11 +122,11 @@ const Ccms = () => {
       // After the first image, start regular 7s interval
       const interval = setInterval(() => {
         setCurrentIndex(prev => (prev + 1) % images.length);
-      }, 5000);
+      }, 9000);
 
       // Cleanup interval when component unmounts
       return () => clearInterval(interval);
-    }, 30000);
+    }, 70000);
 
     return () => clearTimeout(firstTimeout);
   }, [images.length]);
@@ -308,8 +308,16 @@ const Ccms = () => {
      CHART SLIDER SECTION
 ====================== */}
       <motion.section className="ccms-overview-section">
-        <h3 className="section-title" style={{ margin: 0 }}>
-          Solving Real Problems in Indian Clinics—One Innovation at a Time
+        <h3
+          className="section-title"
+          style={{
+            margin: 0,
+            textAlign: "center",
+            display: "block",
+            width: "100%"
+          }}
+        >
+          Solving Real Problems in Indian Clinics
         </h3>
 
         <section className="clinic-card-section" style={{ margin: 0, padding: 0 }}>
