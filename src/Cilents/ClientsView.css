@@ -1,0 +1,87 @@
+.clients-view {
+  padding: 60px 20px;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: -100px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #011f4b;
+}
+
+.clients-view p {
+  margin-bottom: 40px;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* ===== Logos Grid ===== */
+.logos-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* mobile default */
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
+
+@media (min-width: 600px) {
+  .logos-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .logos-container {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.client-logo img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Hover effect */
+.client-logo img:hover {
+  transform: scale(1.1) rotate(-5deg);
+  cursor: pointer;
+  animation-play-state: paused; /* pause float on hover */
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Optional: stagger floating speed slightly */
+.client-logo:nth-child(odd) img {
+  animation-duration: 3.5s;
+}
+.client-logo:nth-child(even) img {
+  animation-duration: 4.5s;
+}

@@ -1,0 +1,107 @@
+/* Reset default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #b6f300;
+}
+
+/* Section styling */
+.clients-section {
+  width: 100%;
+  padding: 3rem 1rem;
+  background-color: #b6f300;
+  overflow-x: hidden; /* Extra safety */
+}
+
+/* Container styling */
+.clients-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1rem; /* Prevent edge overflow */
+}
+
+/* Title styling */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Client names paragraph */
+.clients-names {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+/* Logo grid: 6 per row on large screens */
+.clients-logos {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Individual logo styling */
+.client-logo {
+  padding: 0.75rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 150px;
+}
+
+.client-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Hover effect */
+.client-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Tablets: 3 logos per row */
+@media (max-width: 1024px) {
+  .clients-logos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile: 2 logos per row */
+@media (max-width: 600px) {
+  .clients-logos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .clients-names {
+    font-size: 0.85rem;
+  }
+
+  .clients-section {
+    padding: 2rem 0.5rem;
+  }
+
+  .client-logo {
+    padding: 0.5rem;
+    max-width: 120px;
+  }
+}

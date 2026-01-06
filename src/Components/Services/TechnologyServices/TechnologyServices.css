@@ -1,0 +1,165 @@
+/* -------------------------------
+   Technology Services Section
+--------------------------------*/
+.tech-services {
+
+margin-top: -80px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.tech-services .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 1.8rem;
+  color: #1e293b;
+  margin-bottom: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Paragraph under heading */
+.tech-services p {
+  color: #475569;
+  font-size: 1rem;
+  max-width: 850px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+/* Card Grid Layout */
+.expertise {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* Card Style */
+.mission-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mission-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Icon Styling */
+.card-icon {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.mission-card:hover .card-icon {
+  transform: scale(1.1);
+}
+
+/* Title */
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+/* Description */
+.card-description {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Approach paragraph (if enabled) */
+.approach {
+  font-size: 1rem;
+  color: #475569;
+  margin-top: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* -------------------------------
+   RESPONSIVE DESIGN
+--------------------------------*/
+
+/* Tablet view */
+@media (max-width: 992px) {
+  .tech-services {
+    padding: 50px 15px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .card-title {
+    font-size: 1.05rem;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
+  }
+
+  .card-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+  .tech-services {
+    padding: 40px 10px;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .tech-services p {
+    font-size: 0.95rem;
+  }
+
+  .expertise {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .mission-card {
+    padding: 25px 15px;
+  }
+
+  .card-icon {
+    width: 55px;
+    height: 55px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
+  }
+}

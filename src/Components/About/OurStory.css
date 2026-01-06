@@ -1,0 +1,132 @@
+/* Section Wrapper */
+.ourstory-section {
+  padding: 5rem 5vw;
+  /* background-color: #f9f9f9; */
+  margin-top: 3rem; /* 👈 Adds space below the header */
+}
+
+
+/* Container */
+.ourstory-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+/* Text Content */
+.ourstory-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.ourstory-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: #374151;
+}
+
+/* Title Styling */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #0115ae, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Image Container */
+.ourstory-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ourstory-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.5s ease;
+}
+
+.ourstory-image img:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* Animations */
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: fadeInLeft 1s ease forwards;
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: fadeInRight 1s ease forwards;
+}
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .ourstory-image img {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ourstory-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .ourstory-text,
+  .ourstory-image {
+    width: 100%;
+    order: unset;
+  }
+
+  .ourstory-image img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .ourstory-text p {
+    font-size: 1rem;
+  }
+
+  .ourstory-section {
+    padding: 3rem 1rem;
+  }
+}

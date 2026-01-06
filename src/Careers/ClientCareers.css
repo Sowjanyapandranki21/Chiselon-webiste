@@ -1,0 +1,251 @@
+/* ===============================
+   BASE
+================================ */
+.careers-page {
+  font-family: "Inter", sans-serif;
+  background: #b6f300; /* brand green */
+  color: #0f172a;
+}
+
+/* ===============================
+   HERO / OVERVIEW
+================================ */
+.overview {
+  background: #b6f300;
+  padding: 40px 20px 80px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.overview p {
+  max-width: 900px;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* ===============================
+   CLIENT VALUE SECTION
+================================ */
+.client-value {
+  background: #b6f300;
+  padding: 5px 8%;
+  text-align: center;
+}
+
+.client-value .section-title {
+  font-size: 34px;
+  margin-bottom: 50px;
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.value-card {
+  padding: 30px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.value-card h4 {
+  color: #0b5ed7;
+  margin-bottom: 12px;
+}
+
+/* ===============================
+   JOB SECTION
+================================ */
+.job-openings {
+  padding: 80px 8%;
+}
+
+.job-openings h2 {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 60px;
+}
+
+/* 4 CARDS PER ROW */
+.job-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ===============================
+   JOB CARD
+================================ */
+.job-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px;
+  border: 1px solid #e5e7eb;
+  transition: 0.3s ease;
+
+  /* KEY FIX */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.job-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* HEADER */
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.job-header h3 {
+  font-size: 20px;
+  color: #0b5ed7;
+}
+
+.job-type {
+  background: #e0e7ff;
+  color: #3730a3;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* INFO */
+.department {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #475569;
+}
+
+.job-info {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+/* DESCRIPTION */
+.description {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* SKILLS */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.skill-chip {
+  background: #f1f5f9;
+  padding: 6px 12px;
+  border-radius: 14px;
+  font-size: 12px;
+}
+
+/* ===============================
+   APPLY BUTTON (ALIGNED)
+================================ */
+.apply-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: #0b5ed7;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+
+  /* KEY ALIGNMENT FIX */
+  margin-top: auto;
+}
+
+.apply-btn:hover {
+  background: #084298;
+}
+
+/* ===============================
+   CTA SECTION
+================================ */
+.career-cta {
+  background: #020617;
+  color: #ffffff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.career-cta h2 {
+  font-size: 32px;
+}
+
+.career-cta p {
+  margin: 18px 0 30px;
+  opacity: 0.9;
+}
+
+.cta-btn {
+  background: #22c55e;
+  color: #022c22;
+  padding: 14px 34px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ===============================
+   RESPONSIVE BREAKPOINTS
+================================ */
+
+/* Large Tablets */
+@media (max-width: 1200px) {
+  .job-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .job-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .value-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .job-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .value-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  .overview p {
+    font-size: 16px;
+  }
+}
