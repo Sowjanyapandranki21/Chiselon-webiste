@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d2d83184.css",
-    "main.js": "/static/js/main.a216b447.js",
+    "main.css": "/static/css/main.571f74b4.css",
+    "main.js": "/static/js/main.291a591b.js",
     "static/media/doctor_app.mp4": "/static/media/doctor_app.dda0a0f3700340c38955.mp4",
     "static/media/explore.png": "/static/media/explore.4a6f5becc8faebc9bbc0.png",
     "static/media/ic_launcher.png": "/static/media/ic_launcher.7493eb0f6dbc3a4a8866.png",
@@ -39,11 +39,11 @@
     "static/media/rpwebapps.png": "/static/media/rpwebapps.012524131b73c6d63bea.png",
     "static/media/Exwyn.png": "/static/media/Exwyn.839c4be6ca5ce4168edb.png",
     "index.html": "/index.html",
-    "main.d2d83184.css.map": "/static/css/main.d2d83184.css.map",
-    "main.a216b447.js.map": "/static/js/main.a216b447.js.map"
+    "main.571f74b4.css.map": "/static/css/main.571f74b4.css.map",
+    "main.291a591b.js.map": "/static/js/main.291a591b.js.map"
   },
   "entrypoints": [
-    "static/css/main.d2d83184.css",
-    "static/js/main.a216b447.js"
+    "static/css/main.571f74b4.css",
+    "static/js/main.291a591b.js"
   ]
 }

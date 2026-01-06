@@ -45,39 +45,6 @@ Regards,`
         </p>
       </section>
 
-      {/* CLIENT VALUE SECTION */}
-      <section className="client-value">
-        <h6 className="section-title">How We Support Our Clients</h6>
-
-        <div className="value-grid">
-          <div className="value-card">
-            <h4>Pre-Vetted Talent</h4>
-            <p>
-              Professionals screened for technical excellence, communication
-              skills, and domain expertise.
-            </p>
-          </div>
-
-          <div className="value-card">
-            <h4>Flexible Engagement Models</h4>
-            <p>
-              Full-time, contract, and project-based hiring aligned to your
-              business needs.
-            </p>
-          </div>
-
-          <div className="value-card">
-            <h4>Reliable & Faster Hiring</h4>
-            <p>
-              Streamlined recruitment processes ensuring speed without
-              compromising on quality.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <br />
-
       {/* JOB OPENINGS */}
       <section className="client-value">
         <h6 className="section-title">Current Open Positions</h6>
@@ -119,8 +86,37 @@ Regards,`
         </div>
       </section>
 
-      <br />
+      <br /><br/>  <br /><br/>
+   {/* CLIENT VALUE SECTION */}
+      <section className="client-value">
+        <h6 className="section-title">How We Support Our Clients</h6>
 
+        <div className="value-grid">
+          <div className="value-card">
+            <h4>Pre-Vetted Talent</h4>
+            <p>
+              Professionals screened for technical excellence, communication
+              skills, and domain expertise.
+            </p>
+          </div>
+
+          <div className="value-card">
+            <h4>Flexible Engagement Models</h4>
+            <p>
+              Full-time, contract, and project-based hiring aligned to your
+              business needs.
+            </p>
+          </div>
+
+          <div className="value-card">
+            <h4>Reliable & Faster Hiring</h4>
+            <p>
+              Streamlined recruitment processes ensuring speed without
+              compromising on quality.
+            </p>
+          </div>
+        </div>
+      </section><br/>
       {/* CTA */}
       <section className="career-cta">
         <h2>Build High-Performing Teams with Confidence</h2>
