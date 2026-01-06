@@ -36,13 +36,13 @@ Regards,`
 
       {/* HERO SECTION */}
       <section className="overview">
-        <h6 className="section-title">Join our client in shaping the future of Talent and Technology</h6>
-        <p>
-          We enable organizations to build high-performing teams by providing access to
-          expertly vetted professionals across technology, design, and quality assurance. Our client-centric
-          approach ensures seamless talent integration that accelerates innovation, enhances operational efficiency,
-          and supports sustainable, scalable business growth.
+        <h6 className="section-title">Join our clients in building the future of talent and technology.</h6>
+        <p style={{ maxWidth:"900px",margin:"0 auto 60px",lineHeight:"1.5",fontSize:"20px"}}>
+          We empower organizations to build high-performing teams by providing access to expertly vetted professionals across technology, design, and quality assurance.
+          Through a client-centric approach, we ensure seamless talent integration that accelerates innovation, enhances operational efficiency, and enables sustainable,
+          scalable business growth—delivering long-term success for our clients.
         </p>
+
       </section>
 
       {/* JOB OPENINGS */}
@@ -86,8 +86,8 @@ Regards,`
         </div>
       </section>
 
-      <br /><br/>  <br /><br/>
-   {/* CLIENT VALUE SECTION */}
+      <br /><br />  <br /><br />
+      {/* CLIENT VALUE SECTION */}
       <section className="client-value">
         <h6 className="section-title">How We Support Our Clients</h6>
 
@@ -116,7 +116,7 @@ Regards,`
             </p>
           </div>
         </div>
-      </section><br/>
+      </section><br />
       {/* CTA */}
       <section className="career-cta">
         <h2>Build High-Performing Teams with Confidence</h2>

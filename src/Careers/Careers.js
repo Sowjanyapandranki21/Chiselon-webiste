@@ -41,15 +41,14 @@ Best regards,
     <div className="careers-page">
       {/* Hero */}
       <section className="overview">
-        <h6 className="section-title">Join our in Shaping the Future of Talent and Technology</h6>
-        <p>
-          At Chiselon Technologies Pvt. Ltd., we believe people are the foundation of innovation.
-          Come grow your career with us.
+        <h6 className="section-title">Join us in shaping the future of talent and technology—together.</h6>
+        <p style={{ maxWidth:"900px",margin:"0 auto 60px",lineHeight:"1.5",fontSize:"20px"}}>
+          At Chiselon Technologies Pvt. Ltd., we believe people are the foundation of innovation. Join us and grow your career with purpose, impact, and opportunity.
         </p>
       </section>
 
       {/* Life at Chiselon - Timeline */}
-      <section className="employee-value" style={{ marginTop: "-4rem" }}>
+      <section className="employee-value" style={{ marginTop: "-6rem" }}>
         <h3 className="section-title">Life at Chiselon</h3>
         <div className="timeline" >
           {[
@@ -86,7 +85,7 @@ Best regards,
 
       {/* EMPLOYEE VALUE */}
       <section className="employee-value">
-        <h3 className="section-title">Employee Value Proposition</h3>
+        <h3 className="section-title">Build Your Career with Chiselon</h3>
         <p>
           At Chiselon, we don’t just offer jobs — we offer career journeys.
         </p>
