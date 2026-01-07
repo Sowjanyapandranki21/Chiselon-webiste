@@ -53,11 +53,11 @@ Regards,`
           {careersData.map((job) => (
             <div className="job-card" key={job.id}>
               <div className="job-header">
-                <h4 style={{ color: "blue" }}>{job.title}</h4>
+                <h3 style={{ color: "blue",fontSize:"14px" }}>{job.title}</h3>
                 <span className="job-type">{job.type}</span>
               </div>
 
-              <p className="department">{job.department}</p>
+              {/* <p className="department">{job.department}</p> */}
 
               <div className="job-info">
                 <span>📍 {job.location}</span>

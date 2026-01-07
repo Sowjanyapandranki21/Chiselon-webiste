@@ -1,14 +1,14 @@
 export const careersData = [
   {
     id: "JD-001",
-    title: "Frontend Developer",
+    title: "Senior Software Engineer ",
     department: "Engineering",
-    type: "Full Time",
+    type: "Hybrid",
     location: "Hyderabad, India",
-    experience: "2–4 Years",
-    skills: ["React", "JavaScript", "CSS", "REST APIs"],
+    experience: "6 -10 Years",
+    skills: ["C#", "Web API", "Entity framework", "Angular", "SQL Server", "Javascript", "HTML5", "CSS"],
     description:
-      "Develop scalable and responsive user interfaces using modern frontend technologies.",
+      "We’re looking for a Senior software developer to join our development team working on developing our core products. You’ll work with a manager and software development team on several features of our products and be involved in the concept-to-delivery of high-quality solutions. You need to update technical skills as per project requirements as and when required.",
   },
   {
     id: "JD-002",
