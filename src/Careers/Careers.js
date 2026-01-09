@@ -3,10 +3,12 @@ import "./Careers.css";
 
 const Careers = () => {
   const jobs = [
-    { role: "Full Stack Developer (Java/React)", exp: "3–6 years" },
-    { role: "Cloud & DevOps Engineer (AWS/Azure)", exp: "4–8 years" },
-    { role: "Recruitment Specialist (IT/Non-IT)", exp: "2–5 years" },
-    { role: "QA Automation Engineer (Selenium/Cypress)", exp: "3–6 years" },
+    { role: "Associate Software Engineer", exp: "4 – 6 Years" },
+    { role: "Senior Software Engineer", exp: "6 - 10 Years" },
+    { role: "Senior Software Engineer- Team Lead Backend", exp: "11 - 17 Years" },
+    { role: "Data Scientist", exp: "2 - 4 Years" },
+    { role: "Senior Python Developer", exp: "4 - 7 Years" },
+    // { role: "Data Scientist", exp: "2-4 years" },
   ];
   const HR_EMAIL = "support@chiselontechnologies.com";
   const LINKEDIN_URL = "https://www.linkedin.com/company/chiselon-technologies-pvt-ltd";
@@ -42,7 +44,7 @@ Best regards,
       {/* Hero */}
       <section className="overview">
         <h6 className="section-title">Join us in shaping the future of talent and technology—together.</h6>
-        <p style={{ maxWidth:"900px",margin:"0 auto 60px",lineHeight:"1.5",fontSize:"20px"}}>
+        <p style={{ maxWidth: "900px", margin: "0 auto 60px", lineHeight: "1.5", fontSize: "20px" }}>
           At Chiselon Technologies Pvt. Ltd., we believe people are the foundation of innovation. Join us and grow your career with purpose, impact, and opportunity.
         </p>
       </section>

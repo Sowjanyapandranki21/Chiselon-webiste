@@ -19,6 +19,7 @@ import Ccms from "./Components/CCMS/CCMS";
 // GA
 import { pageview } from "./GA";
 import ClientCareers from "./Careers/ClientCareers";
+import ChiselonOpenings from "./Careers/ChiselonOpenings";
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -42,6 +43,7 @@ const AppRoutes = () => {
       <Route path="/clients" element={<Clients />} />
       <Route path="/ccms" element={<Ccms />} />
       <Route path ='/ClientCareers' element={<ClientCareers/>}/>
+      <Route path ='/ChiselonOpenings' element={<ChiselonOpenings/>}/>
     </Routes>
   );
 };

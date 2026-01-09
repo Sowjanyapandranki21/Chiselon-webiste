@@ -101,9 +101,10 @@ const Navbar = () => {
 
               {openDropdown === "careers" && (
                 <ul className="dropdown-menu">
+                   <li><Link to="/ChiselonOpenings" className={`dropdown-link ${isActive("/ChiselonOpenings") ? "active" : ""}`}>Internal Careers</Link></li>
                   <li><Link to="/ClientCareers" className={`dropdown-link ${isActive("/ClientCareers") ? "active" : ""}`}>Client Careers</Link></li>
-                  {/* <li><Link to="/jobOpenings" className={`dropdown-link ${isActive("/jobOpenings") ? "active" : ""}`}>Job Openings</Link></li>
-                  <li><Link to="/internships" className={`dropdown-link ${isActive("/internships") ? "active" : ""}`}>Internships</Link></li> */}
+                  
+                  {/* <li><Link to="/internships" className={`dropdown-link ${isActive("/internships") ? "active" : ""}`}>Internships</Link></li>  */}
                 </ul>
               )}
             </li>
