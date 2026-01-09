@@ -4,16 +4,16 @@ export const ChiselonOpeningsData = [
     title: "Associate Talent Acquisition",
     department: "People & Talent",
     type: "Hybrid",
-    location: "Hyderabad, India",
+    location: "Coimbatore, India",
     experience: "1 - 3 Years",
     skills: [
       "Recruitment Coordination",
-      "Candidate Sourcing",
+      "Sourcing experience- Naukri & Linkedin",
       "Screening & Shortlisting",
       "Interview Scheduling",
       "Communication Skills",
       "ATS Tools",
-      "LinkedIn Hiring"
+      
     ],
     description:
       "We are hiring an Associate Talent Acquisition professional to support end-to-end hiring functions including sourcing, screening, scheduling, and onboarding coordination. This role involves closely working with hiring managers and ensuring a seamless candidate experience."
