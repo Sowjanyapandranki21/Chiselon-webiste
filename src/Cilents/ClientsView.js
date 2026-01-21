@@ -16,7 +16,7 @@ const ClientsView = () => {
     { name: "Ability Commerce", logo: "https://static.crozdesk.com/web_app_library/providers/logos/000/003/205/box/ability-ccs-oms-1669205711-logo.png?1669205711" },
     { name: "American Consulting Services", logo: ACSLogo },
     { name: "Exwin", logo: "https://cpl.thalesgroup.com/sites/default/files/content/partners/logo/2023-11/Credopay%20logo.png" },
-    { name: "Valor PayTech", logo: "https://valorpaytech.com/wp-content/uploads/2024/03/Valor-Paytech-New-logo-600x.png" },
+    { name: "Valor PayTech", logo: "https://valorpaytech.com/wp-content/uploads/unlimited_elements/Valor-Paytech-logo-mobile.png" },
     { name: "Transtrac Technologies", logo: "https://bro-group.com/wp-content/uploads/2024/05/transtrac.png" },
     { name: "RP WebApps", logo: RPWebAppsLogo },
     { name: "Exwyn", logo: ExwynLogo },
