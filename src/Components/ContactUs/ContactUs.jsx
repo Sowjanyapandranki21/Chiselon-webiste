@@ -151,7 +151,7 @@ const ContactUs = () => {
             <p>
               📍 <b>Corporate Office</b><br />
               Chiselon Technologies Pvt Ltd,
-              4/329-7, First Floor, Above Apollo Pharmacy,Kottai Pirivu,
+              4/329-6, First Floor, Above Apollo Pharmacy,Kottai Pirivu,
               Bilichi PO, Coimbatore<br />
               Pincode: 641019
             </p>
